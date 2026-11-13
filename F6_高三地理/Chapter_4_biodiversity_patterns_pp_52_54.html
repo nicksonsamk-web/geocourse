@@ -3229,5 +3229,816 @@
       renderQuiz();
     });
   </script>
+
+<!-- =========================================================================
+     CHAPTER 4 (pp. 52–54) TEMPLATE 4 (v4.0) MASTER UPGRADE PATCH
+     Includes:
+     1. 50:50 Header Layout & Two-Line Bilingual Title + Clickable 3-Theme Switcher
+     2. Modal `object-contain` Fix, Geo-Term Two-Finger Pinch-Zoom & Photo Caption Box
+     3. Fig 4.1 Log/Sqrt vs. Linear Scale Toggle (Fixes Invisible Vertebrate Bars!)
+     4. Section 3 Live Simpson's Diversity Index (D = 1 - Σn(n-1)/N(N-1)) Calculator
+     5. Section 5 Live Google Maps Spatial Locators (Tasmania/Maria Island & CR/Iceland)
+     6. Section 6 Blind-Box Two-Stage Socratic Prompts (🎁 ① ② ③ ④) + New 10-Mark Task
+     7. iOS Apple Notes / Markup Classroom Annotation Toolbar
+     ========================================================================= -->
+<style>
+  /* 1. Touch Slider Stabilization & Uncropped Modal Images */
+  input[type=range] { touch-action: pan-y !important; }
+  #sp-modal-img, #gt-modal-img {
+    object-fit: contain !important;
+    background-color: #020617 !important;
+  }
+
+  /* 2. Clickable H1 Title & Theme Pill */
+  header h1 {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+  }
+  header h1:hover { opacity: 0.92; }
+  #ch4-theme-pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    margin-left: 6px;
+    border-radius: 999px;
+    background: rgba(253, 224, 71, 0.18);
+    border: 1px solid #fde047;
+    color: #fde047;
+    vertical-align: middle;
+  }
+
+  /* 3. Theme 2: Academic Parchment & Sage (學術人文手稿風) */
+  body.theme-academic {
+    background-color: #FAF9F6 !important;
+    color: #2C2C2C !important;
+  }
+  body.theme-academic header.bg-emerald-950 {
+    background-color: #2C2C2C !important;
+    border-bottom: 3px solid #B87333 !important;
+  }
+  body.theme-academic .bg-white {
+    background-color: #FFFDF9 !important;
+    border-color: #D6D3C9 !important;
+    box-shadow: 0 4px 14px rgba(44, 44, 44, 0.05) !important;
+  }
+  body.theme-academic .bg-slate-50 {
+    background-color: #E6EBE4 !important;
+    border-color: #C5CFC2 !important;
+  }
+  body.theme-academic .species-trigger {
+    background-color: #E8EFE6 !important;
+    border-color: #6B8E63 !important;
+    color: #2B4C25 !important;
+  }
+  body.theme-academic .geo-term-trigger {
+    background-color: #F7EFE6 !important;
+    border-color: #B87333 !important;
+    color: #7C4716 !important;
+  }
+
+  /* 4. Theme 3: Dark Command Dashboard (高對比暗黑儀表板風) */
+  body.theme-dark-pro {
+    background-color: #0B1120 !important;
+    color: #E2E8F0 !important;
+  }
+  body.theme-dark-pro header.bg-emerald-950 {
+    background-color: #020617 !important;
+    border-bottom: 1px solid #1E293B !important;
+  }
+  body.theme-dark-pro .bg-white {
+    background-color: #111827 !important;
+    border-color: #1F2937 !important;
+    color: #F1F5F9 !important;
+  }
+  body.theme-dark-pro .bg-slate-50 {
+    background-color: #1E293B !important;
+    border-color: #334155 !important;
+    color: #E2E8F0 !important;
+  }
+  body.theme-dark-pro h2, body.theme-dark-pro h3, body.theme-dark-pro h4,
+  body.theme-dark-pro .text-slate-900, body.theme-dark-pro .text-slate-800 {
+    color: #F8FAFC !important;
+  }
+  body.theme-dark-pro .text-slate-700, body.theme-dark-pro .text-slate-600 {
+    color: #CBD5E1 !important;
+  }
+  body.theme-dark-pro .zh-note {
+    color: #94A3B8 !important;
+  }
+
+  /* 5. iOS Apple Notes Floating Markup Toolbar & Canvas */
+  #ios-annotation-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 45;
+    pointer-events: none;
+    touch-action: auto;
+  }
+  #ios-annotation-canvas.drawing-active {
+    pointer-events: auto;
+    touch-action: none;
+    cursor: crosshair;
+  }
+  .ios-markup-dock {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(28, 28, 30, 0.9);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42);
+    color: #ffffff;
+    max-width: 96vw;
+    overflow-x: auto;
+  }
+  .ios-tool-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #E5E5EA;
+    background: transparent;
+    border: 1.5px solid transparent;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .ios-tool-btn:hover { background: rgba(255, 255, 255, 0.12); }
+  .ios-tool-btn.active {
+    background: #FFFFFF;
+    color: #1C1C1E;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1.5px);
+  }
+  .ios-color-swatch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+  }
+  .ios-color-swatch.active {
+    transform: scale(1.25);
+    border: 2.5px solid #FFFFFF;
+    box-shadow: 0 0 0 2px #0A84FF;
+  }
+  .ios-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 2px;
+    flex-shrink: 0;
+  }
+</style>
+
+<!-- FULL-VIEWPORT TRANSPARENT ANNOTATION CANVAS -->
+<canvas id="ios-annotation-canvas"></canvas>
+
+<!-- iOS APPLE NOTES FLOATING MARKUP DOCK -->
+<div id="ios-markup-bar" class="ios-markup-dock">
+  <button type="button" id="mk-btn-browse" onclick="setMarkupTool('browse')" class="ios-tool-btn active" title="Browse & Click Page (瀏覽與操作網頁)">
+    <span>🖐️</span><span class="hidden sm:inline">操作網頁</span>
+  </button>
+  <div class="ios-divider"></div>
+  <button type="button" id="mk-btn-pen" onclick="setMarkupTool('pen')" class="ios-tool-btn" title="Pen Tool (鋼筆批註)">
+    <span>✒️</span><span class="hidden sm:inline">畫筆</span>
+  </button>
+  <button type="button" id="mk-btn-highlighter" onclick="setMarkupTool('highlighter')" class="ios-tool-btn" title="Highlighter (螢光筆重點)">
+    <span>🖍️</span><span class="hidden sm:inline">螢光筆</span>
+  </button>
+  <button type="button" id="mk-btn-eraser" onclick="setMarkupTool('eraser')" class="ios-tool-btn" title="Eraser (橡皮擦)">
+    <span>🧽</span><span class="hidden sm:inline">擦膠</span>
+  </button>
+  <div class="ios-divider"></div>
+  <button type="button" onclick="setMarkupColor('#FF3B30', this)" class="ios-color-swatch active" style="background:#FF3B30;" title="iOS Red"></button>
+  <button type="button" onclick="setMarkupColor('#FFCC00', this)" class="ios-color-swatch" style="background:#FFCC00;" title="iOS Yellow"></button>
+  <button type="button" onclick="setMarkupColor('#34C759', this)" class="ios-color-swatch" style="background:#34C759;" title="iOS Green"></button>
+  <button type="button" onclick="setMarkupColor('#0A84FF', this)" class="ios-color-swatch" style="background:#0A84FF;" title="iOS Blue"></button>
+  <button type="button" onclick="setMarkupColor('#AF52DE', this)" class="ios-color-swatch" style="background:#AF52DE;" title="iOS Purple"></button>
+  <button type="button" onclick="setMarkupColor('#1C1C1E', this)" class="ios-color-swatch" style="background:#1C1C1E;" title="iOS Black"></button>
+  <div class="ios-divider"></div>
+  <button type="button" id="mk-btn-size" onclick="cycleMarkupSize()" class="ios-tool-btn" title="Stroke Thickness (筆觸粗細)">
+    <span id="mk-size-label">● 中</span>
+  </button>
+  <button type="button" onclick="undoMarkupStroke()" class="ios-tool-btn" title="Undo Last Stroke (復原上一筆)">
+    <span>↩</span>
+  </button>
+  <button type="button" onclick="clearMarkupCanvas()" class="ios-tool-btn text-rose-400 hover:text-rose-300" title="Clear All Notes (清空全部筆跡)">
+    <span>🗑️</span><span class="hidden md:inline">清空</span>
+  </button>
+</div>
+
+<script>
+  // =========================================================================
+  // UPGRADE 1: 50:50 HEADER SPLIT, 2-LINE BILINGUAL TITLE & 3-THEME SWITCHER
+  // =========================================================================
+  const CH4_THEMES = [
+    { key: 'default', name: '🎨 風格 1/3：翡翠科技' },
+    { key: 'theme-academic', name: '📜 風格 2/3：人文手稿' },
+    { key: 'theme-dark-pro', name: '🌙 風格 3/3：暗黑儀表' }
+  ];
+  let ch4ThemeIdx = 0;
+
+  function upgradeHeaderToTemplate4() {
+    const headerRow = document.querySelector('header > div > div');
+    const navGrid = document.getElementById('step-nav-grid');
+    const h1El = document.querySelector('header h1');
+    if (headerRow && navGrid) {
+      headerRow.className = 'grid grid-cols-1 lg:grid-cols-12 gap-3 items-center';
+      const leftCol = headerRow.children[0];
+      if (leftCol) leftCol.classList.add('lg:col-span-6');
+      navGrid.className = 'hidden sm:grid lg:col-span-6 grid-cols-2 sm:grid-cols-3 gap-1.5 w-full pt-1 sm:pt-0';
+    }
+    if (h1El) {
+      h1El.className = 'text-sm sm:text-lg font-extrabold tracking-tight text-white leading-snug mt-0.5';
+      h1El.innerHTML = `Chapter 4 (pp. 52–54): Biodiversity Patterns <span id="ch4-theme-pill">${CH4_THEMES[0].name}</span>`;
+      const subDiv = document.createElement('div');
+      subDiv.className = 'text-emerald-300 font-medium text-xs leading-snug';
+      subDiv.textContent = '(第四章：生物多樣性定義、基因拯救、濕地養分循環與巴西六大群系 — 點擊標題切換風格)';
+      h1El.parentNode.appendChild(subDiv);
+
+      h1El.addEventListener('click', () => {
+        document.body.classList.remove('theme-academic', 'theme-dark-pro');
+        ch4ThemeIdx = (ch4ThemeIdx + 1) % CH4_THEMES.length;
+        const nextT = CH4_THEMES[ch4ThemeIdx];
+        if (nextT.key !== 'default') document.body.classList.add(nextT.key);
+        document.getElementById('ch4-theme-pill').textContent = nextT.name;
+      });
+    }
+  }
+
+  // =========================================================================
+  // UPGRADE 2: MODAL PINCH-TO-ZOOM FIX & GEO-TERM PHOTO CAPTION INJECTION
+  // =========================================================================
+  function upgradeGeoTermModal() {
+    const gtViewport = document.getElementById('gt-visual-viewport');
+    let gtPinchDist = null;
+    let gtPinchStartZoom = 1;
+
+    if (gtViewport) {
+      gtViewport.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+          isDraggingGt = false;
+          gtPinchDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+          gtPinchStartZoom = gtZoom;
+        }
+      }, { passive: true });
+
+      gtViewport.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2 && gtPinchDist) {
+          e.preventDefault();
+          const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+          gtZoom = Math.min(4.0, Math.max(1.0, +(gtPinchStartZoom * (dist / gtPinchDist)).toFixed(2)));
+          applyGeoTermTransform();
+        }
+      }, { passive: false });
+
+      gtViewport.addEventListener('touchend', () => { gtPinchDist = null; });
+    }
+
+    // Inject Photo Specimen Caption Box into Geo-Term Modal
+    const gtBody = document.querySelector('#geo-term-modal .p-4.sm\\:p-5');
+    if (gtBody && !document.getElementById('gt-photo-caption-box')) {
+      const capBox = document.createElement('div');
+      capBox.id = 'gt-photo-caption-box';
+      capBox.className = 'hidden bg-emerald-50 p-3.5 rounded-xl border-2 border-emerald-400';
+      capBox.innerHTML = `
+        <div class="text-[11px] font-extrabold uppercase text-emerald-900">📸 Featured Photo Specimen & Geographical Context (實景相片代表案例與說明):</div>
+        <p id="gt-modal-photo-caption" class="text-slate-800 mt-1 text-xs leading-relaxed font-medium"></p>
+      `;
+      gtBody.insertBefore(capBox, gtBody.firstChild);
+    }
+
+    // Override switchGeoTermVisualMode to toggle the Photo Caption Box
+    const origSwitchMode = window.switchGeoTermVisualMode;
+    window.switchGeoTermVisualMode = function(mode) {
+      origSwitchMode(mode);
+      const capBox = document.getElementById('gt-photo-caption-box');
+      const capText = document.getElementById('gt-modal-photo-caption');
+      const term = GEO_TERMS_DB[currentGeoTermKey];
+      if (capBox && term) {
+        if (mode === 'photo') {
+          capBox.classList.remove('hidden');
+          capText.innerHTML = `<strong>${term.title} (${term.wikiTitle.replace(/_/g, ' ')}):</strong> ${term.sub}. ${term.def}`;
+        } else {
+          capBox.classList.add('hidden');
+        }
+      }
+    };
+  }
+
+  // =========================================================================
+  // UPGRADE 3: FIGURE 4.1 SQUARE-ROOT VS. LINEAR SCALE TOGGLE
+  // Fixes the tiny invisible vertebrate bars (Mammals 6,596 vs All 8.7M)
+  // =========================================================================
+  let fig41UseSqrtScale = true;
+
+  function upgradeFig41ScaleToggle() {
+    const btnGroup = document.getElementById('fig41-btn-realm')?.parentNode;
+    if (btnGroup && !document.getElementById('fig41-btn-scale')) {
+      const scaleBtn = document.createElement('button');
+      scaleBtn.id = 'fig41-btn-scale';
+      scaleBtn.className = 'px-2.5 py-1.5 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300 transition';
+      scaleBtn.innerHTML = '📐 Visual Scale: √ Root (清晰放大脊椎動物)';
+      scaleBtn.onclick = () => {
+        fig41UseSqrtScale = !fig41UseSqrtScale;
+        scaleBtn.innerHTML = fig41UseSqrtScale
+          ? '📐 Visual Scale: √ Root (清晰放大脊椎動物)'
+          : '📏 Visual Scale: Linear (絕對線性比例)';
+        renderFig41Chart();
+      };
+      btnGroup.appendChild(scaleBtn);
+    }
+
+    const origRenderFig41 = window.renderFig41Chart;
+    window.renderFig41Chart = function() {
+      if (fig41Mode === 'realm' || !fig41UseSqrtScale) {
+        origRenderFig41();
+        return;
+      }
+      const container = document.getElementById('fig41-chart-area');
+      const yearsElapsed = currentCatalogYear - 2022;
+      const totalAdded = yearsElapsed * 13000;
+      const maxScale = fig41Mode === 'described' ? 5410000 : 8700000;
+      const sqrtMax = Math.sqrt(maxScale);
+
+      container.innerHTML = FIG41_TAXA.map(t => {
+        const addedForTaxon = Math.round(totalAdded * t.shareOfNew);
+        const currentCount = Math.min(t.est, t.count + addedForTaxon);
+        const baseW = Math.max(2.5, (Math.sqrt(t.count) / sqrtMax) * 100);
+        const currW = Math.max(baseW, (Math.sqrt(currentCount) / sqrtMax) * 100);
+        const addedW = Math.max(0, currW - baseW);
+        const estW = Math.max(4, (Math.sqrt(t.est) / sqrtMax) * 100);
+
+        const label = currentCount >= 1000000
+          ? (currentCount / 1000000).toFixed(2) + ' million'
+          : currentCount.toLocaleString();
+        const addedBadge = addedForTaxon > 0
+          ? `<span class="text-emerald-600 font-bold ml-1">(+${addedForTaxon.toLocaleString()} new)</span>`
+          : '';
+
+        return `
+          <div class="grid grid-cols-12 items-center gap-2 text-xs">
+            <div class="col-span-4 sm:col-span-3 font-semibold text-slate-700 truncate">${t.name}</div>
+            <div class="col-span-8 sm:col-span-9 flex items-center gap-2">
+              <div class="flex-1 bg-slate-100 h-4 rounded-r-full relative overflow-hidden flex items-center">
+                ${fig41Mode === 'estimated' ? `<div class="h-full bg-amber-200/80 border-r-2 border-amber-500 absolute left-0 top-0" style="width:${estW}%"></div>` : ''}
+                <div class="h-full ${t.color} relative z-10 transition-all duration-300" style="width:${baseW}%"></div>
+                ${addedW > 0 ? `<div class="h-full bg-emerald-500 relative z-10 transition-all duration-300" style="width:${addedW}%"></div>` : ''}
+              </div>
+              <span class="font-bold text-slate-800 text-[11px] shrink-0 text-right">${label}${addedBadge} ${fig41Mode === 'estimated' ? `<span class="text-amber-700 font-normal">/ ~${(t.est/1000).toFixed(0)}k</span>` : ''}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    };
+    renderFig41Chart();
+  }
+
+  // =========================================================================
+  // UPGRADE 4: SECTION 3 LIVE SIMPSON'S DIVERSITY INDEX (D) FORMULA READOUT
+  // =========================================================================
+  function upgradeSwampSimpsonCalculator() {
+    const origUpdateSwamp = window.updateSwampSim;
+    window.updateSwampSim = function() {
+      origUpdateSwamp();
+      const richness = parseInt(document.getElementById('swamp-richness-slider').value);
+      const evenness = parseInt(document.getElementById('swamp-evenness-slider').value);
+      const pollution = parseInt(document.getElementById('swamp-pollution-slider').value);
+
+      const totalCells = 24;
+      const deadPlots = Math.round((pollution / 100) * 10);
+      const liveN = Math.max(2, totalCells - deadPlots);
+
+      let counts = new Array(richness).fill(0);
+      if (richness === 1) {
+        counts[0] = liveN;
+      } else {
+        const dominantShare = 1 - ((evenness / 100) * ((richness - 1) / richness));
+        counts[0] = Math.max(1, Math.round(liveN * dominantShare));
+        let rem = liveN - counts[0];
+        for (let i = 1; i < richness; i++) {
+          counts[i] = (i === richness - 1) ? Math.max(0, rem) : Math.floor(rem / (richness - i));
+          rem -= counts[i];
+        }
+      }
+
+      let sumN = 0;
+      counts.forEach(n => { if (n > 1) sumN += n * (n - 1); });
+      const denom = liveN * (liveN - 1);
+      const simpsonD = denom > 0 ? Math.max(0, (1 - (sumN / denom))).toFixed(2) : '0.00';
+
+      const insp = document.getElementById('swamp-species-inspector');
+      if (insp) {
+        insp.innerHTML += `
+          <div class="mt-2.5 pt-2.5 border-t border-emerald-200 flex flex-wrap items-center justify-between gap-2 text-[11px]">
+            <div>
+              <strong>📐 Live Simpson's Diversity Index:</strong>
+              <span class="font-mono bg-white px-2 py-0.5 rounded border border-emerald-300 text-emerald-900 font-bold">
+                D = 1 − [Σn(n−1) / N(N−1)] = 1 − [${sumN} / ${denom}] = ${simpsonD}
+              </span>
+            </div>
+            <span class="font-extrabold ${simpsonD >= 0.70 ? 'text-emerald-800' : simpsonD >= 0.40 ? 'text-amber-700' : 'text-rose-700'}">
+              ${simpsonD >= 0.70 ? '✅ High Evenness & Richness (D → 1)' : simpsonD >= 0.40 ? '⚠️ Moderate Dominance' : '🚨 Monoculture / Low Diversity (D → 0)'}
+            </span>
+          </div>
+        `;
+      }
+    };
+    updateSwampSim();
+  }
+
+  // =========================================================================
+  // UPGRADE 5: SECTION 5 GOOGLE MAPS SPATIAL LOCATORS (AU TASMANIA & CR/ICELAND)
+  // =========================================================================
+  function setCh4Map(iframeId, url) {
+    const el = document.getElementById(iframeId);
+    if (el) el.src = url;
+  }
+
+  function upgradeSection5Maps() {
+    const devilTitle = document.querySelector('#step-5 .lg\\:col-span-6:first-child h3')?.parentNode?.parentNode;
+    if (devilTitle && !document.getElementById('devil-map-box')) {
+      const mapDiv = document.createElement('div');
+      mapDiv.id = 'devil-map-box';
+      mapDiv.className = 'bg-slate-900 rounded-xl p-2.5 border border-slate-700 space-y-2 mt-3';
+      mapDiv.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-1 text-[11px] text-rose-200 font-bold">
+          <span>🗺️ Google Maps — Tasmania Mainland vs. Maria Island Sanctuary:</span>
+          <div class="flex gap-1">
+            <button onclick="setCh4Map('devil-map-iframe', 'https://www.google.com/maps?q=Maria+Island+National+Park,Tasmania,Australia&hl=en&z=9&output=embed')" class="px-2 py-1 rounded bg-rose-700 hover:bg-rose-600 text-white text-[10px] transition">🛡️ Maria Island Sanctuary (瑪麗亞島無病隔離區)</button>
+            <button onclick="setCh4Map('devil-map-iframe', 'https://www.google.com/maps?q=Tasmania,Australia&hl=en&z=6&output=embed')" class="px-2 py-1 rounded bg-slate-700 hover:bg-slate-600 text-slate-200 text-[10px] transition">🇦🇺 Tasmania Island Overview (塔斯曼尼亞全覽)</button>
+          </div>
+        </div>
+        <div class="w-full h-44 rounded-lg overflow-hidden bg-slate-800 border border-slate-600">
+          <iframe id="devil-map-iframe" src="https://www.google.com/maps?q=Maria+Island+National+Park,Tasmania,Australia&hl=en&z=9&output=embed" class="w-full h-full border-0" loading="lazy"></iframe>
+        </div>
+      `;
+      devilTitle.after(mapDiv);
+    }
+
+    const crTitle = document.querySelector('#step-5 .lg\\:col-span-6:last-child h3')?.parentNode?.parentNode;
+    if (crTitle && !document.getElementById('cr-map-box')) {
+      const mapDiv = document.createElement('div');
+      mapDiv.id = 'cr-map-box';
+      mapDiv.className = 'bg-slate-900 rounded-xl p-2.5 border border-slate-700 space-y-2 mt-3';
+      mapDiv.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-1 text-[11px] text-emerald-200 font-bold">
+          <span>🗺️ Google Maps — Costa Rica (12 Life Zones) vs. Iceland (Sub-Polar):</span>
+          <div class="flex gap-1">
+            <button onclick="setCh4Map('cr-map-iframe', 'https://www.google.com/maps?q=Monteverde+Cloud+Forest,Costa+Rica&hl=en&z=8&output=embed')" class="px-2 py-1 rounded bg-emerald-700 hover:bg-emerald-600 text-white text-[10px] transition">🇨🇷 Costa Rica (蒙特維多雲霧林與地峽)</button>
+            <button onclick="setCh4Map('cr-map-iframe', 'https://www.google.com/maps?q=Vestmannaeyjar,Iceland&hl=en&z=6&output=embed')" class="px-2 py-1 rounded bg-slate-700 hover:bg-slate-600 text-slate-200 text-[10px] transition">🇮🇸 Iceland (韋斯特曼納群島海鸚懸崖與冰川)</button>
+          </div>
+        </div>
+        <div class="w-full h-44 rounded-lg overflow-hidden bg-slate-800 border border-slate-600">
+          <iframe id="cr-map-iframe" src="https://www.google.com/maps?q=Monteverde+Cloud+Forest,Costa+Rica&hl=en&z=8&output=embed" class="w-full h-full border-0" loading="lazy"></iframe>
+        </div>
+      `;
+      crTitle.after(mapDiv);
+    }
+  }
+
+  // =========================================================================
+  // UPGRADE 6: SECTION 6 BLIND-BOX TWO-STAGE PROMPTS + NEW 10-MARK PAPER 3 TASK
+  // =========================================================================
+  function toggleCh4BlindHint(panelId, btnId) {
+    const panel = document.getElementById(panelId);
+    const btn = document.getElementById(btnId);
+    if (!panel) return;
+    const isHidden = panel.classList.contains('hidden');
+    if (isHidden) {
+      panel.classList.remove('hidden');
+      if (btn) btn.classList.add('ring-2', 'ring-amber-600', 'bg-amber-200');
+    } else {
+      panel.classList.add('hidden');
+      if (btn) btn.classList.remove('ring-2', 'ring-amber-600', 'bg-amber-200');
+    }
+  }
+
+  function upgradeSection6ToBlindBox() {
+    // 1. Replace Question 1 & Question 2 Spoiler Clues with Blind-Box Prompts
+    const dr1ClueBox = document.querySelector('#step-6 .space-y-5 > div:nth-child(2) .lg\\:col-span-5');
+    if (dr1ClueBox) {
+      dr1ClueBox.innerHTML = `
+        <div class="font-extrabold text-amber-950 text-xs">🎁 Blind-Box Thinking Prompts (盲盒式思考引導：點擊 ① ② 開啟思考方向提問，不直接劇透答案):</div>
+        <div class="flex flex-wrap gap-1.5 pt-1">
+          <button onclick="toggleCh4BlindHint('dr1-bh-1', 'dr1-bbtn-1')" id="dr1-bbtn-1" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ①</button>
+          <button onclick="toggleCh4BlindHint('dr1-bh-2', 'dr1-bbtn-2')" id="dr1-bbtn-2" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ②</button>
+          <button onclick="toggleDRAnswer('dr1-ms')" class="px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs transition">✅ Mark Scheme</button>
+          <button onclick="toggleDRAnswer('dr1-model')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition">📝 6-Mark Model</button>
+        </div>
+        <div id="dr1-bh-1" class="hidden p-2.5 rounded-lg bg-amber-50 border-l-4 border-amber-500 text-[11px] text-slate-800 space-y-1.5">
+          <div class="font-bold text-amber-900">🧭 Prompt ① — Taxonomic Skew (分類群落差提問):</div>
+          <p>Compare the green bars for vertebrates (Mammals &amp; Birds) against Insects in Figure 4.1a. Why is it much easier for scientists to discover and name a mammal than a 1 mm soil insect or deep-sea organism?</p>
+          <button onclick="toggleDRAnswer('dr1-adv-1')" class="px-2 py-0.5 rounded bg-white text-amber-900 font-bold text-[10px] border border-amber-300">🔓 Click for Data Direction ▾</button>
+          <div id="dr1-adv-1" class="hidden text-[10.5px] text-slate-600 pt-1">Quote Birds (97.3%) &amp; Mammals (94.2%, 6,596 species) vs. Insects (21.0% of ~5M) and All Groups (24.8% = 2.16M / 8.7M); cite Macau’s 1.1 mm subterranean ant <i>Leptanilla macauensis</i>.</div>
+        </div>
+        <div id="dr1-bh-2" class="hidden p-2.5 rounded-lg bg-emerald-50 border-l-4 border-emerald-500 text-[11px] text-slate-800 space-y-1.5">
+          <div class="font-bold text-emerald-900">🧭 Prompt ② — Baseline Uncertainty (基線不確定性提問):</div>
+          <p>If 75.2% of Earth's species are still unnamed and we only catalogue +13,000 per year, what happens if unnamed insects or fungi go extinct before we even know they exist?</p>
+          <button onclick="toggleDRAnswer('dr1-adv-2')" class="px-2 py-0.5 rounded bg-white text-emerald-900 font-bold text-[10px] border border-emerald-300">🔓 Click for Evaluation Direction ▾</button>
+          <div id="dr1-adv-2" class="hidden text-[10.5px] text-slate-600 pt-1">Takes ~10 human lifetimes to catalogue all species; causes "silent extinctions" of keystone decomposers/pollinators and underestimates global biodiversity loss.</div>
+        </div>
+      `;
+    }
+
+    const dr2ClueBox = document.querySelector('#step-6 .space-y-5 > div:nth-child(3) .lg\\:col-span-5');
+    if (dr2ClueBox) {
+      dr2ClueBox.innerHTML = `
+        <div class="font-extrabold text-indigo-950 text-xs">🎁 Blind-Box Thinking Prompts (盲盒式思考引導：點擊 ① ② ③ 開啟思考方向提問):</div>
+        <div class="flex flex-wrap gap-1.5 pt-1">
+          <button onclick="toggleCh4BlindHint('dr2-bh-1', 'dr2-bbtn-1')" id="dr2-bbtn-1" class="px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-950 border-2 border-indigo-400 font-extrabold text-xs transition">🎁 Prompt ①</button>
+          <button onclick="toggleCh4BlindHint('dr2-bh-2', 'dr2-bbtn-2')" id="dr2-bbtn-2" class="px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-950 border-2 border-indigo-400 font-extrabold text-xs transition">🎁 Prompt ②</button>
+          <button onclick="toggleCh4BlindHint('dr2-bh-3', 'dr2-bbtn-3')" id="dr2-bbtn-3" class="px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-950 border-2 border-indigo-400 font-extrabold text-xs transition">🎁 Prompt ③</button>
+          <button onclick="toggleDRAnswer('dr2-ms')" class="px-3 py-1.5 rounded-lg bg-indigo-700 hover:bg-indigo-600 text-white font-bold text-xs transition">✅ Mark Scheme</button>
+          <button onclick="toggleDRAnswer('dr2-model')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition">📝 8-Mark Model</button>
+        </div>
+        <div id="dr2-bh-1" class="hidden p-2.5 rounded-lg bg-amber-50 border-l-4 border-amber-500 text-[11px] text-slate-800 space-y-1.5">
+          <div class="font-bold text-amber-900">🧭 Prompt ① — Graph A Genetic Role (基因適應力提問):</div>
+          <p>Look at Graph A: what happened to the Florida panther population before and after 1995, and why did low genetic diversity prove fatal for Tasmanian devils?</p>
+          <button onclick="toggleDRAnswer('dr2-adv-1')" class="px-2 py-0.5 rounded bg-white text-amber-900 font-bold text-[10px] border border-amber-300">🔓 Click for Data Direction ▾</button>
+          <div id="dr2-adv-1" class="hidden text-[10.5px] text-slate-600 pt-1">Inbred decline (~20 panthers) reversed to ~120 after 8 Texas females introduced new alleles (1995); global genetic diversity fell 6% since Industrial Revolution; Tasmanian devils lost &gt;80% to DFTD cancer.</div>
+        </div>
+        <div id="dr2-bh-2" class="hidden p-2.5 rounded-lg bg-emerald-50 border-l-4 border-emerald-500 text-[11px] text-slate-800 space-y-1.5">
+          <div class="font-bold text-emerald-900">🧭 Prompt ② — Graph B Richness vs. Evenness (物種均勻度提問):</div>
+          <p>Look at Graph B: why does a wetland with High Richness but Low Evenness suffer a 34% drop in nutrient cycling efficiency compared to a balanced wetland?</p>
+          <button onclick="toggleDRAnswer('dr2-adv-2')" class="px-2 py-0.5 rounded bg-white text-emerald-900 font-bold text-[10px] border border-emerald-300">🔓 Click for Data Direction ▾</button>
+          <div id="dr2-adv-2" class="hidden text-[10.5px] text-slate-600 pt-1">Compare 92% efficiency (High R + E) vs. 58% (Low Evenness) and 24% (Degraded); link to C, N, P cycling in Louisiana swamps (alligators/turtles) or Macau Cotai wetlands (mangroves/fiddler crabs).</div>
+        </div>
+        <div id="dr2-bh-3" class="hidden p-2.5 rounded-lg bg-indigo-50 border-l-4 border-indigo-500 text-[11px] text-slate-800 space-y-1.5">
+          <div class="font-bold text-indigo-900">🧭 Prompt ③ — Synoptic Verdict (綜合權衡結論提問):</div>
+          <p>Can species diversity deliver long-term ecosystem services if the individual species lack the genetic diversity to survive climate change?</p>
+          <button onclick="toggleDRAnswer('dr2-adv-3')" class="px-2 py-0.5 rounded bg-white text-indigo-900 font-bold text-[10px] border border-indigo-300">🔓 Click for Verdict Direction ▾</button>
+          <div id="dr2-adv-3" class="hidden text-[10.5px] text-slate-600 pt-1">Conclude that species diversity is the daily functional engine for services (pollination, water purification, C/N/P cycling), while genetic diversity is the long-term evolutionary insurance that keeps those species alive.</div>
+        </div>
+      `;
+    }
+
+    // 2. Append a Full 10-Mark Paper 3 Synoptic Task (Question 3) at the Bottom of Section 6
+    const partBContainer = document.querySelector('#step-6 .space-y-5');
+    if (partBContainer && !document.getElementById('ch4-dr3-10mark')) {
+      const q3Card = document.createElement('div');
+      q3Card.id = 'ch4-dr3-10mark';
+      q3Card.className = 'bg-white rounded-2xl p-4 sm:p-6 shadow-sm border-2 border-emerald-600/30 space-y-4';
+      q3Card.innerHTML = `
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-extrabold text-emerald-900 bg-emerald-100 px-2.5 py-1 rounded border border-emerald-300">IAL Paper 3 Question 3 • [10 Marks] (AO1: 3 marks | AO2: 4 marks | AO3: 3 marks)</span>
+          <h4 class="text-sm sm:text-base font-extrabold text-slate-900 mt-2 leading-snug">
+            Study Resource 3A (Comparative data table of macro-scale <button onclick="openGeoTerm('ecosystem_diversity')" class="geo-term-trigger">📘 ecosystem diversity</button> in Brazil, Costa Rica, Canada/Russia, and Namibia/Iceland, p.54) and the synthesis table above.<br>
+            <span class="text-emerald-800">Evaluate the view that macro-scale climate extremes are the primary determinant of global biodiversity patterns across all three scales (genetic, species, and ecosystem). (10 marks)</span>
+            <span class="zh-note font-normal block mt-1">(研習下方資料 3A［巴西、哥斯達黎加、加/俄與納米比亞/冰島之宏觀生態系統多樣性對照表，p.54］。評估「宏觀氣候極端值是決定全球基因、物種與生態系統三層次生物多樣性分佈模式的首要因素」這一觀點。［10分］)</span>
+          </h4>
+        </div>
+
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 overflow-x-auto text-xs">
+          <div class="font-extrabold text-slate-900 mb-2">📊 Resource 3A: Macro-Climatic Regimes, Biome Diversity &amp; Micro-Habitat Pockets (p.54 &amp; Global Cases)</div>
+          <table class="w-full text-left border-collapse text-[11px] bg-white rounded-lg overflow-hidden">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="p-2">Country / Region</th>
+                <th class="p-2">Land Area &amp; Macro-Climate</th>
+                <th class="p-2">Ecosystem &amp; Species Diversity</th>
+                <th class="p-2">Local Anomaly / Human Factor</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="p-2 font-bold text-emerald-900">🇧🇷 Brazil (Fig 4.4)</td>
+                <td class="p-2">8.5M km² • Equatorial to Subtropical</td>
+                <td class="p-2"><strong>6 Major Biomes</strong> (Amazonia, Cerrado, Pantanal, Caatinga, Atlantic Forest, Pampa) = <strong>15–20% global biodiversity</strong></td>
+                <td class="p-2">Atlantic Forest (&lt;12% left) &amp; Cerrado (&gt;50% cleared) threatened by human fragmentation</td>
+              </tr>
+              <tr class="bg-emerald-50/60">
+                <td class="p-2 font-bold text-teal-900">🇨🇷 Costa Rica</td>
+                <td class="p-2">51,100 km² (0.03% Earth land) • Tropical Isthmus</td>
+                <td class="p-2"><strong>12 Ecological Life Zones</strong> • <strong>~5% global biodiversity</strong></td>
+                <td class="p-2">Mountain relief + 1996 <strong>PES policy</strong> reversed forest cover from 21% to ~60%</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-bold text-sky-900">🇨🇦 Canada / 🇷🇺 Russia / 🇮🇸 Iceland</td>
+                <td class="p-2">Sub-Arctic / Polar • Extreme Cold Limiting Factor</td>
+                <td class="p-2">Low biome variety (Tundra &amp; Taiga)</td>
+                <td class="p-2">Retains <strong>biodiversity pockets</strong> (Lake Baikal endemics; Iceland puffin cliffs &amp; geothermal vents)</td>
+              </tr>
+              <tr class="bg-amber-50/60">
+                <td class="p-2 font-bold text-amber-900">🇳🇦 Namibia / 🇦🇺 Interior Aus / 🇲🇴 Macau</td>
+                <td class="p-2">Arid Desert (Namibia/Aus) or Dense Urban (Macau 33 km²)</td>
+                <td class="p-2">Low macro-scale ecological diversity due to aridity or urbanisation</td>
+                <td class="p-2">Vital <strong>pockets of higher biodiversity</strong>: Namib fog belt; 🇲🇴 <strong>Macau 55-ha Cotai Wetland</strong> &amp; Ilha Verde Hill (<i>L. macauensis</i>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-amber-50/90 p-3.5 rounded-xl border-2 border-amber-300 space-y-2.5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-extrabold text-amber-950">🎁 Blind-Box Thinking Prompts (點擊 ① ② ③ ④ 任一號碼開啟思考方向提問):</span>
+            <div class="flex flex-wrap gap-1.5">
+              <button onclick="toggleCh4BlindHint('dr3-bh-1', 'dr3-bbtn-1')" id="dr3-bbtn-1" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ①</button>
+              <button onclick="toggleCh4BlindHint('dr3-bh-2', 'dr3-bbtn-2')" id="dr3-bbtn-2" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ②</button>
+              <button onclick="toggleCh4BlindHint('dr3-bh-3', 'dr3-bbtn-3')" id="dr3-bbtn-3" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ③</button>
+              <button onclick="toggleCh4BlindHint('dr3-bh-4', 'dr3-bbtn-4')" id="dr3-bbtn-4" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ④</button>
+              <button onclick="toggleDRAnswer('dr3-model')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition">📝 Full 10-Mark Model Essay</button>
+            </div>
+          </div>
+          <div id="dr3-bh-1" class="hidden p-3 rounded-lg bg-white border-l-4 border-amber-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ① (Supporting Macro-Climate):</strong> How do non-limiting equatorial temperatures and rainfall in Brazil (Resource 3A Row 1) versus extreme cold (Canada/Russia) and extreme aridity (Namibia/Australia) govern biome and species richness?
+          </div>
+          <div id="dr3-bh-2" class="hidden p-3 rounded-lg bg-white border-l-4 border-emerald-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ② (Challenging via Micro-Pockets &amp; Relief):</strong> Why does tiny Costa Rica (0.03% of land) hold 12 life zones, and how do "pockets of higher biodiversity" (p.54: Namib fog belt, Iceland vents, or Macau's 55-ha Cotai Wetland) defy macro-climatic averages?
+          </div>
+          <div id="dr3-bh-3" class="hidden p-3 rounded-lg bg-white border-l-4 border-rose-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ③ (Evolutionary Time &amp; Human Drivers on Genetic Scale):</strong> Does macro-climate explain why marsupials (125M yrs) have more genetic diversity than kangaroos (15–30M yrs), or why global genetic diversity fell 6% since the Industrial Revolution (Florida panther fragmentation &amp; rescue)?
+          </div>
+          <div id="dr3-bh-4" class="hidden p-3 rounded-lg bg-white border-l-4 border-indigo-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ④ (10-Mark Synoptic Conclusion):</strong> Conclude by distinguishing across scales: macro-climate sets the broad planetary envelope for <strong>ecosystem diversity</strong>, but <strong>topography, evolutionary lineage age, and human fragmentation/conservation (PES, genetic rescue)</strong> govern local species and genetic patterns.
+          </div>
+        </div>
+
+        <div id="dr3-model" class="hidden p-4 rounded-xl bg-slate-900 text-slate-100 text-xs space-y-2 leading-relaxed">
+          <div class="font-bold text-emerald-400">✍️ Model Paper 3 Essay Response (Level 3 Full 10 Marks 滿分範文):</div>
+          <p>
+            Macro-scale climatic regimes—specifically solar insolation and precipitation—undeniably act as the primary control on continental-scale <strong>ecosystem and species diversity</strong>. Where thermal and moisture conditions are non-limiting, net primary productivity is maximised, supporting complex multi-layered biomes. As Resource 3A shows, <strong>Brazil (Figure 4.4)</strong> spans equatorial to subtropical latitudes across छह major biomes (Amazonia, Cerrado, Pantanal, Caatinga, Atlantic Forest, and Pampa), hosting <strong>15–20% of the world’s biodiversity</strong>. Conversely, where climate reaches extremes, physical limiting factors restrict the number of viable ecosystems: freezing temperatures and permafrost in <strong>Canada and Russia</strong> limit landscapes to tundra and boreal taiga, while extreme aridity in <strong>Namibia and interior Australia</strong> restricts primary productivity to desert scrub.
+          </p>
+          <p>
+            However, macro-climate alone cannot explain regional and local anomalies. Firstly, <strong>topographic relief and oceanic barriers</strong> create steep micro-climatic gradients: tiny <strong>Costa Rica (51,100 km², just 0.03% of Earth’s surface)</strong> packs <strong>12 distinct ecological life zones</strong> and ~5% of global biodiversity. Secondly, textbook p.54 emphasises that even regions with harsh climates or low overall ecological diversity contain vital <strong>pockets of higher biodiversity</strong>—such as coastal fog oases in Namibia, hydrothermal vents and Atlantic puffin cliffs in sub-polar <strong>Iceland</strong>, or <strong>Macau’s 55-hectare Cotai Ecological Zone</strong> (supporting 785 plant and 1,167 animal species, including wintering Black-faced spoonbills, inside a 33 km² city).
+          </p>
+          <p>
+            Finally, when shifting to the micro-scale of <strong>genetic biodiversity</strong>, evolutionary history and anthropogenic pressures outweigh present-day climate. For example, <strong>marsupials (~330 species)</strong> possess far higher genetic diversity than <strong>kangaroos (4 main species)</strong> due to a longer evolutionary lineage (<strong>125 million vs. 15–30 million years</strong>, p.53). Moreover, human habitat fragmentation and hunting have driven a <strong>6% global decline in within-species genetic diversity since the Industrial Revolution</strong>—forcing the <strong>Florida panther</strong> into severe 1980s inbreeding (~20 individuals) until rescued by translocating 8 Texas females in 1995, while Costa Rica’s 1996 <strong>PES policy</strong> reversed forest cover from 21% to ~60%. In conclusion, while macro-climate establishes the broad latitudinal envelope for biomes, evolutionary time, local micro-refugia, and human management ultimately determine genetic and local species survival.
+          </p>
+        </div>
+      `;
+      partBContainer.appendChild(q3Card);
+    }
+  }
+
+  // =========================================================================
+  // UPGRADE 7: iOS APPLE NOTES / MARKUP CLASSROOM ANNOTATION ENGINE
+  // =========================================================================
+  let mkCanvas, mkCtx;
+  let mkTool = 'browse';
+  let mkColor = '#FF3B30';
+  let mkSizeIndex = 1;
+  const MK_SIZES = [
+    { label: '• 細', pen: 2.5, high: 14, erase: 20 },
+    { label: '● 中', pen: 4.5, high: 22, erase: 34 },
+    { label: '⬤ 粗', pen: 8.0, high: 34, erase: 50 }
+  ];
+  let isDrawingStroke = false;
+  let strokeHistory = [];
+
+  function initIosMarkupEngine() {
+    mkCanvas = document.getElementById('ios-annotation-canvas');
+    if (!mkCanvas) return;
+    mkCtx = mkCanvas.getContext('2d');
+    resizeMarkupCanvas();
+    window.addEventListener('resize', resizeMarkupCanvas);
+    mkCanvas.addEventListener('pointerdown', startMarkupStroke);
+    mkCanvas.addEventListener('pointermove', moveMarkupStroke);
+    window.addEventListener('pointerup', endMarkupStroke);
+    window.addEventListener('pointercancel', endMarkupStroke);
+  }
+
+  function resizeMarkupCanvas() {
+    if (!mkCanvas) return;
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = mkCanvas.width;
+    tempCanvas.height = mkCanvas.height;
+    const tempCtx = tempCanvas.getContext('2d');
+    if (mkCanvas.width > 0 && mkCanvas.height > 0) tempCtx.drawImage(mkCanvas, 0, 0);
+
+    const dpr = window.devicePixelRatio || 1;
+    mkCanvas.width = window.innerWidth * dpr;
+    mkCanvas.height = window.innerHeight * dpr;
+    mkCtx.setTransform(1, 0, 0, 1, 0, 0);
+    mkCtx.scale(dpr, dpr);
+    mkCtx.lineCap = 'round';
+    mkCtx.lineJoin = 'round';
+    if (tempCanvas.width > 0) mkCtx.drawImage(tempCanvas, 0, 0, tempCanvas.width / dpr, tempCanvas.height / dpr);
+  }
+
+  function saveStrokeSnapshot() {
+    if (!mkCanvas) return;
+    if (strokeHistory.length >= 20) strokeHistory.shift();
+    strokeHistory.push(mkCanvas.toDataURL());
+  }
+
+  function startMarkupStroke(e) {
+    if (mkTool === 'browse') return;
+    e.preventDefault();
+    saveStrokeSnapshot();
+    isDrawingStroke = true;
+    const sz = MK_SIZES[mkSizeIndex];
+    mkCtx.beginPath();
+    mkCtx.moveTo(e.clientX, e.clientY);
+    if (mkTool === 'eraser') {
+      mkCtx.globalCompositeOperation = 'destination-out';
+      mkCtx.globalAlpha = 1.0;
+      mkCtx.lineWidth = sz.erase;
+    } else if (mkTool === 'highlighter') {
+      mkCtx.globalCompositeOperation = 'source-over';
+      mkCtx.strokeStyle = mkColor;
+      mkCtx.globalAlpha = 0.35;
+      mkCtx.lineWidth = sz.high;
+    } else {
+      mkCtx.globalCompositeOperation = 'source-over';
+      mkCtx.strokeStyle = mkColor;
+      mkCtx.globalAlpha = 1.0;
+      mkCtx.lineWidth = sz.pen;
+    }
+  }
+
+  function moveMarkupStroke(e) {
+    if (!isDrawingStroke || mkTool === 'browse') return;
+    e.preventDefault();
+    mkCtx.lineTo(e.clientX, e.clientY);
+    mkCtx.stroke();
+  }
+
+  function endMarkupStroke() {
+    if (!isDrawingStroke) return;
+    isDrawingStroke = false;
+    mkCtx.closePath();
+    mkCtx.globalCompositeOperation = 'source-over';
+    mkCtx.globalAlpha = 1.0;
+  }
+
+  function setMarkupTool(tool) {
+    mkTool = tool;
+    ['browse', 'pen', 'highlighter', 'eraser'].forEach(t => {
+      const btn = document.getElementById(`mk-btn-${t}`);
+      if (btn) btn.classList.toggle('active', t === tool);
+    });
+    mkCanvas.classList.toggle('drawing-active', tool !== 'browse');
+  }
+
+  function setMarkupColor(hex, swatchEl) {
+    mkColor = hex;
+    document.querySelectorAll('.ios-color-swatch').forEach(el => el.classList.remove('active'));
+    if (swatchEl) swatchEl.classList.add('active');
+    if (mkTool === 'browse' || mkTool === 'eraser') setMarkupTool('pen');
+  }
+
+  function cycleMarkupSize() {
+    mkSizeIndex = (mkSizeIndex + 1) % MK_SIZES.length;
+    document.getElementById('mk-size-label').textContent = MK_SIZES[mkSizeIndex].label;
+  }
+
+  function undoMarkupStroke() {
+    if (!strokeHistory.length || !mkCanvas) return;
+    const prevDataUrl = strokeHistory.pop();
+    const img = new Image();
+    img.onload = () => {
+      const dpr = window.devicePixelRatio || 1;
+      mkCtx.globalCompositeOperation = 'source-over';
+      mkCtx.globalAlpha = 1.0;
+      mkCtx.clearRect(0, 0, mkCanvas.width / dpr, mkCanvas.height / dpr);
+      mkCtx.drawImage(img, 0, 0, mkCanvas.width / dpr, mkCanvas.height / dpr);
+    };
+    img.src = prevDataUrl;
+  }
+
+  function clearMarkupCanvas() {
+    if (!mkCanvas) return;
+    saveStrokeSnapshot();
+    const dpr = window.devicePixelRatio || 1;
+    mkCtx.globalCompositeOperation = 'source-over';
+    mkCtx.clearRect(0, 0, mkCanvas.width / dpr, mkCanvas.height / dpr);
+  }
+
+  // =========================================================================
+  // BOOTSTRAP ALL UPGRADES ON LOAD
+  // =========================================================================
+  window.addEventListener('DOMContentLoaded', () => {
+    upgradeHeaderToTemplate4();
+    upgradeGeoTermModal();
+    upgradeFig41ScaleToggle();
+    upgradeSwampSimpsonCalculator();
+    upgradeSection5Maps();
+    upgradeSection6ToBlindBox();
+    initIosMarkupEngine();
+  });
+</script>
+
 </body>
 </html>

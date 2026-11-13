@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高三地理課程資源庫 (F6 Geography) - 安全防護版</title>
+  <style>
+    /* 防反白、防選取、防右鍵拖曳 */
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      background: #f4f6f9;
+      color: #333;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      position: relative;
+    }
+
+    /* 動態安全浮水印（將透過 JS 動態帶入登入者身分） */
+    #watermark-layer {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: rgba(229, 62, 62, 0.04);
+      pointer-events: none;
+      z-index: 9999;
+      transform: rotate(-30deg);
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    h1 { color: #1a365d; border-bottom: 3px solid #3182ce; padding-bottom: 10px; }
+    
+    /* 登入畫面樣式 */
+    #auth-screen {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-top: 50px;
+    }
+    #auth-screen input {
+      padding: 10px 15px;
+      font-size: 1.1em;
+      border: 2px solid #cbd5e0;
+      border-radius: 6px;
+      width: 280px;
+      margin-right: 10px;
+    }
+    #auth-screen button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background: #3182ce;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #auth-screen button:hover { background: #2b6cb0; }
+    .error-msg { color: #e53e3e; margin-top: 10px; font-weight: bold; display: none; }
+    .hint { font-size: 0.9em; color: #718096; margin-top: 15px; }
+
+    /* 課程內容主體（預設隱藏） */
+    #content-container { display: none; }
+
+    /* 老師專用管理控制台（預設隱藏，僅管理員可見） */
+    #teacher-admin-panel {
+      background: #fffaf0;
+      border: 2px dashed #dd6b20;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    #teacher-admin-panel h3 { color: #c05621; margin-top: 0; }
+
+    .grade-box { background: #fff; padding: 25px; margin-bottom: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .grade-title { font-size: 1.5em; font-weight: bold; color: #2b6cb0; margin-bottom: 15px; border-left: 5px solid #3182ce; padding-left: 10px; }
+    .unit-title { font-size: 1.1em; font-weight: bold; margin-top: 20px; margin-bottom: 10px; color: #2d3748; background: #edf2f7; padding: 6px 10px; border-radius: 5px; }
+    ul { list-style-type: none; padding-left: 10px; }
+    li { margin: 10px 0; }
+    a { text-decoration: none; color: #3182ce; font-weight: 500; padding: 6px 10px; display: block; border-radius: 6px; transition: 0.2s; background: #f7fafc; border: 1px solid #e2e8f0; }
+    a:hover { background: #ebf8ff; color: #2b6cb0; padding-left: 15px; }
+  </style>
+</head>
+<body>
+
+  <!-- 動態浮水印圖層 -->
+  <div id="watermark-layer">粵華中學 • 地理教材保護系統</div>
+
+  <!-- 登入驗證畫面 -->
+  <div id="auth-screen">
+    <h2>🔒 高三地理安全教材登入驗證</h2>
+    <p>請輸入您的專屬「學生代碼 (stu01-30)」或「老師管理代碼」：</p>
+    <input type="password" id="passcode" placeholder="請輸入代碼...">
+    <button onclick="verifyCode()">驗證進入</button>
+    <div id="error" class="error-msg">代碼錯誤或無效，請重新輸入！</div>
+    <div class="hint">提示：學生代碼為 <b>stu01</b> 至 <b>stu30</b>，老師管理代碼為 <b>teacher999</b></div>
+  </div>
+
+  <!-- 登入成功後的教材與目錄主體 -->
+  <div id="content-container">
+    <h1>🌍 高三地理數位課程資源庫 (F6 Geography)</h1>
+
+    <!-- 老師專用管理面板（僅 teacher999 登入時會顯示） -->
+    <div id="teacher-admin-panel">
+      <h3>👨‍🏫 老師管理控制台</h3>
+      <p>目前身分：<b>授課教師 (管理員)</b> | 系統狀態：<span style="color: green;">運行中 (防截圖與複製已啟用)</span></p>
+      <button onclick="logout()" style="background:#e53e3e; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">登出系統</button>
+    </div>
+
+    <div class="grade-box">
+      <div class="grade-title">📚 高三 (F6) 課程單元目錄</div>
+
+      <!-- Biodiversity -->
+      <div class="unit-title">Biodiversity Patterns and Conservation</div>
+      <ul>
+        <li><a href="F6_高三地理/Chapter_4_biodiversity_patterns_pp_52_54.html">Chapter 4.1: Biodiversity patterns (P.52-54)</a></li>
+        <li><a href="F6_高三地理/Chapter_4_biodiversity_patterns_pp_55_57.html">Chapter 4.2: Biodiversity patterns (P.55-57)</a></li>
+        <li><a href="F6_高三地理/Ch05_Threats_to_biodiversity/5_1_Threats_to_biodiversity.html">Chapter 5: Threats to biodiversity</a></li>
+        <li><a href="F6_高三地理/Ch06_Managing_biodiversity/6_1_Managing_biodiversity.html">Chapter 6: Managing biodiversity</a></li>
+      </ul>
+
+      <!-- Energy Security and Water Conflicts -->
+      <div class="unit-title">Energy Security and Water Conflicts</div>
+      <ul>
+        <li><a href="F6_高三地理/Ch07_Energy_supply_demand_security/7_1_Energy_supply.html">Chapter 7: Energy supply, demand and security</a></li>
+        <li><a href="F6_高三地理/Ch08_The_impact_of_energy_use/8_1_Impact_of_energy_use.html">Chapter 8: The impact of energy use</a></li>
+        <li><a href="F6_高三地理/Ch09_Energy_security_and_the_future/9_1_Energy_security_future.html">Chapter 9: Energy security and the future</a></li>
+        <li><a href="F6_高三地理/Ch10_Water_supply_geography/10_1_Water_supply.html">Chapter 10: Water supply geography</a></li>
+        <li><a href="F6_高三地理/Ch11_Water_insecurity/11_1_Water_insecurity.html">Chapter 11: Water insecurity</a></li>
+        <li><a href="F6_高三地理/Ch12_Water_conflicts_and_the_future/12_1_Water_conflicts.html">Chapter 12: Water conflicts and the future</a></li>
+      </ul>
+
+      <!-- Superpower Geographies -->
+      <div class="unit-title">Superpower Geographies</div>
+      <ul>
+        <li><a href="F6_高三地理/Ch13_Superpowers_and_emerging_powers/13_1_Superpowers.html">Chapter 13: Superpowers and emerging powers</a></li>
+        <li><a href="F6_高三地理/Ch14_The_role_of_superpowers/14_1_Role_of_superpowers.html">Chapter 14: The role of superpowers</a></li>
+        <li><a href="F6_高三地理/Ch15_Superpower_futures/15_1_Superpower_futures.html">Chapter 15: Superpower futures</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <script>
+    // 建立 30 個學生的瀏覽權限代碼 (stu01 ~ stu30) 與 1 個老師管理代碼 (teacher999)
+    const validStudentCodes = [];
+    for (let i = 1; i <= 30; i++) {
+      let codeNum = i < 10 ? "0" + i : "" + i;
+      validStudentCodes.push("stu" + codeNum);
+    }
+    const teacherCode = "teacher999";
+
+    function verifyCode() {
+      const inputVal = document.getElementById("passcode").value.trim();
+      const errorMsg = document.getElementById("error");
+      
+      if (validStudentCodes.includes(inputVal)) {
+        // 學生身分登入成功
+        sessionStorage.setItem("geo_auth", "student");
+        sessionStorage.setItem("geo_user", inputVal);
+        initSession(inputVal, false);
+      } else if (inputVal === teacherCode) {
+        // 老師管理員身分登入成功
+        sessionStorage.setItem("geo_auth", "teacher");
+        sessionStorage.setItem("geo_user", "老師 (Admin)");
+        initSession("授課教師 - 管理員", true);
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+
+    function initSession(username, isTeacher) {
+      document.getElementById("auth-screen").style.display = "none";
+      document.getElementById("content-container").style.display = "block";
+      
+      // 動態更新浮水印內容（內含登入者代碼與時間）
+      const now = new Date().toISOString().slice(0, 10);
+      document.getElementById("watermark-layer").innerText = `粵華中學 • 授權使用者: ${username} • ${now} 嚴禁外流`;
+
+      if (isTeacher) {
+        document.getElementById("teacher-admin-panel").style.display = "block";
+      }
+    }
+
+    function logout() {
+      sessionStorage.clear();
+      location.reload();
+    }
+
+    // 自動檢查是否已有暫存登入狀態
+    window.onload = function() {
+      const authRole = sessionStorage.getItem("geo_auth");
+      const authUser = sessionStorage.getItem("geo_user");
+      if (authRole === "student") {
+        initSession(authUser, false);
+      } else if (authRole === "teacher") {
+        initSession(authUser, true);
+      }
+    }
+
+    // 封鎖滑鼠右鍵
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert('【版權警告】本教材受到嚴格保護，禁止右鍵複製與外流！');
+    });
+
+    // 封鎖複製、另存新檔與開發者工具快捷鍵
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || 
+        (e.ctrlKey && (e.key === 'u' || e.key === 'c' || e.key === 's' || e.key === 'p'))
+      ) {
+        e.preventDefault();
+        alert('【系統提示】此操作已被版權安全機制禁止！');
+        return false;
+      }
+    });
+  </script>
+
+</body>
+</html>
