@@ -171,47 +171,47 @@
           <button onclick="prevNextStep(1)" class="px-2.5 py-1 rounded bg-emerald-800 text-emerald-200 font-bold active:bg-emerald-700">Next ▶</button>
         </div>
 
-        <nav id="step-nav-grid" class="hidden sm:grid grid-cols-2 sm:grid-cols-3 gap-1.5 w-full lg:w-auto pt-1 sm:pt-0">
-          <button onclick="switchStep(1)" id="nav-step-1" class="step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-white text-emerald-950 shadow-sm">
-            <span class="w-5 h-5 rounded-full bg-emerald-800 text-white flex items-center justify-center text-[11px] shrink-0">1</span>
-            <div class="text-left leading-tight truncate">
-              <div>Climate Factors (Fig 4.5–4.7)</div>
-              <div class="text-[10px] text-slate-500 font-normal">氣候限制：溫度/降水/暖化</div>
+        <nav id="step-nav-grid" class="hidden sm:grid grid-cols-2 sm:grid-cols-3 gap-1.5 w-full lg:w-auto pt-1 sm:pt-0 items-stretch">
+          <button onclick="switchStep(1)" id="nav-step-1" class="step-tab active-step">
+            <span class="step-tab-num">1</span>
+            <div class="text-left min-w-0 flex-1">
+              <div class="step-tab-title">Climate Factors (Fig 4.5–4.7)</div>
+              <div class="step-tab-sub">氣候限制：溫度/降水/暖化</div>
             </div>
           </button>
-          <button onclick="switchStep(2)" id="nav-step-2" class="step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-900/70 text-emerald-100 hover:bg-emerald-800">
-            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[11px] shrink-0">2</span>
-            <div class="text-left leading-tight truncate">
-              <div>Isolation & Endemism (Fig 4.8–4.9)</div>
-              <div class="text-[10px] text-emerald-300 font-normal">馬達加斯加板塊與狐猴</div>
+          <button onclick="switchStep(2)" id="nav-step-2" class="step-tab">
+            <span class="step-tab-num">2</span>
+            <div class="text-left min-w-0 flex-1">
+              <div class="step-tab-title">Isolation &amp; Endemism (Fig 4.8–4.9)</div>
+              <div class="step-tab-sub">馬達加斯加板塊與狐猴</div>
             </div>
           </button>
-          <button onclick="switchStep(3)" id="nav-step-3" class="step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-900/70 text-emerald-100 hover:bg-emerald-800">
-            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[11px] shrink-0">3</span>
-            <div class="text-left leading-tight truncate">
-              <div>Age, Area & Succession (p.57)</div>
-              <div class="text-[10px] text-emerald-300 font-normal">面積效應與沙丘演替景觀</div>
+          <button onclick="switchStep(3)" id="nav-step-3" class="step-tab">
+            <span class="step-tab-num">3</span>
+            <div class="text-left min-w-0 flex-1">
+              <div class="step-tab-title">Age, Area &amp; Succession</div>
+              <div class="step-tab-sub">面積效應與沙丘演替景觀</div>
             </div>
           </button>
-          <button onclick="switchStep(4)" id="nav-step-4" class="step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-900/70 text-emerald-100 hover:bg-emerald-800">
-            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[11px] shrink-0">4</span>
-            <div class="text-left leading-tight truncate">
-              <div>Human Actions & Fire (p.57)</div>
-              <div class="text-[10px] text-emerald-300 font-normal">人類活動與控制火燒悖論</div>
+          <button onclick="switchStep(4)" id="nav-step-4" class="step-tab">
+            <span class="step-tab-num">4</span>
+            <div class="text-left min-w-0 flex-1">
+              <div class="step-tab-title">Human Actions &amp; Fire</div>
+              <div class="step-tab-sub">人類活動與控制火燒悖論</div>
             </div>
           </button>
-          <button onclick="switchStep(5)" id="nav-step-5" class="step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-900/70 text-emerald-100 hover:bg-emerald-800">
-            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[11px] shrink-0">5</span>
-            <div class="text-left leading-tight truncate">
-              <div>Global Cases (EC & AU)</div>
-              <div class="text-[10px] text-emerald-300 font-normal">國際案例：加拉帕戈斯與澳洲</div>
+          <button onclick="switchStep(5)" id="nav-step-5" class="step-tab">
+            <span class="step-tab-num">5</span>
+            <div class="text-left min-w-0 flex-1">
+              <div class="step-tab-title">Global Cases (EC &amp; AU)</div>
+              <div class="step-tab-sub">國際案例：加拉帕戈斯與澳洲</div>
             </div>
           </button>
-          <button onclick="switchStep(6)" id="nav-step-6" class="step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-900/70 text-emerald-100 hover:bg-emerald-800">
-            <span class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[11px] shrink-0">6</span>
-            <div class="text-left leading-tight truncate">
-              <div>IAL Exam & Activity 2</div>
-              <div class="text-[10px] text-emerald-300 font-normal">應試圖表分析與思考引導</div>
+          <button onclick="switchStep(6)" id="nav-step-6" class="step-tab">
+            <span class="step-tab-num">6</span>
+            <div class="text-left min-w-0 flex-1">
+              <div class="step-tab-title">IAL Exam &amp; Activity 2</div>
+              <div class="step-tab-sub">應試圖表分析與思考引導</div>
             </div>
           </button>
         </nav>
@@ -1457,6 +1457,33 @@
     // 1. GEOGRAPHY KEY TERMS DATABASE (WITH PHOTO CAPTIONS & SVG DIAGRAMS)
     // =========================================================================
     const GEO_TERMS_DB = {
+      ecosystem_diversity: {
+        title: 'Ecosystem Diversity (生態系統多樣性)',
+        sub: 'Variety of Coexisting Habitats, Microclimates & Ecological Communities in a Area',
+        category: 'Macro-Scale Biodiversity (p.57)',
+        wikiTitle: 'Ecosystem_diversity',
+        fallbackImg: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=900&q=80',
+        photoCaption: '<strong>Habitat Mosaic Landscape (多樣生境鑲嵌景觀):</strong> Larger geographic areas contain multiple coexisting ecosystems—such as freshwater wetlands, open grasslands, and closed woodlands—creating wider ecological niches and higher overall species richness <span class="zh-note">(實景顯示較大地理面積內濕地、草原與森林交錯共存，為不同生物提供多樣微生境與豐富資源)</span>.',
+        def: 'The variety of different habitats, biological communities, and ecological processes within a given geographic area (e.g., wetlands, grasslands, and forests coexisting together) <span class="zh-note">(特定地理區域內不同生境類型、生物群落與生態過程的豐富程度，例如濕地、草原與森林並存)</span>.',
+        mech: '<strong>Exam Application (AO1/AO2):</strong> Larger areas encompass greater ecosystem diversity and abundant food, water, and shelter, enabling specialist and generalist species to coexist (p.57) <span class="zh-note">(較大面積因具備更高生態系統多樣性與充沛食物、水源與庇護，能支撐更多物種共存)</span>.',
+        diagramSvg: `<svg viewBox="0 0 420 220" class="w-full h-full">
+          <rect width="420" height="220" fill="#0f172a" rx="12"/>
+          <text x="210" y="22" text-anchor="middle" fill="#6ee7b7" font-size="11.5" font-weight="bold">Ecosystem Diversity Mosaic (生態系統多樣性鑲嵌圖)</text>
+          <rect x="24" y="45" width="115" height="125" rx="10" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="81" y="75" text-anchor="middle" fill="#bae6fd" font-size="11" font-weight="bold">🏞️ Wetland</text>
+          <text x="81" y="96" text-anchor="middle" fill="#cbd5e1" font-size="8.5">Amphibians &amp; Reedbeds</text>
+          <text x="81" y="114" text-anchor="middle" fill="#7dd3fc" font-size="8.5">(淡水濕地生態)</text>
+          <rect x="152" y="45" width="115" height="125" rx="10" fill="#713f12" stroke="#fbbf24" stroke-width="1.5"/>
+          <text x="209" y="75" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="bold">🌾 Grassland</text>
+          <text x="209" y="96" text-anchor="middle" fill="#e2e8f0" font-size="8.5">Pollinators &amp; Grazing Fauna</text>
+          <text x="209" y="114" text-anchor="middle" fill="#fcd34d" font-size="8.5">(開闊草地生境)</text>
+          <rect x="280" y="45" width="115" height="125" rx="10" fill="#064e3b" stroke="#34d399" stroke-width="1.5"/>
+          <text x="337" y="75" text-anchor="middle" fill="#a7f3d0" font-size="11" font-weight="bold">🌳 Woodland</text>
+          <text x="337" y="96" text-anchor="middle" fill="#cbd5e1" font-size="8.5">Canopy Birds &amp; Shade Flora</text>
+          <text x="337" y="114" text-anchor="middle" fill="#6ee7b7" font-size="8.5">(森林冠層生境)</text>
+          <text x="210" y="198" text-anchor="middle" fill="#e2e8f0" font-size="9.5">Multiple Coexisting Biomes &amp; Niches → Higher Total Species Richness</text>
+        </svg>`
+      },
       limiting_factors: {
         title: 'Limiting Factors (限制因素)',
         sub: 'Environmental Variables Restricting Species Growth, Distribution or Abundance (p.55)',
@@ -1760,7 +1787,7 @@
         wikiTitle: 'Amazon_rainforest',
         fallbackImg: 'https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80',
         photoCaption: '<strong>Large Continental Mosaic (Wetlands + Forests + Grasslands 大面積生境鑲嵌實景):</strong> As explained on p.57, larger geographic areas support greater ecological diversity (coexisting rivers, wetlands, and forests) and abundant food, water, and shelter—allowing more species to coexist <span class="zh-note">(課本 p.57 面積效應實景：廣闊的地理面積能同時容納森林、濕地與河流，並提供充足的食物、水源與庇護所)</span>.',
-        def: 'A fundamental biogeographical principle (p.57) stating that larger geographic areas support a greater number of species ($S = cA^z$). This occurs for two reasons: (1) larger areas have greater <strong>ecological diversity</strong> (supporting wetlands, grasslands, and forests together), and (2) larger areas have more abundant resources (food, water, shelter) supporting larger populations <span class="zh-note">(課本 p.57 核心原理：面積越大的區域能支撐越多物種，原因有二：一是大面積能容納濕地、草原與森林等多種生態系統；二是擁有更充沛的食物、水源與庇護所，支撐更大的種群規模)</span>.',
+        def: 'A fundamental biogeographical principle (p.57) stating that larger geographic areas support a greater number of species (S = cA<sup>z</sup>). This occurs for two reasons: (1) larger areas have greater <strong>ecological diversity</strong> (supporting wetlands, grasslands, and forests together), and (2) larger areas have more abundant resources (food, water, shelter) supporting larger populations <span class="zh-note">(課本 p.57 核心原理：面積越大的區域能支撐越多物種，原因有二：一是大面積能容納濕地、草原與森林等多種生態系統；二是擁有更充沛的食物、水源與庇護所，支撐更大的種群規模)</span>.',
         mech: '<strong>Exam Application (AO1/AO2):</strong> Conversely, when human deforestation or climate upslope shifts shrink habitat area, species richness declines predictably due to resource scarcity and habitat loss <span class="zh-note">(反之，當人類伐林或氣候暖化壓縮棲地面積時，物種數量便會因生境單一化與資源枯竭而下降)</span>.',
         diagramSvg: `<svg viewBox="0 0 420 220" class="w-full h-full">
           <rect width="420" height="220" fill="#0f172a" rx="12"/>
@@ -2212,10 +2239,17 @@
       document.getElementById('sp-modal-desc').innerHTML = sp.desc;
       document.getElementById('sp-modal-exam').innerHTML = sp.exam;
       resetPhotoTransform();
+      if (sp.directImg) {
+        imgEl.src = sp.directImg;
+        modal.classList.remove('hidden');
+        return;
+      }
       imgEl.src = sp.fallbackImg;
       modal.classList.remove('hidden');
-      const realUrl = await fetchWikiThumbnail(sp.wikiTitle, sp.fallbackImg);
-      imgEl.src = realUrl;
+      if (sp.wikiTitle) {
+        const realUrl = await fetchWikiThumbnail(sp.wikiTitle, sp.fallbackImg);
+        imgEl.src = realUrl;
+      }
     }
 
     function closeSpeciesModal(e) {
@@ -2340,15 +2374,17 @@
         const sec = document.getElementById(`step-${i}`);
         const btn = document.getElementById(`nav-step-${i}`);
         if (i === step) {
-          sec.classList.remove('hidden');
-          btn.className = 'step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-white text-emerald-950 shadow-sm';
+          if (sec) sec.classList.remove('hidden');
+          if (btn) btn.className = 'step-tab active-step';
         } else {
-          sec.classList.add('hidden');
-          btn.className = 'step-tab flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-900/70 text-emerald-100 hover:bg-emerald-800';
+          if (sec) sec.classList.add('hidden');
+          if (btn) btn.className = 'step-tab';
         }
       }
-      document.getElementById('mobile-step-indicator').textContent = `${step} / 6`;
-      document.getElementById('mobile-step-title').textContent = STEP_TITLES[step];
+      const mobInd = document.getElementById('mobile-step-indicator');
+      const mobTitle = document.getElementById('mobile-step-title');
+      if (mobInd) mobInd.textContent = `${step} / 6`;
+      if (mobTitle) mobTitle.textContent = STEP_TITLES[step];
       if (window.innerWidth < 640 && mobileDrawerOpen) toggleMobileStepDrawer();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -3005,37 +3041,37 @@
 
     const QUIZ_DATA = [
       {
-        q: '1. According to Figure 4.5 and p.55, what is the typical optimum temperature for enzyme activity, and what happens above this temperature?',
+        q: '1. According to Figure 4.5, what is the typical optimum temperature for <button type="button" onclick="openGeoTerm(\'enzyme_denaturation\')" class="geo-term-trigger">📘 enzyme activity <span class="zh-note">(酵素活性)</span></button>, and what happens above this temperature? <span class="zh-note font-normal">(根據圖 4.5，酵素反應的最佳溫度約為幾度？超過此溫度會發生什麼現象？)</span>',
         opts: [
-          'A. Optimum is 20°C; above 20°C metabolic rate stops completely',
-          'B. Optimum is around 40°C; any warmer than this and enzymes denature, causing the rate of reaction to decrease rapidly',
-          'C. Optimum is 60°C; above 60°C reaction rate doubles every 10°C',
-          'D. Optimum is 0°C; enzymes only function in freezing conditions'
+          'A. Optimum is 20°C; above 20°C metabolic rate stops completely <span class="zh-note">(20°C 為最佳；超過後代謝完全停止)</span>',
+          'B. Optimum is around 40°C; any warmer than this and enzymes denature, causing reaction rate to drop rapidly <span class="zh-note">(約 40°C 為最佳；高於此溫酵素變性導致反應速率急降)</span>',
+          'C. Optimum is 60°C; above 60°C reaction rate doubles every 10°C <span class="zh-note">(60°C 為最佳；超過後速率倍增)</span>',
+          'D. Optimum is 0°C; enzymes only function in freezing conditions <span class="zh-note">(0°C 為最佳；酵素僅於結冰下運作)</span>'
         ],
         ans: 1,
-        exp: 'Correct! Figure 4.5 (p.55) shows the optimum temperature for enzyme activity is around 40°C; above 40°C enzymes denature and the reaction rate falls rapidly.'
+        exp: 'Correct! Figure 4.5 shows the optimum temperature is ~<strong>40°C</strong>; above 40°C <button type="button" onclick="openGeoTerm(\'enzyme_denaturation\')" class="geo-term-trigger">📘 enzymes denature <span class="zh-note">(酵素結構變性)</span></button> and reaction rate falls to zero by 60°C <span class="zh-note">(正確！40°C 為反應峰值，超過後蛋白質變性失活)</span>.'
       },
       {
-        q: '2. What is the difference between "vicariance" and "dispersal" in explaining Madagascar’s biodiversity? (pp.56–57)',
+        q: '2. What is the difference between <button type="button" onclick="openGeoTerm(\'vicariance\')" class="geo-term-trigger">📘 vicariance <span class="zh-note">(隔離分化)</span></button> and <button type="button" onclick="openGeoTerm(\'dispersal\')" class="geo-term-trigger">📘 dispersal <span class="zh-note">(跨海擴散)</span></button> in explaining Madagascar’s biodiversity? <span class="zh-note font-normal">(解釋馬達加斯加生物多樣性來源時，「隔離分化」與「跨海擴散」有何分別？)</span>',
         opts: [
-          'A. Vicariance means species swam across the ocean; dispersal means they rode on Gondwana',
-          'B. Vicariance refers to species that "rode there" on drifting continents and were left on Madagascar when it split from India (~90 mya), whereas dispersal refers to species (like lemurs ~54 mya) that immigrated across the ocean after the island separated',
-          'C. Both terms mean human introduction of invasive species',
-          'D. Lemurs arrived via vicariance 170 million years ago'
+          'A. Vicariance means species swam across the ocean; dispersal means they rode on Gondwana <span class="zh-note">(隔離分化指游泳渡海；擴散指乘古大陸漂移)</span>',
+          'B. Vicariance refers to species that "rode there" on drifting continents when Madagascar split from India (~90 mya), whereas dispersal refers to ancestors (like lemurs ~54 mya) crossing the ocean after separation <span class="zh-note">(隔離分化指隨印度板塊分裂［~90 mya］留存原地；擴散指孤猴［~54 mya］於孤島形成後漂流跨海登島)</span>',
+          'C. Both terms refer only to modern human introduction of invasive species <span class="zh-note">(兩者均指人類引入外來入侵種)</span>',
+          'D. Lemurs arrived via vicariance 170 million years ago <span class="zh-note">(孤猴於 1.7 億年前隨隔離分化抵達)</span>'
         ],
         ans: 1,
-        exp: 'Correct! On pp.56–57, vicariance describes species left on Madagascar when it split from India (~90 mya), while dispersal describes ancestors (like lemurs ~54 mya) that crossed the ocean after Madagascar was already an island.'
+        exp: 'Correct! <strong>Vicariance (~90 mya)</strong> describes Gondwanan lineages left on Madagascar when it split from India, whereas <button type="button" onclick="openSpeciesModal(\'lemur\')" class="species-trigger">📸 lemurs <span class="zh-note">(環尾狐猴)</span></button> arrived via oceanic <strong>dispersal (~54 mya)</strong> after island isolation <span class="zh-note">(正確！板塊分裂留存為隔離分化，孤猴於孤島形成後始跨海漂流登島)</span>.'
       },
       {
-        q: '3. Why do some geographers suggest that late successional stages may actually have reduced biodiversity, and how can periodic controlled burning help? (p.57)',
+        q: '3. Why might <button type="button" onclick="openGeoTerm(\'climax_community\')" class="geo-term-trigger">📘 late successional stages <span class="zh-note">(演替晚期頂極群落)</span></button> actually have reduced biodiversity, and how does periodic <button type="button" onclick="openGeoTerm(\'controlled_burning\')" class="geo-term-trigger">📘 controlled burning <span class="zh-note">(控制性火燒)</span></button> help? <span class="zh-note font-normal">(為何演替晚期多樣性反而可能回落？週期性控制性火燒如何逆轉這現象？)</span>',
         opts: [
-          'A. Late stages have no soil; controlled burning destroys all soil nutrients',
-          'B. Late successional stages suffer from competition and dominance by only a few species (plus thick dead organic litter choking small plants); periodic controlled burning removes this decay layer and returns nutrients rapidly to the soil',
-          'C. Uncontrolled frequent wildfires always increase biodiversity more than controlled burns',
-          'D. Larger areas always have lower biodiversity than smaller areas'
+          'A. Late stages have no soil; controlled burning sterilises all soil nutrients <span class="zh-note">(晚期缺乏土壤；火燒會消滅土壤養分)</span>',
+          'B. Late stages suffer from competition and dominance by a few canopy species (and thick dead organic litter); periodic controlled burning clears this decay layer and returns nutrients rapidly to soil <span class="zh-note">(少數優勢種競爭遮蔭及厚枯枝窒息下層；控制性冷火能清除枯枝並快速歸還礦物質養分)</span>',
+          'C. Frequent uncontrolled megafires always maximise biodiversity more than controlled burns <span class="zh-note">(頻繁失控超級野火比冷火更有利於多樣性)</span>',
+          'D. Larger geographic areas always hold fewer habitats and species than smaller patches <span class="zh-note">(較大面積永遠比小區域擁更少生境與物種)</span>'
         ],
         ans: 1,
-        exp: 'Correct! Page 57 explains that late successional stages can lose biodiversity due to competition/dominance of a few species, while periodic controlled burning clears choking dead organic litter and rapidly returns nutrients to the soil.'
+        exp: 'Correct! <button type="button" onclick="openGeoTerm(\'climax_community\')" class="geo-term-trigger">📘 Competitive dominance <span class="zh-note">(競爭壟斷)</span></button> shades out understory herbs in climax woodland, while periodic <strong>controlled burning</strong> clears choking dead litter and recycles ash nutrients <span class="zh-note">(正確！演替晚期少數樹冠優勢種抑制下層植物，控制性火燒可釋放光線與灰燼養分)</span>.'
       }
     ];
 
@@ -3094,5 +3130,2390 @@
       renderQuiz();
     });
   </script>
+<!-- [START OF PATCH V5.5 FOR CHAPTER 4 pp. 55–57 — 6× ZERO-PAGE-NUMBER INFOGRAPHICS + V5.5 UNIFIED STYLE + ZERO-ABYSS] -->
+<style>
+  html, body { max-width: 100vw !important; overflow-x: hidden !important; }
+  body { min-height: auto !important; height: auto !important; position: relative !important; margin: 0 !important; padding-bottom: 92px !important; }
+  input[type=range] { touch-action: pan-y !important; }
+  #sp-modal-img, #gt-modal-img { object-fit: contain !important; background-color: #020617 !important; }
+  svg, iframe, table { max-width: 100% !important; }
+  #species-photo-modal, #geo-term-modal, #deep-dive-modal, #custom-info-modal { z-index: 75 !important; }
+  .step-section > div:first-child span.bg-emerald-50 { display: inline-flex !important; align-items: center; flex-wrap: wrap; gap: 4px; line-height: 1.4 !important; white-space: normal !important; }
+
+  /* [V5.5] 1. Red Underline Key Sentences Style */
+  .exam-red-ul {
+    text-decoration: underline solid #e11d48 2.2px !important;
+    text-underline-offset: 3.5px !important;
+    background: linear-gradient(180deg, transparent 72%, rgba(244, 63, 94, 0.14) 0) !important;
+    font-weight: 700; color: inherit; padding: 0 2px; border-radius: 2px;
+  }
+  body.hide-red-underlines .exam-red-ul { text-decoration: none !important; background: transparent !important; }
+
+  /* [V5.5] 2. Collapsible Student Study Notes & Interactive Mini-Game Drawers */
+  .student-note-details {
+    border: 1.5px solid #059669; background: #f0fdf4; border-radius: 14px;
+    overflow: hidden; transition: all 0.2s ease; margin-top: 10px;
+  }
+  .student-note-details summary {
+    cursor: pointer; padding: 10px 14px; background: linear-gradient(90deg, #ecfdf5 0%, #d1fae5 100%);
+    font-size: 12.5px; font-weight: 800; color: #064e3b; display: flex; align-items: center;
+    justify-content: space-between; list-style: none; user-select: none;
+  }
+  .student-note-details summary::-webkit-details-marker { display: none; }
+  .student-note-details[open] summary { border-bottom: 1px solid #a7f3d0; }
+  .student-note-body { padding: 12px 16px; background: #ffffff; font-size: 12.5px; line-height: 1.68; color: #1e293b; }
+
+  .minigame-details {
+    border: 2px solid #4f46e5; background: #eef2ff; border-radius: 16px;
+    overflow: hidden; margin-top: 16px; box-shadow: 0 6px 16px rgba(79, 70, 229, 0.12);
+  }
+  .minigame-details summary {
+    cursor: pointer; padding: 12px 16px; background: linear-gradient(90deg, #1e1b4b 0%, #3730a3 55%, #4f46e5 100%);
+    font-size: 13px; font-weight: 800; color: #ffffff; display: flex; align-items: center;
+    justify-content: space-between; list-style: none; user-select: none;
+  }
+  .minigame-details summary::-webkit-details-marker { display: none; }
+  .minigame-body { padding: 16px; background: #ffffff; color: #0f172a; font-size: 12.5px; }
+
+  .mg-token {
+    display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; min-height: 42px;
+    border-radius: 10px; font-size: 12px; font-weight: 800; cursor: pointer;
+    border: 2px solid #cbd5e1; background: #f8fafc; color: #1e293b;
+    transition: all 0.15s ease; user-select: none; touch-action: manipulation;
+  }
+  .mg-token:hover { border-color: #6366f1; background: #eef2ff; transform: translateY(-1px); }
+  .mg-token.selected { border-color: #4f46e5; background: #4f46e5; color: #ffffff; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.35); transform: scale(1.02); }
+  .mg-token.placed { opacity: 0.42; border-style: dashed; pointer-events: none; }
+
+  .mg-slot {
+    border: 2px dashed #94a3b8; border-radius: 12px; padding: 10px 12px;
+    background: #f8fafc; cursor: pointer; transition: all 0.15s ease;
+    min-height: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+  }
+  .mg-slot:hover { border-color: #4f46e5; background: #eef2ff; }
+  .mg-slot.filled-ok { border: 2px solid #10b981; background: #ecfdf5; color: #065f46; }
+  .mg-slot.filled-err { border: 2px solid #f43f5e; background: #fff1f2; color: #9f1239; }
+
+  input[type=range] + div.relative.w-full {
+    position: static !important; height: auto !important; display: flex !important;
+    justify-content: space-between !important; align-items: flex-start !important;
+    flex-wrap: wrap !important; gap: 4px !important; padding-top: 4px !important;
+  }
+  input[type=range] + div.relative.w-full > span { position: static !important; transform: none !important; }
+  #step-6 .bg-white svg text { font-size: 8.2px !important; paint-order: stroke; stroke: rgba(255,255,255,0.92); stroke-width: 2.5px; }
+
+  /* [V5.5] 3. Pure Text Zoom (125% & 145%) */
+  body.classroom-zoom-125 main.max-w-7xl, body.classroom-zoom-145 main.max-w-7xl,
+  body.classroom-zoom-125 header .max-w-7xl, body.classroom-zoom-145 header .max-w-7xl { max-width: 97% !important; }
+  body.classroom-zoom-125 main .truncate, body.classroom-zoom-145 main .truncate { overflow: visible !important; text-overflow: clip !important; white-space: normal !important; word-break: break-word !important; }
+  body.classroom-zoom-125 main .text-\[9\.5px\], body.classroom-zoom-125 main .text-\[10px\], body.classroom-zoom-125 main .text-\[10\.5px\], body.classroom-zoom-125 main .text-\[11px\] { font-size: 0.92rem !important; line-height: 1.55 !important; }
+  body.classroom-zoom-125 main .text-xs, body.classroom-zoom-125 .student-note-body, body.classroom-zoom-125 .minigame-body, body.classroom-zoom-125 .infographic-qa-answer { font-size: 1.05rem !important; line-height: 1.65 !important; }
+  body.classroom-zoom-125 main .text-sm { font-size: 1.18rem !important; line-height: 1.7 !important; }
+  body.classroom-zoom-125 main .text-base, body.classroom-zoom-125 main h3 { font-size: 1.32rem !important; line-height: 1.45 !important; }
+  body.classroom-zoom-125 main h2 { font-size: 1.6rem !important; line-height: 1.35 !important; }
+  body.classroom-zoom-145 main .text-\[9\.5px\], body.classroom-zoom-145 main .text-\[10px\], body.classroom-zoom-145 main .text-\[10\.5px\], body.classroom-zoom-145 main .text-\[11px\] { font-size: 1.06rem !important; line-height: 1.6 !important; }
+  body.classroom-zoom-145 main .text-xs, body.classroom-zoom-145 .student-note-body, body.classroom-zoom-145 .minigame-body, body.classroom-zoom-145 .infographic-qa-answer { font-size: 1.22rem !important; line-height: 1.72 !important; }
+  body.classroom-zoom-145 main .text-sm { font-size: 1.36rem !important; line-height: 1.75 !important; }
+  body.classroom-zoom-145 main .text-base, body.classroom-zoom-145 main h3 { font-size: 1.52rem !important; line-height: 1.45 !important; }
+  body.classroom-zoom-145 main h2 { font-size: 1.82rem !important; line-height: 1.35 !important; }
+
+  #ch4-theme-icon-btn {
+    width: 34px; height: 34px; border-radius: 10px; background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.28); display: inline-flex; align-items: center;
+    justify-content: center; font-size: 16px; cursor: pointer; transition: all 0.15s ease; flex-shrink: 0;
+  }
+  #ch4-theme-icon-btn:hover { background: rgba(255,255,255,0.24); transform: scale(1.06); }
+
+  /* [V5.5] Theme 2: Academic Parchment & Theme 3: Dark Command */
+  body.theme-academic { background-color: #FAF9F6 !important; color: #2C2C2C !important; }
+  body.theme-academic header.bg-emerald-950 { background-color: #2C2C2C !important; border-bottom: 3px solid #B87333 !important; }
+  body.theme-academic .bg-white, body.theme-academic .student-note-body, body.theme-academic .minigame-body, body.theme-academic .concept-infographic-card, body.theme-academic .infographic-qa-details, body.theme-academic #custom-info-modal > div { background-color: #FFFDF9 !important; border-color: #D6D3C9 !important; }
+  body.theme-academic .bg-slate-50, body.theme-academic .concept-infographic-q-box { background-color: #E6EBE4 !important; border-color: #C5CFC2 !important; }
+
+  body.theme-dark-pro { background-color: #0B1120 !important; color: #E2E8F0 !important; }
+  body.theme-dark-pro header.bg-emerald-950 { background-color: #020617 !important; border-bottom: 1px solid #1E293B !important; }
+  body.theme-dark-pro .bg-white, body.theme-dark-pro tbody tr.bg-white, body.theme-dark-pro .student-note-body, body.theme-dark-pro .minigame-body, body.theme-dark-pro .concept-infographic-card, body.theme-dark-pro .infographic-qa-details, body.theme-dark-pro #custom-info-modal > div { background-color: #111827 !important; border-color: #1F2937 !important; color: #F1F5F9 !important; }
+  body.theme-dark-pro .bg-slate-50, body.theme-dark-pro tbody tr.bg-slate-50, body.theme-dark-pro .bg-slate-100, body.theme-dark-pro .concept-infographic-q-box, body.theme-dark-pro .infographic-manager-bar { background-color: #1E293B !important; border-color: #334155 !important; color: #E2E8F0 !important; }
+  body.theme-dark-pro h2, body.theme-dark-pro h3, body.theme-dark-pro h4, body.theme-dark-pro .text-slate-900, body.theme-dark-pro .text-slate-800, body.theme-dark-pro td { color: #F8FAFC !important; }
+  body.theme-dark-pro .text-slate-700, body.theme-dark-pro .text-slate-600 { color: #CBD5E1 !important; }
+
+  /* Apple Pencil Canvas, Laser Pointer & Text Sticky Notes Layer */
+  #ios-annotation-canvas { position: absolute; top: 0; left: 0; z-index: 44; pointer-events: none; touch-action: auto; user-select: none; -webkit-user-select: none; }
+  #ios-annotation-canvas.drawing-all { pointer-events: auto; touch-action: none !important; cursor: crosshair; }
+  #ios-annotation-canvas.drawing-pen-only { pointer-events: auto; touch-action: pan-x pan-y pinch-zoom !important; cursor: crosshair; }
+  #ios-annotation-canvas.text-insert-mode { pointer-events: auto; cursor: text; }
+
+  #ios-laser-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 46; pointer-events: none; }
+  #ios-text-notes-layer { position: absolute; top: 0; left: 0; width: 100%; height: 0px; overflow: visible !important; z-index: 45; pointer-events: none; }
+  .ios-text-note {
+    position: absolute; pointer-events: auto; min-width: 150px; max-width: 320px;
+    background: rgba(254, 249, 195, 0.96); backdrop-filter: blur(8px);
+    border: 2px solid #F59E0B; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.22); overflow: hidden;
+  }
+  .ios-note-header {
+    background: rgba(245, 158, 11, 0.25); padding: 3px 8px; cursor: grab;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 10px; font-weight: 800; color: #78350F; user-select: none;
+  }
+  .ios-note-body { padding: 6px 9px; font-size: 13px; font-weight: 700; line-height: 1.45; outline: none; min-height: 32px; color: #1E293B; word-break: break-word; }
+  .ios-note-body:empty:before { content: attr(data-placeholder); color: #94A3B8; font-weight: 400; }
+
+  #pencil-hover-ring { position: fixed; top: -100px; left: -100px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #FF3B30; transform: translate(-50%, -50%); pointer-events: none; z-index: 9999; display: none; }
+  .ios-markup-dock {
+    position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 60;
+    display: flex; align-items: center; gap: 3.5px; padding: 6px 10px; border-radius: 999px;
+    background: rgba(22, 22, 24, 0.94); backdrop-filter: blur(22px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.22); box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+    color: #ffffff; max-width: 97vw; overflow-x: auto; user-select: none;
+  }
+  .ios-tool-btn {
+    display: flex; align-items: center; justify-content: center; gap: 3px;
+    height: 32px; padding: 0 7.5px; border-radius: 999px; font-size: 11px; font-weight: 700;
+    color: #E5E5EA; background: transparent; border: 1.5px solid transparent;
+    transition: all 0.15s ease; white-space: nowrap; flex-shrink: 0;
+  }
+  .ios-tool-btn:hover { background: rgba(255, 255, 255, 0.12); }
+  .ios-tool-btn.active { background: #FFFFFF; color: #1C1C1E; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); transform: translateY(-1.5px); }
+  .ios-tool-btn.pencil-lock-on { background: #0A84FF; color: #FFFFFF; border-color: #64D2FF; }
+  .ios-tool-btn.zoom-active { background: #10B981; color: #FFFFFF; border-color: #6EE7B7; }
+  .ios-tool-btn.redline-on { background: #E11D48; color: #FFFFFF; border-color: #FDA4AF; }
+  .ios-color-swatch { width: 19px; height: 19px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.55); cursor: pointer; flex-shrink: 0; }
+  .ios-color-swatch.active { transform: scale(1.25); border: 2.5px solid #FFFFFF; box-shadow: 0 0 0 2px #0A84FF; }
+  .ios-divider { width: 1px; height: 18px; background: rgba(255, 255, 255, 0.2); margin: 0 1.5px; flex-shrink: 0; }
+
+  /* [V5.5] Concept Infographic Gallery & Interactive Q&A Cards */
+  .concept-infographic-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1.5px solid #cbd5e1;
+    border-radius: 1.15rem;
+    box-shadow: 0 10px 25px -10px rgba(15, 23, 42, 0.12);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .concept-infographic-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    background: linear-gradient(90deg, #064e3b 0%, #0f766e 100%);
+    color: #ffffff;
+  }
+  .concept-infographic-img-wrap {
+    position: relative;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: zoom-in;
+    overflow: hidden;
+  }
+  .concept-infographic-img-wrap img {
+    width: 100%;
+    height: auto;
+    max-height: 540px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.25s ease;
+  }
+  .concept-infographic-img-wrap:hover img { transform: scale(1.012); }
+  .concept-infographic-zoom-hint {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    background: rgba(15, 23, 42, 0.78);
+    color: #f8fafc;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+  }
+  .concept-infographic-q-box {
+    padding: 1rem 1.25rem 1.15rem;
+    background: #f8fafc;
+  }
+  .infographic-qa-details {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #059669;
+    border-radius: 0.65rem;
+    padding: 0.55rem 0.85rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .infographic-qa-details[open] {
+    border-left-color: #0284c7;
+    box-shadow: 0 4px 12px -4px rgba(2, 132, 199, 0.16);
+  }
+  .infographic-qa-details summary {
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #0f172a;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+  }
+  .infographic-qa-details summary::-webkit-details-marker { display: none; }
+  .infographic-qa-answer {
+    margin-top: 0.55rem;
+    padding-top: 0.55rem;
+    border-top: 1px dashed #cbd5e1;
+    font-size: 0.8rem;
+    line-height: 1.62;
+    color: #334155;
+  }
+  body.theme-dark-pro .infographic-qa-details summary { color: #f1f5f9 !important; }
+  body.theme-dark-pro .infographic-qa-answer { color: #cbd5e1 !important; border-top-color: #475569 !important; }
+  .infographic-manager-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    background: #ecfdf5;
+    border: 1px dashed #6ee7b7;
+    border-radius: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .concept-infographic-guide-box {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0d9488;
+    border-radius: 0.65rem;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: #1e293b;
+  }
+  body.theme-academic .concept-infographic-guide-box { background-color: #FFFDF9 !important; border-color: #D6D3C9 !important; color: #2C2C2C !important; }
+  body.theme-dark-pro .concept-infographic-guide-box { background-color: #0f172a !important; border-color: #334155 !important; color: #e2e8f0 !important; }
+  body.theme-dark-pro .concept-infographic-q-box .text-emerald-900 { color: #6ee7b7 !important; }
+
+  /* [V5.5] Unified Header Chapter Navigation Tabs Across All Themes */
+  #step-nav-grid .step-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    padding: 0.48rem 0.65rem;
+    border-radius: 0.7rem;
+    background: rgba(6, 78, 59, 0.72);
+    border: 1.5px solid rgba(52, 211, 153, 0.25);
+    color: #ecfdf5;
+    font-size: 0.75rem;
+    font-weight: 700;
+    transition: all 0.16s ease;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  #step-nav-grid .step-tab:hover {
+    background: rgba(6, 95, 70, 0.92);
+    border-color: rgba(110, 231, 183, 0.5);
+  }
+  #step-nav-grid .step-tab.active-step {
+    background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+    border: 1.5px solid #fde68a;
+    color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(110, 231, 183, 0.28), 0 4px 12px rgba(2, 44, 34, 0.35);
+  }
+  #step-nav-grid .step-tab-num {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 9999px;
+    background: #047857;
+    color: #ecfdf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.68rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    transition: all 0.16s ease;
+  }
+  #step-nav-grid .step-tab.active-step .step-tab-num {
+    background: #fbbf24;
+    color: #064e3b;
+    font-weight: 900;
+  }
+  #step-nav-grid .step-tab-title {
+    font-weight: 800;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #step-nav-grid .step-tab-sub {
+    font-size: 0.64rem;
+    line-height: 1.25;
+    font-weight: 500;
+    color: #a7f3d0;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #step-nav-grid .step-tab.active-step .step-tab-sub {
+    color: #ecfdf5;
+    font-weight: 600;
+  }
+  body.theme-academic #step-nav-grid .step-tab {
+    background: rgba(56, 56, 54, 0.85) !important;
+    border-color: rgba(184, 115, 51, 0.45) !important;
+    color: #FAF9F6 !important;
+  }
+  body.theme-academic #step-nav-grid .step-tab .step-tab-sub { color: #e7d8c3 !important; }
+  body.theme-academic #step-nav-grid .step-tab.active-step {
+    background: linear-gradient(135deg, #9a5b25 0%, #b87333 100%) !important;
+    border-color: #fde68a !important;
+  }
+  body.theme-dark-pro #step-nav-grid .step-tab {
+    background: rgba(15, 23, 42, 0.88) !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
+  body.theme-dark-pro #step-nav-grid .step-tab .step-tab-sub { color: #94a3b8 !important; }
+  body.theme-dark-pro #step-nav-grid .step-tab.active-step {
+    background: linear-gradient(135deg, #065f46 0%, #0f766e 100%) !important;
+    border-color: #34d399 !important;
+    color: #ffffff !important;
+  }
+  body.theme-dark-pro #step-nav-grid .step-tab.active-step .step-tab-sub { color: #d1fae5 !important; }
+</style>
+
+<!-- [V5.5] Add Custom Infographic Modal -->
+<div id="custom-info-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target.id==='custom-info-modal') this.classList.add('hidden')">
+  <div class="bg-white rounded-2xl border border-slate-300 shadow-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto p-5 space-y-3.5 text-slate-800">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+      <h3 class="text-base font-extrabold text-emerald-900 flex items-center gap-2">🎨 新增自訂概念示意圖（Add Custom Infographic V5.5）</h3>
+      <button type="button" onclick="document.getElementById('custom-info-modal').classList.add('hidden')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-800">✕ 關閉</button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div>
+        <label class="font-bold block mb-1">目標單元 Section：</label>
+        <select id="ci-sec-num" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 font-semibold bg-white text-slate-800">
+          <option value="1">1️⃣ Unit 1: Climate Factors &amp; Enzyme/Water Limits</option>
+          <option value="2">2️⃣ Unit 2: Madagascar Drift, Vicariance &amp; Dispersal</option>
+          <option value="3">3️⃣ Unit 3: Area Effect &amp; Sand Dune Succession</option>
+          <option value="4">4️⃣ Unit 4: Human Impacts &amp; The Fire Paradox</option>
+          <option value="5">5️⃣ Unit 5: Global Cases (Galápagos vs. Australia)</option>
+        </select>
+      </div>
+      <div>
+        <label class="font-bold block mb-1">徽章標籤 Badge Tag：</label>
+        <input id="ci-tag" type="text" value="🎨 教師自訂圖卡 Custom Visual" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-800">
+      </div>
+    </div>
+    <div class="text-xs">
+      <label class="font-bold block mb-1">圖卡標題 Title：</label>
+      <input id="ci-title" type="text" placeholder="e.g. Custom Gondwana Rift Map or Fire Regime Matrix" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-800">
+    </div>
+    <div class="text-xs bg-emerald-50/70 border border-emerald-200 rounded-xl p-3 space-y-2">
+      <label class="font-bold block text-emerald-950">上載圖片檔案（自動存入 IndexedDB 離線持久化）或輸入檔案路徑 / URL：</label>
+      <input id="ci-file" type="file" accept="image/*" class="block w-full text-xs text-slate-700 file:mr-3 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-emerald-700 file:text-white hover:file:bg-emerald-800">
+      <input id="ci-url" type="text" placeholder="選填：輸入相對檔名 (如 MyDiagram.png) 或圖片 URL" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-800">
+    </div>
+    <div class="space-y-2 text-xs">
+      <div>
+        <label class="font-bold block mb-1">引導思考題 Q1 (AO1/AO2 • 請於題尾附括號中文題意解釋)：</label>
+        <input id="ci-q1" type="text" value="Q1 (AO2): Describe the main geographical pattern or limiting mechanism shown in this diagram. (描述圖示展現的主要地理分佈規律或環境限制機制。)" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-800">
+      </div>
+      <div>
+        <label class="font-bold block mb-1">參考答案 A1（建議包含重點名詞解釋與括號中文補充）：</label>
+        <textarea id="ci-a1" rows="2" placeholder="輸入 Q1 的高分答題要點、重點名詞解釋（內附括號中文）與數據引用..." class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-800"></textarea>
+      </div>
+      <div>
+        <label class="font-bold block mb-1">進階評估題 Q2 (AO3 • 請於題尾附括號中文題意解釋)：</label>
+        <input id="ci-q2" type="text" value="Q2 (AO3): Evaluate how human management or timescale controls this biodiversity outcome. (評估人類管理或時間尺度如何主導此生物多樣性結果。)" class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-800">
+      </div>
+      <div>
+        <label class="font-bold block mb-1">參考答案 A2（建議包含重點名詞解釋與括號中文補充）：</label>
+        <textarea id="ci-a2" rows="2" placeholder="輸入 Q2 的正反評估 (However / On balance) 與重點名詞中文解釋..." class="w-full border border-slate-300 rounded-lg px-2.5 py-1.5 bg-white text-slate-800"></textarea>
+      </div>
+    </div>
+    <div class="flex justify-end gap-2 pt-2 border-t border-slate-200">
+      <button type="button" onclick="document.getElementById('custom-info-modal').classList.add('hidden')" class="px-3.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-xs font-bold text-slate-800">取消 Cancel</button>
+      <button type="button" onclick="saveNewCustomInfographicCard()" class="px-4 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-xs font-extrabold text-white shadow">💾 儲存並嵌入課件 Save Card</button>
+    </div>
+  </div>
+</div>
+
+<canvas id="ios-annotation-canvas"></canvas>
+<canvas id="ios-laser-canvas"></canvas>
+<div id="ios-text-notes-layer"></div>
+<div id="pencil-hover-ring"></div>
+
+<!-- iOS FLOATING MARKUP DOCK WITH LASER POINTER, TEXT TOOL & A4 PDF STUDY GUIDE -->
+<div id="ios-markup-bar" class="ios-markup-dock">
+  <button type="button" id="mk-btn-zoom" onclick="cycleClassroomZoom()" class="ios-tool-btn" title="純文字放大模式 (100% / 125% / 145%)">
+    <span>🔍</span><span id="mk-zoom-label">100%</span>
+  </button>
+  <button type="button" id="mk-btn-redline" onclick="toggleRedUnderlines()" class="ios-tool-btn redline-on" title="顯示/隱藏全章節重點句子紅線底線">
+    <span>🖍️</span><span class="hidden sm:inline">紅線</span>
+  </button>
+  <div class="ios-divider"></div>
+  <button type="button" id="mk-btn-browse" onclick="setMarkupTool('browse')" class="ios-tool-btn active" title="瀏覽與操作網頁">
+    <span>🖐️</span><span class="hidden sm:inline">操作</span>
+  </button>
+  <button type="button" id="mk-btn-laser" onclick="setMarkupTool('laser')" class="ios-tool-btn" title="雷射筆指圖模式 (畫過後1.5秒自動淡出消失)">
+    <span>🔴</span><span class="hidden sm:inline">雷射筆</span>
+  </button>
+  <button type="button" id="mk-btn-pen" onclick="setMarkupTool('pen')" class="ios-tool-btn" title="Apple Pencil 畫筆">
+    <span>✒️</span><span class="hidden sm:inline">畫筆</span>
+  </button>
+  <button type="button" id="mk-btn-highlighter" onclick="setMarkupTool('highlighter')" class="ios-tool-btn" title="螢光筆">
+    <span>🖍️</span><span class="hidden sm:inline">螢光</span>
+  </button>
+  <button type="button" id="mk-btn-text" onclick="setMarkupTool('text')" class="ios-tool-btn" title="插入文字便利貼">
+    <span>🔤</span><span class="hidden sm:inline">文字</span>
+  </button>
+  <button type="button" id="mk-btn-eraser" onclick="setMarkupTool('eraser')" class="ios-tool-btn" title="橡皮擦">
+    <span>🧽</span><span class="hidden sm:inline">擦膠</span>
+  </button>
+  <button type="button" id="mk-btn-penlock" onclick="togglePencilOnlyMode()" class="ios-tool-btn" title="防誤觸筆寫手滑模式">
+    <span>✏️</span><span id="mk-penlock-label" class="hidden xl:inline">筆寫手滑: 關</span>
+  </button>
+  <div class="ios-divider"></div>
+  <button type="button" onclick="setMarkupColor('#FF3B30', this)" class="ios-color-swatch active" style="background:#FF3B30;"></button>
+  <button type="button" onclick="setMarkupColor('#FFCC00', this)" class="ios-color-swatch" style="background:#FFCC00;"></button>
+  <button type="button" onclick="setMarkupColor('#34C759', this)" class="ios-color-swatch" style="background:#34C759;"></button>
+  <button type="button" onclick="setMarkupColor('#0A84FF', this)" class="ios-color-swatch" style="background:#0A84FF;"></button>
+  <button type="button" onclick="setMarkupColor('#AF52DE', this)" class="ios-color-swatch" style="background:#AF52DE;"></button>
+  <button type="button" onclick="setMarkupColor('#1C1C1E', this)" class="ios-color-swatch" style="background:#1C1C1E;"></button>
+  <div class="ios-divider"></div>
+  <button type="button" id="mk-btn-size" onclick="cycleMarkupSize()" class="ios-tool-btn" title="筆觸粗細"><span id="mk-size-label">● 中</span></button>
+  <button type="button" onclick="undoMarkupStroke()" class="ios-tool-btn" title="復原上一筆"><span>↩️</span></button>
+  <button type="button" onclick="clearMarkupCanvas()" class="ios-tool-btn text-rose-400" title="清空本節筆跡與文字"><span>🗑️</span></button>
+  <div class="ios-divider"></div>
+  <button type="button" onclick="exportStudentStudyGuidePDF()" class="ios-tool-btn bg-emerald-600/90 hover:bg-emerald-500 text-white border-emerald-400" title="下載 A4 直式學生溫習筆記 PDF (支援完整版與填空工作紙切換)">
+    <span>📄</span><span class="hidden md:inline">A4 筆記 PDF</span>
+  </button>
+</div>
+
+<script>
+  // =========================================================================
+  // [V5.0] 1. RED UNDERLINES + EXPANDABLE STUDENT NOTES
+  // =========================================================================
+  function toggleRedUnderlines() {
+    const isHidden = document.body.classList.toggle('hide-red-underlines');
+    document.getElementById('mk-btn-redline')?.classList.toggle('redline-on', !isHidden);
+  }
+
+  function applyRedUnderlinesAndCollapsibleNotesV50() {
+    const keyPhrases = [
+      'factors that restrict the growth, distribution, or abundance of a species',
+      'Climate is perhaps the most important factor affecting biodiversity',
+      'metabolic rate slows down, reducing cellular energy production',
+      'Enzyme activity reaches peak reaction speed at <strong>40°C</strong>',
+      'ability to supply energy is exceeded',
+      'reaction rate falls rapidly to zero at 60°C',
+      '50 per cent water',
+      '2 to 3 cm of precipitation per week',
+      '120,000 litres of water',
+      'migrates to <strong>higher altitudes</strong>',
+      'splits from India around <strong>90 million years ago</strong>',
+      'split from African primates <strong>~62 mya</strong>, dispersed to Madagascar <strong>~54 mya</strong>, and diversified into <strong>≥50 endemic species</strong>',
+      'late successional stages may actually have reduced biodiversity due to competition and dominance of only a few species',
+      'removes dead organic litter and rapidly returns nutrients to the soil',
+      'uncontrolled or over-frequent fire</strong> destroys healthy species'
+    ];
+
+    document.querySelectorAll('#step-1 p, #step-2 p, #step-3 p, #step-4 p, #step-5 p, #step-3 div.p-3, #step-4 div.p-3').forEach(el => {
+      let html = el.innerHTML;
+      keyPhrases.forEach(phrase => {
+        if (html.includes(phrase) && !html.includes(`exam-red-ul">${phrase}`)) {
+          html = html.replace(phrase, `<span class="exam-red-ul">${phrase}</span>`);
+        }
+      });
+      el.innerHTML = html;
+    });
+
+    const COLLAPSIBLE_NOTES_EN = {
+      'step-1': {
+        title: '📓 Click to Expand: Section 1 Student Exam Study Notes — Climate Limiting Factors (重點名詞與溫習筆記 AO1–AO3)',
+        body: `<ul class="list-disc pl-5 space-y-1.5">
+          <li><strong>1. Definition of <button type="button" onclick="openGeoTerm('limiting_factors')" class="geo-term-trigger">📘 Limiting Factors <span class="zh-note">(限制因素)</span></button> (AO1):</strong> <span class="exam-red-ul">Limiting factors are physical or biological environmental variables that restrict the growth, geographical distribution, or abundance of a species.</span> Climate (temperature and precipitation 氣溫與降水) is the primary macro-scale control <span class="zh-note">(限制因素是指限制物種生長、分佈或數量的環境條件；其中氣候是宏觀尺度最重要因素)</span>.</li>
+          <li><strong>2. Temperature &amp; Enzyme Kinetics (Fig 4.5, AO1/AO2):</strong> In cold conditions (0–10°C), <span class="exam-red-ul"><button type="button" onclick="openGeoTerm('metabolic_rate')" class="geo-term-trigger">📘 metabolic rate <span class="zh-note">(新陳代謝率)</span></button> slows down, reducing cellular energy (ATP) production</span>. As temperature warms, reactions peak around the <span class="exam-red-ul">~40°C optimum</span>. Above 40°C, <span class="exam-red-ul"><button type="button" onclick="openGeoTerm('enzyme_denaturation')" class="geo-term-trigger">📘 enzymes denature <span class="zh-note">(酵素變性)</span></button> and the organism's ability to supply energy is exceeded</span>, plunging to 0 at 60°C <span class="zh-note">(低溫令代謝慢、產能低；40°C 達峰值；高於 40°C 酵素活性部位變形且供能超負荷，速率暴跌至零)</span>.</li>
+          <li><strong>3. Precipitation &amp; <button type="button" onclick="openGeoTerm('xerophyte')" class="geo-term-trigger">📘 Xerophytic <span class="zh-note">(耐旱植物)</span></button> Storage (Fig 4.6, AO2):</strong> Standard trees are <span class="exam-red-ul">50 per cent water and require 2 to 3 cm of precipitation per week</span>. Dry-adapted <button type="button" onclick="openSpeciesModal('baobab')" class="species-trigger">📸 baobabs <span class="zh-note">(猴麵包樹)</span></button> survive drought by <span class="exam-red-ul">storing up to 120,000 litres of water inside swollen trunks</span> <span class="zh-note">(一般林木含 50% 水分並需每週 2–3 厘米降水；猴麵包樹可於腫脹樹幹儲存高達 12 萬公升水度過旱季)</span>.</li>
+          <li><strong>4. Climate Warming &amp; Upslope Retreat (Fig 4.7, AO2/AO3):</strong> Warming forces heat-intolerant species like the <button type="button" onclick="openSpeciesModal('pika')" class="species-trigger">📸 American pika <span class="zh-note">(美洲鼠兔)</span></button> to <span class="exam-red-ul">migrate to higher altitudes</span>. Conical peaks shrink habitat area towards sky-island extinction—whereas Macau’s <strong>Alto de Coloane (172.4m 疊石塘山)</strong> offers ~1.1°C cooling with zero high-altitude thermal refuge <span class="zh-note">(山體呈圓錐狀，鼠兔被迫往窄小山頂退縮；澳門疊石塘山過矮，無法提供垂直避暑空間)</span>.</li>
+        </ul>`
+      },
+      'step-2': {
+        title: '📓 Click to Expand: Section 2 Student Exam Study Notes — Isolation, Vicariance & Dispersal (地理隔離與特有種筆記)',
+        body: `<ul class="list-disc pl-5 space-y-1.5">
+          <li><strong>1. <button type="button" onclick="openGeoTerm('geographical_isolation')" class="geo-term-trigger">📘 Geographical Isolation <span class="zh-note">(地理隔離)</span></button> &amp; <button type="button" onclick="openGeoTerm('endemism')" class="geo-term-trigger">📘 Endemism <span class="zh-note">(特有現象)</span></button> (AO1):</strong> <span class="exam-red-ul">Physical barriers (oceans or mountain ranges) separate populations and block gene flow (基因流)</span>, generating <strong>endemic species</strong> restricted to one area and found nowhere else <span class="zh-note">(海洋與山脈阻斷基因交流，推動異域物種分化，形成全球獨一無二的特有種)</span>.</li>
+          <li><strong>2. <button type="button" onclick="openGeoTerm('vicariance')" class="geo-term-trigger">📘 Vicariance <span class="zh-note">(隔離分化)</span></button> vs. <button type="button" onclick="openGeoTerm('dispersal')" class="geo-term-trigger">📘 Dispersal <span class="zh-note">(跨海擴散)</span></button> in Madagascar (Fig 4.8–4.9, AO2):</strong> Madagascar lay inside <strong>Gondwana (170 mya 岡瓦納古陸)</strong> and <span class="exam-red-ul">split from India around 90 million years ago</span> (leaving ancient taxa via vicariance). Later, <button type="button" onclick="openSpeciesModal('lemur')" class="species-trigger">📸 lemurs <span class="zh-note">(環尾狐猴)</span></button> split from African primates <strong>~62 mya</strong>, rafted across the Mozambique Channel <strong>~54 mya</strong>, and radiated into <span class="exam-red-ul">≥50 endemic species</span> <span class="zh-note">(9000萬年前與印度分離造就原地留存種；狐猴則是 5400 萬年前乘漂浮植被筏跨海登島後適應輻射)</span>.</li>
+          <li><strong>3. <button type="button" onclick="openGeoTerm('biodiversity_hotspot')" class="geo-term-trigger">📘 Biodiversity Hotspot <span class="zh-note">(生物多樣性熱點)</span></button> Risk (AO3):</strong> Over <strong>90% of Madagascar’s species are endemic</strong> (comparable to Macau’s hill-stream <button type="button" onclick="openSpeciesModal('macau_crab')" class="species-trigger">📸 <i>Nanhaipotamon macau</i> <span class="zh-note">(澳門南海溪蟹)</span></button>), making small range size acutely vulnerable to clearing and climate shifts <span class="zh-note">(特有種分佈極局限，面對伐林或暖化時滅絕風險極高)</span>.</li>
+        </ul>`
+      },
+      'step-3': {
+        title: '📓 Click to Expand: Section 3 Student Exam Study Notes — Area Effect, Sand Dunes & Climax Drop (面積與演替筆記)',
+        body: `<ul class="list-disc pl-5 space-y-1.5">
+          <li><strong>1. <button type="button" onclick="openGeoTerm('species_area_relationship')" class="geo-term-trigger">📘 Species–Area Relationship <span class="zh-note">(物種–面積關係 S = cA<sup>z</sup>)</span></button> (AO1/AO2):</strong> <span class="exam-red-ul">Larger geographic areas support greater <button type="button" onclick="openGeoTerm('ecosystem_diversity')" class="geo-term-trigger">📘 ecosystem diversity <span class="zh-note">(生態系統多樣性)</span></button> (wetlands, grasslands, forests) and abundant food, water, and shelter</span> <span class="zh-note">(大面積可並存濕地、草原與森林，提供豐富棲息空間與食物資源)</span>.</li>
+          <li><strong>2. Coastal Sand Dune <button type="button" onclick="openGeoTerm('succession')" class="geo-term-trigger">📘 Succession <span class="zh-note">(生態演替)</span></button> (Psammosere 沙丘演替, AO2):</strong> Develops from bare alkaline <button type="button" onclick="openSpeciesModal('dune_embryo')" class="species-trigger">📸 embryo dunes <span class="zh-note">(胚胎沙丘 pH 8.4)</span></button> stabilised by pioneer <button type="button" onclick="openSpeciesModal('marram_grass')" class="species-trigger">📸 marram grass <span class="zh-note">(濱草)</span></button> into <button type="button" onclick="openSpeciesModal('dune_grey')" class="species-trigger">📸 grey dunes <span class="zh-note">(固定灰沙丘)</span></button> and <button type="button" onclick="openSpeciesModal('dune_scrub')" class="species-trigger">📸 dune scrub &amp; slacks <span class="zh-note">(灌木與濕窪地 — 多樣性最高峰)</span></button> <span class="zh-note">(腐植質逐級累積、生境生態位增加，於中晚期灌叢濕窪區達至生物多樣性高峰)</span>.</li>
+          <li><strong>3. AO3 <button type="button" onclick="openGeoTerm('climax_community')" class="geo-term-trigger">📘 Climax Community <span class="zh-note">(頂極群落競爭壟斷)</span></button> Caveat (Critical Exam Point):</strong> <span class="exam-red-ul">Late successional stages may actually have reduced biodiversity due to competition and dominance of only a few canopy species</span> (similar to dense monoculture <button type="button" onclick="openSpeciesModal('acacia_confusa')" class="species-trigger">📸 <i>Acacia confusa</i> <span class="zh-note">(澳門台灣相思人工純林遮蔭)</span></button>) <span class="zh-note">(演替晚期閉合樹冠遮蔽陽光並排擠下層草本，導致多樣性反而下降)</span>.</li>
+        </ul>`
+      },
+      'step-4': {
+        title: '📓 Click to Expand: Section 4 Student Exam Study Notes — Human Actions & The Fire Paradox (人類活動與火燒悖論筆記)',
+        body: `<ul class="list-disc pl-5 space-y-1.5">
+          <li><strong>1. Negative Anthropogenic Pressures (AO1):</strong> Land clearing for farming, logging, and urban growth fragments habitats, while <span class="exam-red-ul">industrial discharges and <button type="button" onclick="openGeoTerm('eutrophication')" class="geo-term-trigger">📘 agricultural runoff <span class="zh-note">(農業徑流優養化)</span></button> degrade water and soil quality</span> <span class="zh-note">(開墾伐木造成棲地割裂，肥水污染引發優養化與水體缺氧，縮減適居生境)</span>.</li>
+          <li><strong>2. Periodic <button type="button" onclick="openGeoTerm('controlled_burning')" class="geo-term-trigger">📘 Controlled Burning <span class="zh-note">(控制性火燒)</span></button> vs. Wildfire (AO2/AO3):</strong> Without fire (52% richness), decaying dead litter locks nutrients and smothers seedlings. <span class="exam-red-ul">Periodic controlled burning removes dead organic litter and rapidly returns nutrients to the soil (91% richness)</span>; however, <span class="exam-red-ul">uncontrolled or over-frequent fire destroys healthy species (26% richness)</span> <span class="zh-note">(適度低溫冷火清理窒息小苗的枯枝並快速釋放礦物灰燼養分；失控野火卻徹底焚毀健康樹冠與野生動物)</span>.</li>
+        </ul>`
+      },
+      'step-5': {
+        title: '📓 Click to Expand: Section 5 Student Exam Study Notes — Galápagos vs. Australia Case Synthesis (國際雙案例對照筆記)',
+        body: `<ul class="list-disc pl-5 space-y-1.5">
+          <li><strong>Case A — 🇪🇨 Galápagos Islands (Volcanic Hotspot, 973 km offshore):</strong> Never attached to mainland South America (<span class="exam-red-ul">0% vicariance; 100% <button type="button" onclick="openGeoTerm('dispersal')" class="geo-term-trigger">📘 oceanic dispersal <span class="zh-note">(海洋擴散)</span></button></span>), driving <button type="button" onclick="openGeoTerm('adaptive_radiation')" class="geo-term-trigger">📘 adaptive radiation <span class="zh-note">(適應輻射)</span></button> into 18 <button type="button" onclick="openSpeciesModal('darwin_finch')" class="species-trigger">📸 Darwin’s finches <span class="zh-note">(達爾文雀)</span></button>, yet <button type="button" onclick="openSpeciesModal('marine_iguana')" class="species-trigger">📸 marine iguanas <span class="zh-note">(海鬣蜥)</span></button> starve during El Niño sea warming <span class="zh-note">(年輕火山群島零板塊隔離，純靠洋流漂流擴散並填補空缺生態位，但極易受聖嬰暖水及入侵物種衝擊)</span>.</li>
+          <li><strong>Case B — 🇦🇺 Australia (Kakadu Cool Burns vs. SE Megafires):</strong> Ancient landmass (>35 mya isolated) hosting fire-adapted <button type="button" onclick="openSpeciesModal('eucalyptus')" class="species-trigger">📸 <i>Eucalyptus</i> <span class="zh-note">(桉樹)</span></button> &amp; <button type="button" onclick="openSpeciesModal('banksia')" class="species-trigger">📸 <i>Banksia</i> <span class="zh-note">(山龍眼屬耐熱萌發種)</span></button>. Indigenous Kakadu cool patch burns preserve canopy cover, whereas fuel suppression + extreme heatwave sparked the <span class="exam-red-ul">2019–20 Black Summer crown megafires (18.6M ha burned; &gt;60,000 <button type="button" onclick="openSpeciesModal('koala')" class="species-trigger">📸 koalas <span class="zh-note">(樹熊)</span></button> lost)</span> <span class="zh-note">(對比澳洲北部原住民冷火防燃護樹冠與東南澳洲禁火累積燃料導致毀滅性樹冠大火)</span>.</li>
+        </ul>`
+      }
+    };
+
+    Object.keys(COLLAPSIBLE_NOTES_EN).forEach(secId => {
+      const secEl = document.getElementById(secId);
+      if (secEl) {
+        secEl.querySelector('.student-note-details')?.remove();
+        const det = document.createElement('details');
+        det.className = 'student-note-details shadow-sm';
+        det.innerHTML = `
+          <summary>
+            <span>${COLLAPSIBLE_NOTES_EN[secId].title}</span>
+            <span class="text-xs font-extrabold text-emerald-700 bg-white px-2.5 py-0.5 rounded-full border border-emerald-300 shrink-0 ml-2">▼ Expand / Collapse</span>
+          </summary>
+          <div class="student-note-body">${COLLAPSIBLE_NOTES_EN[secId].body}</div>
+        `;
+        if (secEl.children[0]) secEl.children[0].after(det);
+      }
+    });
+  }
+
+  // =========================================================================
+  // [V5.0] 2. FIVE COMPLETELY DIFFERENT INTERACTIVE MINI-GAMES (NON-MCQ!)
+  // =========================================================================
+
+  // -------------------------------------------------------------------------
+  // GAME 1 (Section 1): Interactive Diagram Pinning & Field Lab Fill-in-the-Map
+  // (圖表填圖與數據配對工作台：點擊下方標籤卡，釘選到 Fig 4.5 曲線圖與儲水圖的空白熱區)
+  // -------------------------------------------------------------------------
+  const MG1_TOKENS = [
+    { id: 't_cold', label: '❄️ Slow Metabolic Rate (0–10°C 低溫代謝減緩)' },
+    { id: 't_opt', label: '🌡️ ~40°C Optimum Peak (酵素最佳反應溫度峰值)' },
+    { id: 't_denat', label: '🔥 >40°C Enzymes Denature (高溫酵素變性崩跌)' },
+    { id: 't_baobab', label: '🌴 120,000 L Trunk Store (猴麵包樹幹儲水量)' },
+    { id: 't_pika', label: '⛰️ Upslope Altitude Shift (鼠兔向高海拔垂直遷移)' }
+  ];
+  const MG1_HOTSPOTS = [
+    { slotId: 's_cold', expect: 't_cold', title: 'Zone ①: 0°C–10°C Curve Base (圖4.5低溫起點)', hint: 'What happens to cellular energy production in extreme cold? (極寒下的代謝變化)' },
+    { slotId: 's_opt', expect: 't_opt', title: 'Zone ②: Curve Apex at 40°C (圖4.5曲線最高峰)', hint: 'Peak catalytic reaction speed temperature (催化反應最快溫度)' },
+    { slotId: 's_denat', expect: 't_denat', title: 'Zone ③: Steep Drop 40°C➔60°C (圖4.5右側陡降段)', hint: 'Why does reaction rate fall rapidly above 40°C? (超過40°C為何急跌)' },
+    { slotId: 's_baobab', expect: 't_baobab', title: 'Zone ④: Fig 4.6 Xerophyte Reservoir (圖4.6耐旱儲水適應)', hint: 'Overcomes <2–3 cm/wk rainfall limit (克服每週少於2–3cm降水限制)' },
+    { slotId: 's_pika', expect: 't_pika', title: 'Zone ⑤: Fig 4.7 Rocky Mts Summit (圖4.7高山暖化反應)', hint: 'Response of heat-sensitive American pika (美洲鼠兔面對升溫的遷移方向)' }
+  ];
+  let mg1SelectedToken = null;
+  let mg1Placements = {};
+
+  function renderGame1() {
+    const box = document.getElementById('mg-box-1');
+    if (!box) return;
+    const correctCount = MG1_HOTSPOTS.filter(h => mg1Placements[h.slotId] === h.expect).length;
+
+    box.innerHTML = `
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <span class="text-xs font-extrabold text-indigo-950 bg-indigo-100 px-2.5 py-1 rounded-full">🗺️ Mode: Diagram Label Pinning &amp; Map Fill-in (圖表填圖配對模式 • 已填對 ${correctCount} / 5)</span>
+          <p class="text-xs text-slate-600 mt-1"><strong>How to Play (玩法說明):</strong> Step 1: Click a <strong>Data Tag (數據標籤卡)</strong> below ➔ Step 2: Click the matching <strong>[?] Hotspot Box (圖表空白座標框)</strong> on the diagram &amp; field cards!</p>
+        </div>
+        <button onclick="mg1SelectedToken=null;mg1Placements={};renderGame1()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700">🔄 Reset Diagram (重置填圖)</button>
+      </div>
+
+      <!-- Step 1: Selectable Token Bank -->
+      <div class="p-3 rounded-xl bg-indigo-50/80 border border-indigo-200 mb-3">
+        <div class="text-[11px] font-extrabold text-indigo-950 uppercase tracking-wider mb-2">🏷️ Step 1 — Click a Label Tag to Pick It Up (點擊選取下方標籤卡):</div>
+        <div class="flex flex-wrap gap-2">
+          ${MG1_TOKENS.map(tk => {
+            const isPlacedCorrectly = Object.keys(mg1Placements).some(k => mg1Placements[k] === tk.id && MG1_HOTSPOTS.find(h => h.slotId === k)?.expect === tk.id);
+            const isSel = (mg1SelectedToken === tk.id);
+            return `<button type="button" onclick="selectMg1Token('${tk.id}')" class="mg-token ${isSel ? 'selected' : ''} ${isPlacedCorrectly ? 'placed' : ''}">
+              ${isPlacedCorrectly ? '✅ ' : '📌 '}${tk.label}
+            </button>`;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- Step 2: Interactive SVG Diagram + Field Hotspot Boxes -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+        <div class="lg:col-span-6 bg-white p-2.5 rounded-xl border border-slate-200">
+          <div class="text-[11px] font-bold text-slate-700 mb-1 text-center">📈 Fig 4.5 Interactive Fill-in Diagram (點擊下方①②③對應圖上位置)</div>
+          <svg viewBox="0 0 380 155" class="w-full h-auto">
+            <line x1="40" y1="18" x2="40" y2="125" stroke="#334155" stroke-width="1.8"/>
+            <line x1="40" y1="125" x2="355" y2="125" stroke="#334155" stroke-width="1.8"/>
+            <path d="M 40,122 C 95,112 185,26 240,26 C 280,26 315,82 340,125" fill="none" stroke="#9f1239" stroke-width="3"/>
+            <line x1="240" y1="26" x2="240" y2="125" stroke="#10b981" stroke-dasharray="4,3" stroke-width="1.5"/>
+            <text x="40" y="140" font-size="9" text-anchor="middle" fill="#475569">0°C</text>
+            <text x="140" y="140" font-size="9" text-anchor="middle" fill="#475569">20°C</text>
+            <text x="240" y="140" font-size="9.5" font-weight="bold" text-anchor="middle" fill="#047857">40°C</text>
+            <text x="340" y="140" font-size="9" font-weight="bold" text-anchor="middle" fill="#dc2626">60°C</text>
+
+            <!-- Callout Badges on SVG -->
+            <g onclick="placeMg1Slot('s_cold')" class="cursor-pointer">
+              <rect x="48" y="76" width="82" height="24" rx="5" fill="${mg1Placements['s_cold']==='t_cold'?'#d1fae5':'#fef3c7'}" stroke="#d97706" stroke-width="1.5"/>
+              <text x="89" y="91" font-size="8.5" font-weight="bold" text-anchor="middle" fill="#1e293b">${mg1Placements['s_cold']==='t_cold'?'✅ Slow Metab.':'[? Zone ① 0–10°C]'}</text>
+            </g>
+            <g onclick="placeMg1Slot('s_opt')" class="cursor-pointer">
+              <rect x="175" y="4" width="125" height="22" rx="5" fill="${mg1Placements['s_opt']==='t_opt'?'#d1fae5':'#fef3c7'}" stroke="#059669" stroke-width="1.5"/>
+              <text x="237" y="18" font-size="8.5" font-weight="bold" text-anchor="middle" fill="#1e293b">${mg1Placements['s_opt']==='t_opt'?'✅ ~40°C Optimum':'[? Zone ② Peak]'}</text>
+            </g>
+            <g onclick="placeMg1Slot('s_denat')" class="cursor-pointer">
+              <rect x="262" y="56" width="108" height="24" rx="5" fill="${mg1Placements['s_denat']==='t_denat'?'#d1fae5':'#ffe4e6'}" stroke="#e11d48" stroke-width="1.5"/>
+              <text x="316" y="71" font-size="8.5" font-weight="bold" text-anchor="middle" fill="#1e293b">${mg1Placements['s_denat']==='t_denat'?'✅ Denatures >40°C':'[? Zone ③ >40°C]'}</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="lg:col-span-6 grid grid-cols-1 gap-2">
+          ${MG1_HOTSPOTS.map(h => {
+            const placedId = mg1Placements[h.slotId];
+            const placedObj = MG1_TOKENS.find(t => t.id === placedId);
+            const isOk = placedId && (placedId === h.expect);
+            const isErr = placedId && (placedId !== h.expect);
+            return `
+              <div onclick="placeMg1Slot('${h.slotId}')" class="mg-slot ${isOk ? 'filled-ok' : isErr ? 'filled-err' : ''}">
+                <div class="text-xs font-extrabold">${h.title}</div>
+                <div class="text-[11px] mt-0.5 ${placedObj ? 'font-bold' : 'text-slate-500'}">
+                  ${placedObj ? (isOk ? '✅ ' + placedObj.label : '❌ ' + placedObj.label + ' (Click to replace / 點擊重填)') : '➕ Click here to pin selected tag (' + h.hint + ')'}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+      ${correctCount === 5 ? `<div class="mt-3 p-3 rounded-xl bg-emerald-100 border border-emerald-400 text-emerald-950 font-extrabold text-xs">🎉 All 5 Diagram Zones Correctly Pinned! You have mastered Figure 4.5 (40°C optimum vs denaturation), Figure 4.6 (120,000 L baobab storage), and Figure 4.7 (pika upslope migration)! (恭喜完成全部 5 個氣候圖表填圖座標！)</div>` : ''}
+    `;
+  }
+
+  function selectMg1Token(id) {
+    mg1SelectedToken = (mg1SelectedToken === id) ? null : id;
+    renderGame1();
+  }
+
+  function placeMg1Slot(slotId) {
+    if (!mg1SelectedToken) {
+      const firstUnplaced = MG1_TOKENS.find(tk => !Object.keys(mg1Placements).some(k => mg1Placements[k] === tk.id && MG1_HOTSPOTS.find(h => h.slotId === k)?.expect === tk.id));
+      if (firstUnplaced) mg1SelectedToken = firstUnplaced.id;
+    }
+    if (!mg1SelectedToken) return;
+    mg1Placements[slotId] = mg1SelectedToken;
+    const h = MG1_HOTSPOTS.find(x => x.slotId === slotId);
+    if (h && h.expect === mg1SelectedToken) mg1SelectedToken = null;
+    renderGame1();
+  }
+
+  // -------------------------------------------------------------------------
+  // GAME 2 (Section 2): Gondwana Geological Timeline & Dual-Bucket Sorter
+  // (馬達加斯加演化時間軸填空 + Vicariance vs Dispersal 雙軌分類箱)
+  // -------------------------------------------------------------------------
+  const MG2_ITEMS = [
+    { id: 'sp_boa', name: '🐍 Gondwanan Boid Snakes & Iguanids (岡瓦納古蟒蛇與美洲鬣蜥支系)', hint: 'Already lived on Gondwana before the ~90 mya split from India (分裂前已存在於古大陸上)', bucket: 'vicariance' },
+    { id: 'sp_lemur', name: '🐒 Ring-tailed Lemurs — Fig 4.9 (環尾狐猴：演化出≥50特有種)', hint: 'Crossed Mozambique Channel on floating vegetation rafts ~54 mya (約5400萬年前乘漂浮植被筏跨海登島)', bucket: 'dispersal' },
+    { id: 'sp_finch', name: '🐦 Galápagos Darwin’s Finches (加拉帕戈斯達爾文雀)', hint: 'Colonised young volcanic islands 973 km off Ecuador across open ocean (飛越973公里海洋抵達年輕火山島)', bucket: 'dispersal' },
+    { id: 'sp_crab', name: '🦀 Macau Hill-Stream Crab Nanhaipotamon macau (澳門南海溪蟹)', hint: 'Stranded in situ on Coloane hills when Holocene sea-level rise flooded surrounding plains (海平面上升隔絕陸連島後留存原地演化)', bucket: 'vicariance' }
+  ];
+  let mg2ActiveItem = 'sp_boa';
+  let mg2Buckets = { vicariance: [], dispersal: [] };
+  let mg2SplitMya = '', mg2LemurMya = '';
+
+  function renderGame2() {
+    const box = document.getElementById('mg-box-2');
+    if (!box) return;
+    const allAssigned = mg2Buckets.vicariance.length + mg2Buckets.dispersal.length;
+    const timelineOk = (mg2SplitMya === '90' && mg2LemurMya === '54');
+
+    box.innerHTML = `
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <span class="text-xs font-extrabold text-indigo-950 bg-indigo-100 px-2.5 py-1 rounded-full">🚢 Mode: Geological Timeline Cloze + Dual-Track Sorter (年代填空＋雙軌分類箱)</span>
+          <p class="text-xs text-slate-600 mt-1"><strong>Part A:</strong> Select the exact geological dates on the timeline (完成地質年代填空) ➔ <strong>Part B:</strong> Sort the 4 species into <strong>Vicariance (板塊留存)</strong> vs. <strong>Dispersal (跨海擴散)</strong>!</p>
+        </div>
+        <button onclick="mg2Buckets={vicariance:[],dispersal:[]};mg2SplitMya='';mg2LemurMya='';mg2ActiveItem='sp_boa';renderGame2()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700">🔄 Reset Sorter (重置遊戲)</button>
+      </div>
+
+      <!-- Part A: Interactive Timeline Cloze -->
+      <div class="p-3 rounded-xl bg-amber-50 border border-amber-300 mb-3 text-xs space-y-2">
+        <div class="font-extrabold text-amber-950">⏳ Part A — Complete the Madagascar Timeline (請選擇正確的地質年代數字):</div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span>1. Madagascar split from India (Vicariance):</span>
+          <select onchange="mg2SplitMya=this.value;renderGame2()" class="px-2 py-1 rounded border border-amber-400 bg-white font-extrabold text-amber-950">
+            <option value="">-- Select mya --</option>
+            <option value="170" ${mg2SplitMya==='170'?'selected':''}>170 mya</option>
+            <option value="90" ${mg2SplitMya==='90'?'selected':''}>~90 mya (88 mya panel)</option>
+            <option value="10" ${mg2SplitMya==='10'?'selected':''}>10 mya</option>
+          </select>
+          <span class="ml-2">2. Lemurs rafted from Africa (Dispersal):</span>
+          <select onchange="mg2LemurMya=this.value;renderGame2()" class="px-2 py-1 rounded border border-amber-400 bg-white font-extrabold text-amber-950">
+            <option value="">-- Select mya --</option>
+            <option value="162" ${mg2LemurMya==='162'?'selected':''}>162 mya</option>
+            <option value="54" ${mg2LemurMya==='54'?'selected':''}>~54 mya (after 62 mya primate split)</option>
+            <option value="2" ${mg2LemurMya==='2'?'selected':''}>2 mya</option>
+          </select>
+          ${timelineOk ? `<span class="text-emerald-800 font-extrabold">✅ Timeline Verified! (~90 mya Split &amp; ~54 mya Lemur Dispersal)</span>` : ''}
+        </div>
+      </div>
+
+      <!-- Part B: Unsorted Specimen Cards -->
+      <div class="mb-3">
+        <div class="text-[11px] font-extrabold text-slate-600 uppercase mb-1.5">📦 Click a Specimen Card below, then click its Arrival Track Bucket (先點選物種卡，再點擊下方分類箱):</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          ${MG2_ITEMS.map(item => {
+            const inVic = mg2Buckets.vicariance.includes(item.id);
+            const inDis = mg2Buckets.dispersal.includes(item.id);
+            const isPlaced = inVic || inDis;
+            const isSel = (mg2ActiveItem === item.id);
+            return `
+              <div onclick="mg2ActiveItem='${item.id}';renderGame2()" class="p-2.5 rounded-xl border-2 cursor-pointer transition ${isPlaced ? 'opacity-45 border-dashed border-slate-300 bg-slate-50' : isSel ? 'border-indigo-600 bg-indigo-50/90 shadow-sm' : 'border-slate-200 bg-white hover:border-indigo-300'}">
+                <div class="font-extrabold text-xs text-slate-900">${isPlaced ? '✅ ' : '🎯 '}${item.name}</div>
+                <div class="text-[11px] text-slate-600 mt-0.5">${item.hint}</div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- Two Sorting Buckets -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div onclick="dropIntoMg2Bucket('vicariance')" class="p-3.5 rounded-xl border-2 border-dashed border-emerald-600 bg-emerald-50/60 hover:bg-emerald-100/70 cursor-pointer transition min-h-[110px]">
+          <div class="font-extrabold text-emerald-950 text-xs flex items-center justify-between">
+            <span>🪨 Track 1: VICARIANCE Bucket (地理隔離分化／隨板塊留存)</span>
+            <span class="bg-emerald-700 text-white px-2 py-0.5 rounded text-[10px]">+ Drop Here</span>
+          </div>
+          <p class="text-[10.5px] text-emerald-800 mt-0.5">"Rode there" on splitting landmass / stranded in situ when barrier formed (隨大陸分裂或海平面上升留在原地)</p>
+          <div class="mt-2 space-y-1">
+            ${mg2Buckets.vicariance.map(id => {
+              const obj = MG2_ITEMS.find(x => x.id === id);
+              const ok = obj.bucket === 'vicariance';
+              return `<div class="p-1.5 rounded bg-white border ${ok?'border-emerald-400 text-emerald-900':'border-rose-400 text-rose-900'} text-[11px] font-bold">${ok?'✅':'❌ (Should be Dispersal!)'} ${obj.name}</div>`;
+            }).join('')}
+          </div>
+        </div>
+
+        <div onclick="dropIntoMg2Bucket('dispersal')" class="p-3.5 rounded-xl border-2 border-dashed border-sky-600 bg-sky-50/60 hover:bg-sky-100/70 cursor-pointer transition min-h-[110px]">
+          <div class="font-extrabold text-sky-950 text-xs flex items-center justify-between">
+            <span>🌊 Track 2: DISPERSAL Bucket (跨海擴散／生物主動或漂流遷入)</span>
+            <span class="bg-sky-700 text-white px-2 py-0.5 rounded text-[10px]">+ Drop Here</span>
+          </div>
+          <p class="text-[10.5px] text-sky-800 mt-0.5">Immigrated across an existing ocean barrier AFTER the island was already isolated (島嶼獨立後才跨海遷入)</p>
+          <div class="mt-2 space-y-1">
+            ${mg2Buckets.dispersal.map(id => {
+              const obj = MG2_ITEMS.find(x => x.id === id);
+              const ok = obj.bucket === 'dispersal';
+              return `<div class="p-1.5 rounded bg-white border ${ok?'border-emerald-400 text-emerald-900':'border-rose-400 text-rose-900'} text-[11px] font-bold">${ok?'✅':'❌ (Should be Vicariance!)'} ${obj.name}</div>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+      ${(allAssigned === 4 && timelineOk) ? `<div class="mt-3 p-3 rounded-xl bg-emerald-100 border border-emerald-400 text-emerald-950 font-extrabold text-xs">🎉 Perfect Biogeographical Classification! You accurately distinguished Gondwanan Vicariance (~90 mya) from Oceanic Dispersal (~54 mya lemur rafting)!</div>` : ''}
+    `;
+  }
+
+  function dropIntoMg2Bucket(bName) {
+    if (!mg2ActiveItem) return;
+    mg2Buckets.vicariance = mg2Buckets.vicariance.filter(x => x !== mg2ActiveItem);
+    mg2Buckets.dispersal = mg2Buckets.dispersal.filter(x => x !== mg2ActiveItem);
+    mg2Buckets[bName].push(mg2ActiveItem);
+    const nextUnplaced = MG2_ITEMS.find(x => !mg2Buckets.vicariance.includes(x.id) && !mg2Buckets.dispersal.includes(x.id));
+    mg2ActiveItem = nextUnplaced ? nextUnplaced.id : null;
+    renderGame2();
+  }
+
+  // -------------------------------------------------------------------------
+  // GAME 3 (Section 3): Sand Dune Psammosere Transect Builder & Curve Plotter
+  // (沙丘演替橫斷面排圖工程師 ＋ 親手拉動 Stage 4 峰值與 Stage 5 競爭回落曲線)
+  // -------------------------------------------------------------------------
+  const MG3_CARDS = [
+    { id: 'c_s1', order: 1, name: '🌱 Bare Embryo Dune (初生沙丘：pH 8.4 強風鹽霧)', soil: 'Humus <0.5%' },
+    { id: 'c_s2', order: 2, name: '🌾 Marram Grass Fore Dune (黃沙丘：濱草深根固沙)', soil: 'Humus 1–2%' },
+    { id: 'c_s3', order: 3, name: '🌿 Fixed Grey Dune Herb Mat (固定灰沙丘：苔蘚百里香)', soil: 'Humus 5–10%' },
+    { id: 'c_s4', order: 4, name: '🦋 Dune Slack & Scrub Mosaic (沙丘濕地與灌叢交錯帶)', soil: 'Peak Niche Variety!' },
+    { id: 'c_s5', order: 5, name: '🌲 Closed Climax Woodland (晚期頂極林：少數樹種遮蔭壟斷)', soil: 'Canopy Shade >90%' }
+  ];
+  let mg3SelectedCard = 'c_s2';
+  let mg3Transect = { 1: null, 2: null, 3: null, 4: null, 5: null };
+  let mg3Stage4Val = 88, mg3Stage5Val = 85; // Student must lower Stage 5 below Stage 4 to prove p.57 caveat!
+
+  function renderGame3() {
+    const box = document.getElementById('mg-box-3');
+    if (!box) return;
+    const slotsCorrect = [1,2,3,4,5].filter(s => mg3Transect[s] === `c_s${s}`).length;
+    const curveCorrect = (mg3Stage4Val >= 80 && mg3Stage5Val <= 70 && mg3Stage4Val > mg3Stage5Val);
+
+    box.innerHTML = `
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <span class="text-xs font-extrabold text-indigo-950 bg-indigo-100 px-2.5 py-1 rounded-full">🏖️ Mode: Transect Sequence Builder + Curve Plotter (橫斷面排圖＋曲線繪製器 • 排圖 ${slotsCorrect}/5)</span>
+          <p class="text-xs text-slate-600 mt-1"><strong>Task 1:</strong> Place the 5 Sand Dune cards in chronological order from Sea (Slot 1) to Inland (Slot 5) ➔ <strong>Task 2:</strong> Adjust the <strong>Stage 5 Climax Biodiversity Slider</strong> to reflect textbook p.57’s competitive dominance rule!</p>
+        </div>
+        <button onclick="mg3Transect={1:null,2:null,3:null,4:null,5:null};mg3Stage4Val=88;mg3Stage5Val=85;renderGame3()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700">🔄 Reset Transect</button>
+      </div>
+
+      <!-- Shuffled Cards Bank -->
+      <div class="flex flex-wrap gap-2 mb-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
+        ${[MG3_CARDS[1], MG3_CARDS[4], MG3_CARDS[0], MG3_CARDS[3], MG3_CARDS[2]].map(c => {
+          const isPlaced = Object.values(mg3Transect).includes(c.id);
+          const isSel = (mg3SelectedCard === c.id);
+          return `<button type="button" onclick="mg3SelectedCard='${c.id}';renderGame3()" class="mg-token ${isSel?'selected':''} ${isPlaced?'placed':''}">
+            ${isPlaced ? '✅ ' : '🃏 '}${c.name}
+          </button>`;
+        }).join('')}
+      </div>
+
+      <!-- 5 Coastal-to-Inland Transect Slots -->
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 mb-4">
+        ${[1,2,3,4,5].map(slotNum => {
+          const cid = mg3Transect[slotNum];
+          const cardObj = MG3_CARDS.find(x => x.id === cid);
+          const ok = (cid === `c_s${slotNum}`);
+          return `
+            <div onclick="placeMg3Transect(${slotNum})" class="mg-slot ${cardObj ? (ok ? 'filled-ok' : 'filled-err') : ''}">
+              <div class="text-[10.5px] font-extrabold uppercase text-slate-500">🌊➔🌲 Slot ${slotNum} (階段 ${slotNum})</div>
+              <div class="text-xs font-bold mt-1">${cardObj ? (ok ? '✅ ' + cardObj.name : '❌ Wrong Order: ' + cardObj.name) : '➕ Click to place Stage ' + slotNum}</div>
+              ${cardObj ? `<div class="text-[10px] text-emerald-800 mt-0.5">${cardObj.soil}</div>` : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+
+      <!-- Task 2: Interactive Curve Calibration (Stage 4 vs Stage 5 Climax Drop) -->
+      <div class="p-3.5 rounded-xl bg-amber-50/90 border border-amber-300 space-y-2">
+        <div class="font-extrabold text-amber-950 text-xs">📉 Task 2 — Plot the Biodiversity Curve (p.57 AO3 Rule: Why does Stage 5 Climax drop below Stage 4? 請拉動滑桿校準演替晚期曲線高度):</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+          <div class="space-y-2 text-xs">
+            <div>
+              <div class="flex justify-between font-bold"><span>Stage 4 (Dune Scrub &amp; Slack Peak 灌叢濕地峰值):</span><span class="text-emerald-800">${mg3Stage4Val}%</span></div>
+              <input type="range" min="50" max="98" value="${mg3Stage4Val}" oninput="mg3Stage4Val=parseInt(this.value);renderGame3()">
+            </div>
+            <div>
+              <div class="flex justify-between font-bold"><span>Stage 5 (Late Climax Woodland 晚期頂極林多樣性):</span><span class="${curveCorrect?'text-emerald-800':'text-rose-700'}">${mg3Stage5Val}% ${curveCorrect?'✅ (Dropped due to canopy dominance!)':'⚠️ (Too high! Pull down to ≤70%)'}</span></div>
+              <input type="range" min="35" max="95" value="${mg3Stage5Val}" oninput="mg3Stage5Val=parseInt(this.value);renderGame3()">
+            </div>
+          </div>
+          <div class="bg-white p-2 rounded-xl border border-amber-200">
+            <svg viewBox="0 0 260 95" class="w-full h-auto">
+              <line x1="25" y1="10" x2="25" y2="78" stroke="#64748b" stroke-width="1.5"/>
+              <line x1="25" y1="78" x2="245" y2="78" stroke="#64748b" stroke-width="1.5"/>
+              <polyline fill="none" stroke="${curveCorrect?'#059669':'#e11d48'}" stroke-width="3" points="35,70 80,55 130,38 180,${78 - Math.round(mg3Stage4Val*0.62)} 230,${78 - Math.round(mg3Stage5Val*0.62)}"/>
+              <circle cx="180" cy="${78 - Math.round(mg3Stage4Val*0.62)}" r="4.5" fill="#047857"/>
+              <circle cx="230" cy="${78 - Math.round(mg3Stage5Val*0.62)}" r="4.5" fill="${curveCorrect?'#059669':'#e11d48'}"/>
+              <text x="180" y="90" font-size="8" font-weight="bold" text-anchor="middle" fill="#047857">St.4 Peak</text>
+              <text x="230" y="90" font-size="8" font-weight="bold" text-anchor="middle" fill="#b45309">St.5 Climax</text>
+            </svg>
+          </div>
+        </div>
+        ${(slotsCorrect === 5 && curveCorrect) ? `<div class="p-2.5 rounded-lg bg-emerald-100 border border-emerald-400 text-emerald-950 font-extrabold text-xs">🎉 Master Ecologist! You built the exact sand dune succession sequence AND demonstrated p.57's AO3 evaluation caveat (late successional stages decline due to competitive dominance of a few canopy species)!</div>` : ''}
+      </div>
+    `;
+  }
+
+  function placeMg3Transect(slotNum) {
+    if (!mg3SelectedCard) return;
+    Object.keys(mg3Transect).forEach(k => { if (mg3Transect[k] === mg3SelectedCard) mg3Transect[k] = null; });
+    mg3Transect[slotNum] = mg3SelectedCard;
+    const nextUnplaced = MG3_CARDS.find(c => !Object.values(mg3Transect).includes(c.id));
+    if (nextUnplaced) mg3SelectedCard = nextUnplaced.id;
+    renderGame3();
+  }
+
+  // -------------------------------------------------------------------------
+  // GAME 4 (Section 4): Role-Play Ecological Reserve Manager Simulator
+  // (場景代入模擬器：扮演澳洲護林員，調控 3 組生態管理旋鈕以達成 ≥85 分平衡指標)
+  // -------------------------------------------------------------------------
+  let mg4BurnFreq = 0; // 0=No Fire, 1=Periodic Cool Burn (Optimal), 2=Frequent Hot Wildfire
+  let mg4LitterClear = 75;
+  let mg4RunoffFilter = 80;
+
+  function renderGame4() {
+    const box = document.getElementById('mg-box-4');
+    if (!box) return;
+
+    let soilFert = 50, banksiaSprout = 40, koalaSafe = 60, waterClean = mg4RunoffFilter;
+    if (mg4BurnFreq === 0) {
+      soilFert = 42; banksiaSprout = 22; koalaSafe = 75;
+    } else if (mg4BurnFreq === 1) {
+      soilFert = Math.min(98, Math.round(55 + mg4LitterClear * 0.48));
+      banksiaSprout = Math.min(96, Math.round(50 + mg4LitterClear * 0.48));
+      koalaSafe = 94;
+    } else {
+      soilFert = 24; banksiaSprout = 28; koalaSafe = 14;
+    }
+    const totalBioIndex = Math.round((soilFert * 0.3) + (banksiaSprout * 0.25) + (koalaSafe * 0.25) + (waterClean * 0.2));
+    const missionPassed = (totalBioIndex >= 85 && mg4BurnFreq === 1);
+
+    box.innerHTML = `
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <span class="text-xs font-extrabold text-indigo-950 bg-indigo-100 px-2.5 py-1 rounded-full">🔥 Mode: Reserve Ranger Scenario Role-Play (場景代入：澳洲生態保護區護林員模擬器)</span>
+          <p class="text-xs text-slate-600 mt-1"><strong>Your Mission (任務目標):</strong> You are the Chief Ranger of Kakadu &amp; Blue Mountains Reserve! Configure the 3 management controls below to achieve an <strong>Ecosystem Biodiversity Index ≥ 85 / 100</strong>!</p>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-black ${missionPassed ? 'bg-emerald-600 text-white' : 'bg-amber-100 text-amber-900 border border-amber-300'}">
+          Current Index: ${totalBioIndex} / 100 ${missionPassed ? '🏆 MISSION PASSED!' : '(Target: ≥85)'}
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+        <!-- Control Console -->
+        <div class="lg:col-span-6 space-y-3 bg-white p-3.5 rounded-xl border border-slate-200">
+          <div class="text-xs font-extrabold text-slate-800">🎛️ Ranger Control Console (護林員管理控制台):</div>
+
+          <div>
+            <div class="text-xs font-bold text-slate-700 mb-1">1. Fire Regime Policy (火燒管理政策選擇):</div>
+            <div class="grid grid-cols-3 gap-1.5">
+              <button type="button" onclick="mg4BurnFreq=0;renderGame4()" class="p-2 rounded-lg border text-[11px] font-bold ${mg4BurnFreq===0?'border-2 border-indigo-600 bg-indigo-50 text-indigo-950':'border-slate-200 bg-slate-50'}">🚫 Total Ban<br><span class="text-[9.5px] font-normal">(完全禁火堆積枯枝)</span></button>
+              <button type="button" onclick="mg4BurnFreq=1;renderGame4()" class="p-2 rounded-lg border text-[11px] font-bold ${mg4BurnFreq===1?'border-2 border-emerald-600 bg-emerald-50 text-emerald-950':'border-slate-200 bg-slate-50'}">🔥 Cool Patch Burn<br><span class="text-[9.5px] font-normal">(週期性控制冷火)</span></button>
+              <button type="button" onclick="mg4BurnFreq=2;renderGame4()" class="p-2 rounded-lg border text-[11px] font-bold ${mg4BurnFreq===2?'border-2 border-rose-600 bg-rose-50 text-rose-950':'border-slate-200 bg-slate-50'}">💥 Hot Crown Fire<br><span class="text-[9.5px] font-normal">(失控高頻樹冠火)</span></button>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-bold">
+              <span>2. Dead Litter Removal Coverage (清除枯枝落葉比例):</span>
+              <span class="text-emerald-800">${mg4LitterClear}%</span>
+            </div>
+            <input type="range" min="10" max="95" step="5" value="${mg4LitterClear}" oninput="mg4LitterClear=parseInt(this.value);renderGame4()">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs font-bold">
+              <span>3. Riparian Buffer vs Agricultural Runoff (攔截農業徑流污染):</span>
+              <span class="text-sky-800">${mg4RunoffFilter}%</span>
+            </div>
+            <input type="range" min="10" max="95" step="5" value="${mg4RunoffFilter}" oninput="mg4RunoffFilter=parseInt(this.value);renderGame4()">
+          </div>
+        </div>
+
+        <!-- Live Telemetry Gauges -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-2.5">
+          <div class="p-3 rounded-xl bg-white border border-slate-200">
+            <div class="text-[10.5px] text-slate-500 font-bold">♻️ Soil Ash Nutrient Return (土壤養分歸還)</div>
+            <div class="text-sm font-black mt-0.5 ${soilFert>=80?'text-emerald-700':'text-amber-700'}">${soilFert}%</div>
+            <div class="w-full h-2.5 bg-slate-200 rounded-full mt-1 overflow-hidden"><div class="h-full bg-emerald-600" style="width:${soilFert}%"></div></div>
+          </div>
+          <div class="p-3 rounded-xl bg-white border border-slate-200">
+            <div class="text-[10.5px] text-slate-500 font-bold">🌱 Banksia Seed Germination (耐火種子萌發)</div>
+            <div class="text-sm font-black mt-0.5 ${banksiaSprout>=80?'text-teal-700':'text-amber-700'}">${banksiaSprout}%</div>
+            <div class="w-full h-2.5 bg-slate-200 rounded-full mt-1 overflow-hidden"><div class="h-full bg-teal-600" style="width:${banksiaSprout}%"></div></div>
+          </div>
+          <div class="p-3 rounded-xl bg-white border border-slate-200">
+            <div class="text-[10.5px] text-slate-500 font-bold">🐨 Canopy Koala Survival (樹冠樹熊存活率)</div>
+            <div class="text-sm font-black mt-0.5 ${koalaSafe>=80?'text-emerald-700':'text-rose-700'}">${koalaSafe}%</div>
+            <div class="w-full h-2.5 bg-slate-200 rounded-full mt-1 overflow-hidden"><div class="h-full ${koalaSafe>=80?'bg-emerald-600':'bg-rose-600'}" style="width:${koalaSafe}%"></div></div>
+          </div>
+          <div class="p-3 rounded-xl bg-white border border-slate-200">
+            <div class="text-[10.5px] text-slate-500 font-bold">💧 Stream Water Quality (溪流水質潔淨度)</div>
+            <div class="text-sm font-black mt-0.5 ${waterClean>=75?'text-sky-700':'text-rose-700'}">${waterClean}%</div>
+            <div class="w-full h-2.5 bg-slate-200 rounded-full mt-1 overflow-hidden"><div class="h-full bg-sky-600" style="width:${waterClean}%"></div></div>
+          </div>
+        </div>
+      </div>
+      ${missionPassed ? `<div class="mt-3 p-3 rounded-xl bg-emerald-100 border border-emerald-400 text-emerald-950 font-extrabold text-xs">🏆 Chief Ranger Commendation! By combining Periodic Cool Patch Burning (${mg4LitterClear}% litter cleared) with ${mg4RunoffFilter}% agricultural runoff interception, you prevented choking litter buildup, rapidly recycled soil nutrients, and protected upper Eucalyptus canopies for koalas!</div>` : ''}
+    `;
+  }
+
+  // -------------------------------------------------------------------------
+  // GAME 5 (Section 6): Cause-and-Effect Linker + Examiner's Red Pen Fixer
+  // (考點因果配對矩陣 ＋ 閱卷員紅筆改錯雙合一挑戰)
+  // -------------------------------------------------------------------------
+  const MG5_CAUSES = [
+    { id: 'c1', text: '1. Temperature rises above 40°C (氣溫超過 40°C 最佳值)' },
+    { id: 'c2', text: '2. Conical mountain geometry as Pika shifts upslope (鼠兔向圓錐形山頂遷移)' },
+    { id: 'c3', text: '3. Closed canopy in late successional climax forest (演替晚期閉合樹冠)' },
+    { id: 'c4', text: '4. Periodic low-intensity controlled burning (週期性低強度控制火燒)' }
+  ];
+  const MG5_EFFECTS = [
+    { id: 'e_c3', match: 'c3', text: '➔ Few dominant species monopolise light & reduce understory biodiversity (少數優勢種壟斷陽光導致林下多樣性回落)' },
+    { id: 'e_c1', match: 'c1', text: '➔ Enzymes denature & energy demand exceeds supply (酵素變性且能量供應超負荷)' },
+    { id: 'e_c4', match: 'c4', text: '➔ Removes choking dead organic litter & rapidly returns ash nutrients to soil (清除窒息小苗的枯枝並快速歸還養分)' },
+    { id: 'e_c2', match: 'c2', text: '➔ Available alpine habitat area shrinks & fragments on isolated peaks (高山棲地面積急劇縮小並孤島化)' }
+  ];
+  let mg5SelectedCause = 'c1';
+  let mg5Pairs = {};
+
+  function renderGame5() {
+    const box = document.getElementById('mg-box-6');
+    if (!box) return;
+    const matchedCount = Object.keys(mg5Pairs).filter(eId => {
+      const ef = MG5_EFFECTS.find(x => x.id === eId);
+      return ef && ef.match === mg5Pairs[eId];
+    }).length;
+
+    box.innerHTML = `
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div>
+          <span class="text-xs font-extrabold text-indigo-950 bg-indigo-100 px-2.5 py-1 rounded-full">🧩 Mode: AO2 Cause–Effect Matrix Connector (因果鏈連線配對挑戰 • 已配對 ${matchedCount} / 4)</span>
+          <p class="text-xs text-slate-600 mt-1"><strong>How to Play (玩法):</strong> Click a <strong>Geographical Cause (左欄地理原因)</strong> on the left, then click its matching <strong>Ecological Effect (右欄生態後果)</strong> on the right!</p>
+        </div>
+        <button onclick="mg5Pairs={};mg5SelectedCause='c1';renderGame5()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700">🔄 Reset Connector</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
+        <!-- Left Column: Causes -->
+        <div class="md:col-span-5 space-y-2">
+          <div class="text-[11px] font-extrabold uppercase text-indigo-900">⚡ Step 1: Select Geographical Cause (選擇原因):</div>
+          ${MG5_CAUSES.map(c => {
+            const isMatched = Object.keys(mg5Pairs).some(eId => mg5Pairs[eId] === c.id && MG5_EFFECTS.find(x => x.id === eId)?.match === c.id);
+            const isSel = (mg5SelectedCause === c.id);
+            return `
+              <div onclick="mg5SelectedCause='${c.id}';renderGame5()" class="p-2.5 rounded-xl border-2 cursor-pointer font-bold text-xs transition ${isMatched ? 'border-emerald-500 bg-emerald-50 text-emerald-900' : isSel ? 'border-indigo-600 bg-indigo-600 text-white shadow-md' : 'border-slate-200 bg-slate-50 hover:border-indigo-300'}">
+                ${isMatched ? '✅ ' : '🔗 '}${c.text}
+              </div>
+            `;
+          }).join('')}
+        </div>
+
+        <!-- Right Column: Effects -->
+        <div class="md:col-span-7 space-y-2">
+          <div class="text-[11px] font-extrabold uppercase text-emerald-900">🎯 Step 2: Click Matching Ecological Effect (點擊對應後果):</div>
+          ${MG5_EFFECTS.map(ef => {
+            const linkedCauseId = mg5Pairs[ef.id];
+            const linkedCauseObj = MG5_CAUSES.find(x => x.id === linkedCauseId);
+            const isOk = linkedCauseId && (linkedCauseId === ef.match);
+            const isErr = linkedCauseId && (linkedCauseId !== ef.match);
+            return `
+              <div onclick="connectMg5Effect('${ef.id}')" class="p-2.5 rounded-xl border-2 cursor-pointer transition ${isOk ? 'border-emerald-500 bg-emerald-50 text-emerald-950' : isErr ? 'border-rose-400 bg-rose-50 text-rose-950' : 'border-dashed border-slate-300 bg-white hover:border-indigo-500'}">
+                <div class="text-xs font-bold">${ef.text}</div>
+                <div class="text-[11px] mt-1 ${isOk ? 'text-emerald-800 font-extrabold' : isErr ? 'text-rose-700 font-extrabold' : 'text-slate-400'}">
+                  ${linkedCauseObj ? (isOk ? '✅ Linked to: ' + linkedCauseObj.text : '❌ Mismatched with: ' + linkedCauseObj.text + ' (Click to fix)') : '➕ Click to connect selected cause'}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+      ${matchedCount === 4 ? `<div class="mt-3 p-3 rounded-xl bg-emerald-100 border border-emerald-400 text-emerald-950 font-extrabold text-xs">🎉 All 4 Synoptic Cause–Effect Chains Connected! You are ready for Edexcel IAL Section A &amp; B data-response questions!</div>` : ''}
+    `;
+  }
+
+  function connectMg5Effect(efId) {
+    if (!mg5SelectedCause) return;
+    mg5Pairs[efId] = mg5SelectedCause;
+    const ef = MG5_EFFECTS.find(x => x.id === efId);
+    if (ef && ef.match === mg5SelectedCause) {
+      const nextUnmatched = MG5_CAUSES.find(c => !Object.keys(mg5Pairs).some(k => mg5Pairs[k] === c.id && MG5_EFFECTS.find(x => x.id === k)?.match === c.id));
+      if (nextUnmatched) mg5SelectedCause = nextUnmatched.id;
+    }
+    renderGame5();
+  }
+
+  function injectClassroomMiniGamesV50() {
+    const gameConfigs = [
+      { sec: 'step-1', boxId: 'mg-box-1', title: '🎮 Interactive Mini-Game 1: Diagram Label Pinning & Map Fill-in (氣候圖表填圖配對工作台：Fig 4.5–4.7)', renderFn: renderGame1 },
+      { sec: 'step-2', boxId: 'mg-box-2', title: '🎮 Interactive Mini-Game 2: Gondwana Timeline Cloze & Dual-Track Sorter (地質年代填空＋板塊留存 vs 跨海擴散分類箱)', renderFn: renderGame2 },
+      { sec: 'step-3', boxId: 'mg-box-3', title: '🎮 Interactive Mini-Game 3: Sand Dune Transect Builder & Curve Plotter (沙丘演替橫斷面排圖＋晚期競爭曲線校準器)', renderFn: renderGame3 },
+      { sec: 'step-4', boxId: 'mg-box-4', title: '🎮 Interactive Mini-Game 4: Australian Reserve Ranger Role-Play Simulator (場景代入：卡卡杜護林員火燒與水質調控模擬器)', renderFn: renderGame4 },
+      { sec: 'step-6', boxId: 'mg-box-6', title: '🎮 Interactive Mini-Game 5: Exam Cause–Effect Matrix Connector (應試因果鏈連線配對大挑戰)', renderFn: renderGame5 }
+    ];
+
+    gameConfigs.forEach(cfg => {
+      const secEl = document.getElementById(cfg.sec);
+      if (secEl) {
+        secEl.querySelector('.minigame-details')?.remove();
+        const det = document.createElement('details');
+        det.className = 'minigame-details';
+        det.open = true;
+        det.innerHTML = `
+          <summary>
+            <span>${cfg.title}</span>
+            <span class="text-xs font-extrabold bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full shrink-0 ml-2">▼ Click to Fold / Expand</span>
+          </summary>
+          <div id="${cfg.boxId}" class="minigame-body"></div>
+        `;
+        secEl.appendChild(det);
+        cfg.renderFn();
+      }
+    });
+  }
+
+  // =========================================================================
+  // [V5.0] 3. CHART FIXES, GONDWANA AUTOPLAY, HEADER & PROTECTED TABLE LAYOUT
+  // =========================================================================
+  let driftTimer = null;
+  function toggleGondwanaAutoPlay() {
+    const btn = document.getElementById('gondwana-play-btn');
+    if (driftTimer) {
+      clearInterval(driftTimer); driftTimer = null;
+      if (btn) btn.innerHTML = '▶️ Auto-Play Drift (自動播放大陸漂移)';
+      return;
+    }
+    if (btn) btn.innerHTML = '⏸️ Pause Drift (暫停播放)';
+    let st = parseInt(document.getElementById('tect-slider').value);
+    driftTimer = setInterval(() => {
+      st = (st + 1) % 6;
+      document.getElementById('tect-slider').value = st;
+      updateTectonicSim(st);
+    }, 1600);
+  }
+
+  const CH4M_THEMES = [
+    { key: 'default', icon: '🎨', tip: '翡翠科技風 (點擊切換風格)' },
+    { key: 'theme-academic', icon: '📜', tip: '人文手稿風 (點擊切換風格)' },
+    { key: 'theme-dark-pro', icon: '🌙', tip: '暗黑儀表風 (點擊切換風格)' }
+  ];
+  let ch4mThemeIdx = 0;
+
+  function upgradeHeaderAndLayoutV55() {
+    if (typeof GEO_TERMS_DB !== 'undefined' && GEO_TERMS_DB.species_area_relationship) {
+      GEO_TERMS_DB.species_area_relationship.def = GEO_TERMS_DB.species_area_relationship.def.replace(/\$S = cA\^z\$/g, 'S = cA<sup>z</sup>');
+    }
+    if (typeof openGeoTerm === 'function' && !window._ch4ModalWrapInit) {
+      window._ch4ModalWrapInit = true;
+      const rawOpenGeo = openGeoTerm;
+      window.openGeoTerm = function(key) {
+        document.getElementById('species-photo-modal')?.classList.add('hidden');
+        return rawOpenGeo(key);
+      };
+      const rawOpenSp = openSpeciesModal;
+      window.openSpeciesModal = function(key) {
+        document.getElementById('geo-term-modal')?.classList.add('hidden');
+        return rawOpenSp(key);
+      };
+    }
+
+    const headerRow = document.querySelector('header > div > div');
+    const navGrid = document.getElementById('step-nav-grid');
+    const h1El = document.querySelector('header h1');
+    if (headerRow && navGrid) {
+      headerRow.className = 'grid grid-cols-1 lg:grid-cols-12 gap-3 items-center';
+      const leftCol = headerRow.children[0];
+      if (leftCol) leftCol.classList.add('lg:col-span-6');
+      navGrid.className = 'hidden sm:grid lg:col-span-6 grid-cols-2 sm:grid-cols-3 gap-1.5 w-full pt-1 sm:pt-0 items-stretch';
+    }
+    for (let i = 1; i <= 6; i++) {
+      const b = document.getElementById('nav-step-' + i);
+      if (b) {
+        b.className = (i === (typeof currentStep === 'number' ? currentStep : 1)) ? 'step-tab active-step' : 'step-tab';
+      }
+    }
+
+    if (h1El && !document.getElementById('ch4-theme-icon-btn')) {
+      h1El.className = 'text-sm sm:text-lg font-extrabold tracking-tight text-white leading-snug mt-0.5 flex items-center gap-2';
+      h1El.innerHTML = `<span>Chapter 4 (pp. 55–57): Biodiversity Factors</span>`;
+      const iconBtn = document.createElement('button');
+      iconBtn.id = 'ch4-theme-icon-btn'; iconBtn.type = 'button';
+      iconBtn.textContent = CH4M_THEMES[0].icon; iconBtn.title = CH4M_THEMES[0].tip;
+      iconBtn.onclick = (ev) => {
+        ev.stopPropagation();
+        document.body.classList.remove('theme-academic', 'theme-dark-pro');
+        ch4mThemeIdx = (ch4mThemeIdx + 1) % CH4M_THEMES.length;
+        const nextT = CH4M_THEMES[ch4mThemeIdx];
+        if (nextT.key !== 'default') document.body.classList.add(nextT.key);
+        iconBtn.textContent = nextT.icon; iconBtn.title = nextT.tip;
+      };
+      h1El.appendChild(iconBtn);
+
+      const subDiv = document.createElement('div');
+      subDiv.className = 'text-emerald-300 font-medium text-xs leading-snug';
+      subDiv.textContent = '(氣候限制因素、馬達加斯加板塊與特有種、面積與沙丘演替、控制火燒悖論)';
+      h1El.parentNode.appendChild(subDiv);
+    }
+
+    ['#step-1 > div:first-child', '#step-2 > div:first-child'].forEach(selector => {
+      const banner = document.querySelector(selector);
+      if (banner && banner.children.length === 2 && !banner.querySelector('table')) {
+        const leftTextCol = banner.children[0], rightBtnCol = banner.children[1];
+        banner.className = 'bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center';
+        leftTextCol.className = 'lg:col-span-8 space-y-1.5 min-w-0';
+        rightBtnCol.className = 'lg:col-span-4 flex flex-col gap-2 bg-slate-50 p-3 rounded-xl border border-slate-200 w-full';
+        if (!rightBtnCol.querySelector('.ext-box-label')) {
+          const label = document.createElement('div');
+          label.className = 'ext-box-label text-[10px] font-bold uppercase tracking-wider text-slate-400 px-1';
+          label.innerHTML = 'Deep-Dive Concept Extensions <span class="zh-note">(延伸概念與澳門案例剖析)</span>:';
+          rightBtnCol.insertBefore(label, rightBtnCol.firstChild);
+        }
+        rightBtnCol.querySelectorAll('button').forEach(btn => {
+          btn.classList.remove('shrink-0', 'self-start', 'md:self-auto');
+          btn.classList.add('w-full', 'justify-between', 'text-left', 'px-3.5', 'py-2.5');
+          if (!btn.querySelector('.ext-arrow')) {
+            const wrap = document.createElement('span'); wrap.className = 'leading-snug';
+            while (btn.firstChild) wrap.appendChild(btn.firstChild);
+            const arrow = document.createElement('span'); arrow.className = 'ext-arrow font-extrabold text-sm ml-2 shrink-0'; arrow.textContent = '➔';
+            btn.appendChild(wrap); btn.appendChild(arrow);
+          }
+        });
+      }
+    });
+
+    const step6TableCard = document.querySelector('#step-6 > div:first-child');
+    if (step6TableCard) {
+      step6TableCard.className = 'bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 block space-y-3';
+      step6TableCard.querySelector('.ext-box-label')?.remove();
+      const tblWrap = step6TableCard.querySelector('table')?.parentNode;
+      if (tblWrap) {
+        tblWrap.className = 'overflow-x-auto -mx-2 px-2 w-full mt-2';
+        tblWrap.querySelectorAll('button.geo-term-trigger, button.species-trigger').forEach(btn => {
+          btn.classList.remove('w-full', 'justify-between', 'text-left', 'px-3.5', 'py-2.5');
+          btn.querySelector('.ext-arrow')?.remove();
+        });
+      }
+    }
+
+    const step5Grid = document.querySelector('#step-5 > div.grid');
+    if (step5Grid) {
+      const rawChildren = Array.from(step5Grid.children).filter(el => !el.classList.contains('concept-infographic-card'));
+      rawChildren.forEach((caseCard, idx) => {
+        if (!caseCard.id) caseCard.id = idx === 0 ? 'case-card-galapagos' : 'case-card-australia';
+        if (caseCard.dataset.restructured === '1') return;
+        caseCard.dataset.restructured = '1';
+        caseCard.className = 'lg:col-span-12 bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 space-y-4';
+        const topWrap = caseCard.children[0], botWrap = caseCard.children[1];
+        if (!topWrap || !botWrap) return;
+        const headerBlock = topWrap.children[0], mapBox = topWrap.children[1], locForeword = topWrap.children[2], caseSit = topWrap.children[3], sliderBox = topWrap.children[4];
+        if (!headerBlock || !mapBox) return;
+
+        mapBox.className = 'bg-slate-900 rounded-2xl p-3 border border-slate-700 flex flex-col justify-start gap-2.5 w-full shadow-md';
+        const iframeWrap = mapBox.querySelector('div.w-full');
+        if (iframeWrap) iframeWrap.className = 'w-full h-64 sm:h-72 md:h-80 rounded-xl overflow-hidden bg-slate-800 border border-slate-600 shrink-0';
+        const iframeEl = mapBox.querySelector('iframe');
+        if (iframeEl) { iframeEl.removeAttribute('loading'); iframeEl.className = 'w-full h-full border-0 block'; }
+
+        const newGrid = document.createElement('div');
+        newGrid.className = 'grid grid-cols-1 md:grid-cols-12 gap-5 items-start';
+        const leftHalf = document.createElement('div');
+        leftHalf.className = 'md:col-span-6 flex flex-col justify-start space-y-3.5 w-full';
+        leftHalf.appendChild(mapBox);
+        if (sliderBox) leftHalf.appendChild(sliderBox);
+        leftHalf.appendChild(botWrap);
+
+        const rightHalf = document.createElement('div');
+        rightHalf.className = 'md:col-span-6 flex flex-col justify-start space-y-3.5 w-full';
+        if (locForeword) rightHalf.appendChild(locForeword);
+        if (caseSit) rightHalf.appendChild(caseSit);
+
+        newGrid.appendChild(leftHalf); newGrid.appendChild(rightHalf);
+        caseCard.innerHTML = ''; caseCard.appendChild(headerBlock); caseCard.appendChild(newGrid);
+      });
+    }
+
+    const pikaSvg = document.querySelector('#step-1 svg[viewBox="0 0 440 165"]');
+    if (pikaSvg) {
+      const polys = pikaSvg.querySelectorAll('polygon');
+      if (polys.length >= 3) polys[2].setAttribute('points', '325,142 370,136 415,142');
+      pikaSvg.querySelectorAll('text').forEach(t => { if (t.textContent.includes('Alto de Coloane')) t.setAttribute('y', '126'); });
+    }
+    const tectLabelRow = document.getElementById('tect-stage-label')?.parentNode;
+    if (tectLabelRow && !document.getElementById('gondwana-play-btn')) {
+      const playBtn = document.createElement('button');
+      playBtn.id = 'gondwana-play-btn'; playBtn.type = 'button';
+      playBtn.className = 'px-2.5 py-0.5 rounded-full bg-emerald-700 hover:bg-emerald-600 text-white text-[11px] font-bold transition shadow-sm';
+      playBtn.innerHTML = '▶️ Auto-Play Drift (自動播放大陸漂移)';
+      playBtn.onclick = toggleGondwanaAutoPlay;
+      tectLabelRow.appendChild(playBtn);
+    }
+  }
+
+  function wakeUpSection5Iframes() {
+    ['galapagos-map-iframe', 'australia-map-iframe'].forEach(id => {
+      const ifr = document.getElementById(id);
+      if (ifr && ifr.src && !ifr.dataset.woken) { ifr.dataset.woken = '1'; ifr.src = ifr.src; }
+    });
+  }
+
+  const CLASSROOM_ZOOM_LEVELS = [
+    { cls: '', label: '100%' },
+    { cls: 'classroom-zoom-125', label: '125%' },
+    { cls: 'classroom-zoom-145', label: '145%' }
+  ];
+  let currentZoomIdx = 0;
+
+  function cycleClassroomZoom() {
+    document.body.classList.remove('classroom-zoom-125', 'classroom-zoom-145');
+    currentZoomIdx = (currentZoomIdx + 1) % CLASSROOM_ZOOM_LEVELS.length;
+    const z = CLASSROOM_ZOOM_LEVELS[currentZoomIdx];
+    if (z.cls) document.body.classList.add(z.cls);
+    document.getElementById('mk-zoom-label').textContent = z.label;
+    document.getElementById('mk-btn-zoom').classList.toggle('zoom-active', currentZoomIdx > 0);
+    setTimeout(syncCanvasToDocumentHeight, 120);
+  }
+
+  // =========================================================================
+  // [V5.0] 4. APPLE PENCIL PRO + LASER POINTER + TEXT NOTES + LOCALSTORAGE
+  // =========================================================================
+  const STORAGE_KEY_PREFIX = 'ial_geo_ch4_55_57_v50_';
+  let mkCanvas, mkCtx, laserCanvas, laserCtx, hoverRing, notesLayer;
+  let mkTool = 'browse', mkPreviousTool = 'pen', mkColor = '#FF3B30', mkSizeIndex = 1, pencilOnlyLock = false, currentSafeDpr = 1;
+const MK_SIZES = [
+    { label: '• 細', pen: 2.6, high: 15, erase: 24 },
+    { label: '● 中', pen: 4.8, high: 24, erase: 38 },
+    { label: '⬤ 粗', pen: 8.5, high: 36, erase: 56 }
+  ];
+  let isDrawingStroke = false, activePointerId = null, lastPt = { x: 0, y: 0 };
+  let laserTrail = [], laserAnimId = null;
+  const stepStrokeHistory = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [] };
+  const stepCanvasSnapshots = { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null };
+  let stepTextNotes = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [] };
+
+  function renderLaserLoop() {
+    if (!laserCanvas || !laserCtx) return;
+    const now = performance.now();
+    laserTrail = laserTrail.filter(p => now - p.t < 1400);
+    laserCtx.clearRect(0, 0, laserCanvas.width, laserCanvas.height);
+
+    if (laserTrail.length > 1) {
+      laserCtx.save();
+      laserCtx.lineCap = 'round'; laserCtx.lineJoin = 'round';
+      for (let i = 1; i < laserTrail.length; i++) {
+        const p0 = laserTrail[i - 1], p1 = laserTrail[i];
+        if (p1.break) continue;
+        const age = now - p1.t;
+        const alpha = Math.max(0, 1 - age / 1400);
+        laserCtx.beginPath();
+        laserCtx.moveTo(p0.x, p0.y);
+        laserCtx.lineTo(p1.x, p1.y);
+        laserCtx.strokeStyle = `rgba(255, 30, 30, ${alpha * 0.45})`;
+        laserCtx.lineWidth = 12;
+        laserCtx.stroke();
+        laserCtx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.95})`;
+        laserCtx.lineWidth = 3.5;
+        laserCtx.stroke();
+      }
+      laserCtx.restore();
+    }
+    if (laserTrail.length > 0 || (mkTool === 'laser' && isDrawingStroke)) {
+      laserAnimId = requestAnimationFrame(renderLaserLoop);
+    } else {
+      laserAnimId = null;
+    }
+  }
+
+  function loadPersistedAnnotations() {
+    try {
+      const savedNotes = localStorage.getItem(STORAGE_KEY_PREFIX + 'text_notes');
+      if (savedNotes) stepTextNotes = JSON.parse(savedNotes);
+      for (let s = 1; s <= 6; s++) {
+        const snap = localStorage.getItem(STORAGE_KEY_PREFIX + 'canvas_' + s);
+        if (snap) stepCanvasSnapshots[s] = snap;
+      }
+    } catch (e) {}
+  }
+
+  function savePersistedAnnotations() {
+    try {
+      localStorage.setItem(STORAGE_KEY_PREFIX + 'text_notes', JSON.stringify(stepTextNotes));
+      if (mkCanvas && currentStep) {
+        const dataUrl = mkCanvas.toDataURL();
+        stepCanvasSnapshots[currentStep] = dataUrl;
+        localStorage.setItem(STORAGE_KEY_PREFIX + 'canvas_' + currentStep, dataUrl);
+      }
+    } catch (e) {}
+  }
+
+  function renderTextNotesForStep(stepNum) {
+    if (!notesLayer) return;
+    notesLayer.innerHTML = '';
+    const list = stepTextNotes[stepNum] || [];
+    list.forEach((n, idx) => {
+      const card = document.createElement('div');
+      card.className = 'ios-text-note';
+      card.style.left = n.x + 'px'; card.style.top = n.y + 'px'; card.style.borderColor = n.color || '#F59E0B';
+
+      const head = document.createElement('div');
+      head.className = 'ios-note-header';
+      head.innerHTML = `<span>📌 Note #${idx + 1}</span><button type="button" style="font-size:13px;color:#B91C1C;font-weight:900;">×</button>`;
+      head.querySelector('button').onclick = (ev) => {
+        ev.stopPropagation();
+        stepTextNotes[stepNum].splice(idx, 1);
+        savePersistedAnnotations();
+        renderTextNotesForStep(stepNum);
+      };
+
+      let draggingNote = false, startX = 0, startY = 0, origX = n.x, origY = n.y;
+      head.addEventListener('pointerdown', (ev) => {
+        if (ev.target.tagName === 'BUTTON') return;
+        ev.preventDefault(); ev.stopPropagation();
+        draggingNote = true; startX = ev.pageX; startY = ev.pageY; origX = n.x; origY = n.y;
+        head.setPointerCapture(ev.pointerId);
+      });
+      head.addEventListener('pointermove', (ev) => {
+        if (!draggingNote) return;
+        n.x = Math.max(8, origX + (ev.pageX - startX));
+        n.y = Math.max(60, origY + (ev.pageY - startY));
+        card.style.left = n.x + 'px'; card.style.top = n.y + 'px';
+      });
+      head.addEventListener('pointerup', () => { if (draggingNote) { draggingNote = false; savePersistedAnnotations(); } });
+
+      const body = document.createElement('div');
+      body.className = 'ios-note-body'; body.contentEditable = 'true';
+      body.dataset.placeholder = 'Type class note (English/中文)...';
+      body.style.color = (n.color === '#FFCC00') ? '#78350F' : (n.color || '#1E293B');
+      body.innerHTML = n.html || '';
+      body.addEventListener('input', () => { n.html = body.innerHTML; savePersistedAnnotations(); });
+      body.addEventListener('pointerdown', (ev) => ev.stopPropagation());
+
+      card.appendChild(head); card.appendChild(body);
+      notesLayer.appendChild(card);
+    });
+  }
+
+  function createNewTextNoteAt(pageX, pageY) {
+    if (!stepTextNotes[currentStep]) stepTextNotes[currentStep] = [];
+    stepTextNotes[currentStep].push({
+      x: Math.min(window.innerWidth - 220, Math.max(12, pageX - 60)),
+      y: Math.max(70, pageY - 15), color: mkColor, html: ''
+    });
+    savePersistedAnnotations();
+    renderTextNotesForStep(currentStep);
+    setMarkupTool('browse');
+    setTimeout(() => {
+      const allBodies = notesLayer.querySelectorAll('.ios-note-body');
+      if (allBodies.length) allBodies[allBodies.length - 1].focus();
+    }, 40);
+  }
+
+  function initApplePencilProEngine() {
+    mkCanvas = document.getElementById('ios-annotation-canvas');
+    laserCanvas = document.getElementById('ios-laser-canvas');
+    notesLayer = document.getElementById('ios-text-notes-layer');
+    hoverRing = document.getElementById('pencil-hover-ring');
+    if (!mkCanvas) return;
+    mkCtx = mkCanvas.getContext('2d', { desynchronized: true });
+    if (laserCanvas) {
+      laserCanvas.width = window.innerWidth; laserCanvas.height = window.innerHeight;
+      laserCtx = laserCanvas.getContext('2d');
+    }
+
+    loadPersistedAnnotations();
+    syncCanvasToDocumentHeight();
+    restoreSectionSnapshot(currentStep);
+    renderTextNotesForStep(currentStep);
+
+    window.addEventListener('resize', () => {
+      syncCanvasToDocumentHeight();
+      if (laserCanvas) { laserCanvas.width = window.innerWidth; laserCanvas.height = window.innerHeight; }
+    });
+    if (window.ResizeObserver) {
+      new ResizeObserver(() => {
+        clearTimeout(ch4mResizeTimer);
+        ch4mResizeTimer = setTimeout(() => syncCanvasToDocumentHeight(), 140);
+      }).observe(document.body);
+    }
+    if (window.ResizeObserver) new ResizeObserver(() => syncCanvasToDocumentHeight()).observe(document.body);
+
+    mkCanvas.addEventListener('touchstart', (e) => {
+      if (mkTool === 'browse') return;
+      const touch = e.touches[0];
+      const isStylus = touch && (touch.touchType === 'stylus' || (touch.radiusX !== undefined && touch.radiusX < 5));
+      if (!pencilOnlyLock || isStylus || mkTool === 'text') e.preventDefault();
+    }, { passive: false });
+
+    mkCanvas.addEventListener('pointerdown', onPencilDown, { passive: false });
+    mkCanvas.addEventListener('pointermove', onPencilMove, { passive: false });
+    window.addEventListener('pointerup', onPencilUp);
+    window.addEventListener('pointercancel', onPencilUp);
+    mkCanvas.addEventListener('pointerleave', () => { if (hoverRing) hoverRing.style.display = 'none'; });
+
+    const origSwitchStep = window.switchStep;
+    window.switchStep = function(nextStep) {
+      savePersistedAnnotations();
+      origSwitchStep(nextStep);
+      if (nextStep === 5) wakeUpSection5Iframes();
+      setTimeout(() => {
+        syncCanvasToDocumentHeight();
+        restoreSectionSnapshot(nextStep);
+        renderTextNotesForStep(nextStep);
+      }, 90);
+    };
+  }
+
+  function syncCanvasToDocumentHeight() {
+    if (!mkCanvas || !mkCtx) return;
+    mkCanvas.style.height = '0px';
+    if (notesLayer) notesLayer.style.height = '0px';
+    const docW = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const footerEl = document.querySelector('footer');
+    const mainEl = document.querySelector('main');
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    let trueH = window.innerHeight || 800;
+    if (footerEl) trueH = Math.ceil(footerEl.getBoundingClientRect().bottom + scrollY);
+    else if (mainEl) trueH = Math.ceil(mainEl.getBoundingClientRect().bottom + scrollY + 80);
+    const docH = Math.max(trueH, window.innerHeight || 0);
+    if (notesLayer) { notesLayer.style.width = docW + 'px'; notesLayer.style.height = docH + 'px'; }
+
+    const maxAllowedPixels = 12000000;
+    const rawDpr = Math.min(2, window.devicePixelRatio || 1);
+    currentSafeDpr = Math.max(0.75, Math.min(rawDpr, Math.sqrt(maxAllowedPixels / (docW * docH)), 4090 / docH));
+
+    const targetW = Math.round(docW * currentSafeDpr), targetH = Math.round(docH * currentSafeDpr);
+    if (Math.abs(mkCanvas.width - targetW) < 6 && Math.abs(mkCanvas.height - targetH) < 6) {
+      mkCanvas.style.width = docW + 'px';
+      mkCanvas.style.height = docH + 'px';
+      return;
+    }
+
+    const savedData = mkCanvas.width > 0 ? mkCanvas.toDataURL() : stepCanvasSnapshots[currentStep];
+    mkCanvas.style.width = docW + 'px'; mkCanvas.style.height = docH + 'px';
+    mkCanvas.width = targetW; mkCanvas.height = targetH;
+    mkCtx.setTransform(1, 0, 0, 1, 0, 0);
+    mkCtx.scale(currentSafeDpr, currentSafeDpr);
+    mkCtx.lineCap = 'round'; mkCtx.lineJoin = 'round';
+
+    if (savedData) {
+      const img = new Image();
+      img.onload = () => mkCtx.drawImage(img, 0, 0, docW, docH);
+      img.src = savedData;
+    }
+  }
+
+  function getExactCanvasPoint(e) {
+    if (typeof e.pageX === 'number' && typeof e.pageY === 'number') return { x: e.pageX, y: e.pageY };
+    const rect = mkCanvas.getBoundingClientRect();
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  }
+
+  function saveStepHistory() {
+    if (!mkCanvas) return;
+    const arr = stepStrokeHistory[currentStep] || [];
+    if (arr.length >= 12) arr.shift();
+    arr.push(mkCanvas.toDataURL());
+    stepStrokeHistory[currentStep] = arr;
+  }
+
+  function restoreSectionSnapshot(stepNum) {
+    if (!mkCanvas || !mkCtx) return;
+    const docW = parseFloat(mkCanvas.style.width) || window.innerWidth;
+    const docH = parseFloat(mkCanvas.style.height) || window.innerHeight;
+    mkCtx.globalCompositeOperation = 'source-over';
+    mkCtx.clearRect(0, 0, docW, docH);
+    const snap = stepCanvasSnapshots[stepNum];
+    if (snap) {
+      const img = new Image();
+      img.onload = () => mkCtx.drawImage(img, 0, 0, docW, docH);
+      img.src = snap;
+    }
+  }
+
+  function onPencilDown(e) {
+    if (mkTool === 'browse') return;
+    const pt = getExactCanvasPoint(e);
+    if (mkTool === 'text') {
+      e.preventDefault(); e.stopPropagation();
+      createNewTextNoteAt(pt.x, pt.y);
+      return;
+    }
+    if (e.pointerType === 'pen' && !pencilOnlyLock) togglePencilOnlyMode(true);
+    if (pencilOnlyLock && e.pointerType === 'touch') return;
+    if (e.pointerType === 'pen' && (e.button === 5 || e.buttons === 32)) {
+      setMarkupTool(mkTool === 'eraser' ? mkPreviousTool : 'eraser');
+    }
+
+    e.preventDefault(); e.stopPropagation();
+    isDrawingStroke = true; activePointerId = e.pointerId;
+    try { mkCanvas.setPointerCapture(e.pointerId); } catch (err) {}
+
+    if (mkTool === 'laser') {
+      laserTrail.push({ x: e.clientX, y: e.clientY, t: performance.now(), break: true });
+      if (!laserAnimId) laserAnimId = requestAnimationFrame(renderLaserLoop);
+      return;
+    }
+
+    saveStepHistory();
+    lastPt = pt;
+    const sz = MK_SIZES[mkSizeIndex];
+    const pFactor = (e.pointerType === 'pen' && e.pressure > 0) ? (0.6 + e.pressure * 0.8) : 1.0;
+
+    mkCtx.beginPath(); mkCtx.moveTo(lastPt.x, lastPt.y);
+    if (mkTool === 'eraser') {
+      mkCtx.globalCompositeOperation = 'destination-out'; mkCtx.globalAlpha = 1.0; mkCtx.lineWidth = sz.erase;
+    } else if (mkTool === 'highlighter') {
+      mkCtx.globalCompositeOperation = 'source-over'; mkCtx.strokeStyle = mkColor; mkCtx.globalAlpha = 0.28; mkCtx.lineWidth = sz.high;
+    } else {
+      mkCtx.globalCompositeOperation = 'source-over'; mkCtx.strokeStyle = mkColor; mkCtx.globalAlpha = 1.0; mkCtx.lineWidth = sz.pen * pFactor;
+    }
+    mkCtx.lineTo(lastPt.x + 0.1, lastPt.y + 0.1); mkCtx.stroke();
+  }
+
+  function onPencilMove(e) {
+    if (!isDrawingStroke || e.pointerId !== activePointerId || mkTool === 'browse' || mkTool === 'text') return;
+    e.preventDefault(); e.stopPropagation();
+
+    if (mkTool === 'laser') {
+      laserTrail.push({ x: e.clientX, y: e.clientY, t: performance.now(), break: false });
+      if (!laserAnimId) laserAnimId = requestAnimationFrame(renderLaserLoop);
+      return;
+    }
+
+    const events = (e.getCoalescedEvents && e.getCoalescedEvents().length > 0) ? e.getCoalescedEvents() : [e];
+    const sz = MK_SIZES[mkSizeIndex];
+    events.forEach(ev => {
+      const pt = getExactCanvasPoint(ev);
+      if (mkTool === 'pen' && ev.pointerType === 'pen' && ev.pressure > 0) mkCtx.lineWidth = sz.pen * (0.6 + ev.pressure * 0.8);
+      mkCtx.quadraticCurveTo(lastPt.x, lastPt.y, (lastPt.x + pt.x) / 2, (lastPt.y + pt.y) / 2);
+      lastPt = pt;
+    });
+    mkCtx.stroke();
+  }
+
+  function onPencilUp(e) {
+    if (!isDrawingStroke || (activePointerId !== null && e.pointerId !== activePointerId)) return;
+    isDrawingStroke = false;
+    try { mkCanvas.releasePointerCapture(activePointerId); } catch (err) {}
+    activePointerId = null;
+    if (mkTool !== 'laser') {
+      mkCtx.closePath(); mkCtx.globalCompositeOperation = 'source-over'; mkCtx.globalAlpha = 1.0;
+      savePersistedAnnotations();
+    }
+  }
+
+  function updateCanvasTouchClass() {
+    if (!mkCanvas) return;
+    mkCanvas.classList.remove('drawing-all', 'drawing-pen-only', 'text-insert-mode');
+    if (mkTool === 'text') mkCanvas.classList.add('text-insert-mode');
+    else if (mkTool !== 'browse') mkCanvas.classList.add(pencilOnlyLock ? 'drawing-pen-only' : 'drawing-all');
+  }
+
+  function setMarkupTool(tool) {
+    if (tool === 'pen' || tool === 'highlighter') mkPreviousTool = tool;
+    mkTool = tool;
+    ['browse', 'laser', 'pen', 'highlighter', 'text', 'eraser'].forEach(t => {
+      document.getElementById(`mk-btn-${t}`)?.classList.toggle('active', t === tool);
+    });
+    syncCanvasToDocumentHeight();
+    updateCanvasTouchClass();
+  }
+
+  function togglePencilOnlyMode(forceState) {
+    pencilOnlyLock = (typeof forceState === 'boolean') ? forceState : !pencilOnlyLock;
+    document.getElementById('mk-btn-penlock')?.classList.toggle('pencil-lock-on', pencilOnlyLock);
+    const lbl = document.getElementById('mk-penlock-label');
+    if (lbl) lbl.textContent = pencilOnlyLock ? '筆寫手滑: 開' : '筆寫手滑: 關';
+    updateCanvasTouchClass();
+  }
+
+  function setMarkupColor(hex, swatchEl) {
+    mkColor = hex;
+    document.querySelectorAll('.ios-color-swatch').forEach(el => el.classList.remove('active'));
+    if (swatchEl) swatchEl.classList.add('active');
+    if (mkTool === 'browse' || mkTool === 'eraser') setMarkupTool('pen');
+  }
+
+  function cycleMarkupSize() {
+    mkSizeIndex = (mkSizeIndex + 1) % MK_SIZES.length;
+    document.getElementById('mk-size-label').textContent = MK_SIZES[mkSizeIndex].label;
+  }
+
+  function undoMarkupStroke() {
+    const arr = stepStrokeHistory[currentStep] || [];
+    if (!arr.length || !mkCanvas) return;
+    const prevDataUrl = arr.pop();
+    const img = new Image();
+    img.onload = () => {
+      const docW = parseFloat(mkCanvas.style.width) || window.innerWidth;
+      const docH = parseFloat(mkCanvas.style.height) || window.innerHeight;
+      mkCtx.globalCompositeOperation = 'source-over'; mkCtx.globalAlpha = 1.0;
+      mkCtx.clearRect(0, 0, docW, docH); mkCtx.drawImage(img, 0, 0, docW, docH);
+      savePersistedAnnotations();
+    };
+    img.src = prevDataUrl;
+  }
+
+ function clearMarkupCanvas() {
+    if (!mkCanvas) return;
+    saveStepHistory();
+    const docW = parseFloat(mkCanvas.style.width) || window.innerWidth;
+    const docH = parseFloat(mkCanvas.style.height) || window.innerHeight;
+    mkCtx.globalCompositeOperation = 'source-over'; mkCtx.clearRect(0, 0, docW, docH);
+    stepCanvasSnapshots[currentStep] = null;
+    stepTextNotes[currentStep] = [];
+    try { localStorage.removeItem(STORAGE_KEY_PREFIX + 'canvas_' + currentStep); } catch (e) {}
+    savePersistedAnnotations();
+    renderTextNotesForStep(currentStep);
+  }
+
+  // =========================================================================
+  // [V5.1 CLEAN FINALE] 5. XSS-SAFE A4 PORTRAIT PDF WITH CLOZE WORKSHEET TOGGLE
+  // =========================================================================
+  function sanitizeNoteHtml(raw) {
+    if (!raw) return '';
+    const temp = document.createElement('div');
+    temp.textContent = raw.replace(/<br\s*\/?>/gi, '\n').replace(/<\/?[^>]+(>|$)/g, '');
+    return temp.innerHTML.replace(/\n/g, '<br>');
+  }
+
+  function exportStudentStudyGuidePDF() {
+    savePersistedAnnotations();
+    let teacherNotesHtml = '';
+    for (let s = 1; s <= 6; s++) {
+      const notes = (stepTextNotes[s] || []).filter(n => n.html && n.html.trim() !== '');
+      if (notes.length > 0) {
+        teacherNotesHtml += `<div style="margin-bottom:6px;"><strong>Section ${s} Teacher's Class Notes (課堂補充筆記):</strong><ul>` +
+          notes.map(n => `<li>${sanitizeNoteHtml(n.html)}</li>`).join('') + `</ul></div>`;
+      }
+    }
+    if (!teacherNotesHtml) {
+      teacherNotesHtml = `<p style="color:#64748b;font-style:italic;margin:0;">No custom sticky notes added yet — use the "🔤 文字" tool on the toolbar to add custom class notes before exporting. (教師可於網頁底部點選「🔤 文字」新增隨堂筆記後一併匯出)</p>`;
+    }
+
+    const printWin = window.open('', '_blank');
+    if (!printWin) { alert('Please allow popups to generate the A4 PDF Revision Guide! (請允許彈出視窗以生成 A4 PDF 溫習筆記)'); return; }
+
+    printWin.document.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edexcel IAL Geography — Chapter 4 (pp. 55–57) A4 Student Revision Notes</title>
+  <style>
+    @page { size: A4 portrait; margin: 11mm 13mm; }
+    body { font-family: 'Inter', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; color: #0f172a; font-size: 9.8pt; line-height: 1.46; margin: 0; }
+    h1 { font-size: 14pt; color: #064e3b; margin: 0 0 3px 0; border-bottom: 2.5px solid #047857; padding-bottom: 4px; }
+    h2 { font-size: 10.8pt; color: #065f46; background: #ecfdf5; padding: 4px 8px; border-left: 4px solid #059669; margin: 10px 0 5px 0; break-after: avoid; }
+    table { width: 100%; border-collapse: collapse; margin: 5px 0 8px 0; font-size: 8.8pt; page-break-inside: auto; }
+    tr { page-break-inside: avoid; page-break-after: auto; }
+    th { background: #0f172a; color: #ffffff; padding: 4px 6px; text-align: left; }
+    td { border: 1px solid #cbd5e1; padding: 4px 6px; vertical-align: top; }
+    .zh { color: #475569; font-size: 8.5pt; font-weight: normal; }
+    .red-ul { text-decoration: underline solid #e11d48 1.8px; text-underline-offset: 2.5px; font-weight: 700; }
+    body.cloze-mode .cloze-blank { color: transparent !important; border-bottom: 1.8px solid #0f172a !important; text-decoration: none !important; padding: 0 6px; user-select: none; }
+    .box { border: 1.5px solid #94a3b8; border-radius: 6px; padding: 7px 9px; margin-bottom: 7px; background: #f8fafc; break-inside: avoid; }
+    .teacher-box { border: 2px solid #f59e0b; background: #fffbeb; border-radius: 6px; padding: 7px 9px; margin-bottom: 8px; }
+    .no-print { background: #064e3b; color: white; padding: 9px 14px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; margin-bottom: 12px; border-radius: 8px; }
+    @media print { .no-print { display: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="no-print">
+    <div><strong>📄 A4 Portrait Revision Notes (pp. 55–57)</strong> — Switch between Full Answer Key &amp; Student Cloze Worksheet:</div>
+    <div style="display:flex;gap:8px;">
+      <button onclick="document.body.classList.toggle('cloze-mode')" style="background:#f59e0b;color:#0f172a;border:none;padding:6px 12px;border-radius:6px;font-weight:800;cursor:pointer;">✏️ Toggle Student Cloze Blanks (切換學生填空工作紙版)</button>
+      <button onclick="window.print()" style="background:#10b981;color:white;border:none;padding:6px 14px;border-radius:6px;font-weight:bold;cursor:pointer;">🖨️ Print / Save A4 PDF</button>
+    </div>
+  </div>
+
+  <h1>Pearson Edexcel IAL Geography (WGE03) • Topic A2: Chapter 4 (pp. 55–57) Study Notes</h1>
+  <div style="font-size:8.6pt;color:#475569;margin-bottom:6px;"><strong>Enquiry Topic:</strong> The Processes &amp; Factors that Influence Biodiversity | Name: ____________________ Class: _______</div>
+
+  <h2>📌 1. Teacher's Classroom Annotations &amp; Highlights (教師課堂補充筆記)</h2>
+  <div class="teacher-box">${teacherNotesHtml}</div>
+
+  <h2>🌡️ 2. Core Factors &amp; Processes Synthesis Matrix (pp. 55–57 核心因素總表)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:17%;">Factor (因素)</th>
+        <th style="width:31%;">AO1 Core Geographical &amp; Biological Mechanisms</th>
+        <th style="width:27%;">AO2 Textbook Figures &amp; Quantified Evidence</th>
+        <th style="width:25%;">AO2/AO3 Global &amp; 🇲🇴 Macau Contrasting Cases</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Climate Limiting Factors</strong><br><span class="zh">(氣候限制因素 p.55)</span></td>
+        <td>• <span class="red-ul">Limiting factors restrict the <span class="cloze-blank">growth, distribution, or abundance</span> of a species.</span><br>• In extreme cold, <span class="red-ul"><span class="cloze-blank">metabolic rate</span> slows down, reducing energy production</span>.<br>• Above the 40°C optimum, <span class="red-ul"><span class="cloze-blank">enzymes denature</span> and energy supply is exceeded</span>.<br>• Standard trees are <span class="red-ul"><span class="cloze-blank">50% water</span> and require <span class="cloze-blank">2–3 cm</span> of rainfall/week</span>. <span class="zh">(低溫減緩代謝，&gt;40°C酵素變性；樹木含50%水，每週需2–3cm雨量)</span></td>
+        <td>• <strong>Fig 4.5:</strong> Enzyme reaction rate peaks at <span class="cloze-blank"><strong>~40°C</strong></span> and falls rapidly to zero at <strong>60°C</strong>.<br>• <strong>Fig 4.6 Baobab:</strong> <span class="red-ul">Stores up to <span class="cloze-blank">120,000 litres</span> of water</span> in its swollen trunk.<br>• <strong>Fig 4.7 American Pika:</strong> Heat-intolerant alpine mammal forced to <span class="red-ul">migrate to <span class="cloze-blank">higher altitudes</span></span> in the Rocky Mts.</td>
+        <td>• 🇪🇨 El Niño ocean warming kills green/red algae, starving endemic <strong>Galápagos marine iguanas</strong>.<br>• 🇲🇴 <strong>Macau's Alto de Coloane (172.4m)</strong> provides only ~1.1°C cooling, offering zero high-altitude thermal refuge. <span class="zh">(路環疊石塘山僅172.4m，無高海拔退路)</span></td>
+      </tr>
+      <tr>
+        <td><strong>2. Geographical Isolation &amp; Endemism</strong><br><span class="zh">(地理隔離與特有種 pp.56–57)</span></td>
+        <td>• <span class="red-ul">Physical barriers (oceans/mountains) separate communities and block <span class="cloze-blank">gene flow</span></span>, driving speciation into <strong><span class="cloze-blank">endemic</span> species</strong> (restricted to one area and found nowhere else).<br>• Operates via <strong><span class="cloze-blank">vicariance</span></strong> ("rode there" on drifting plates) and <strong><span class="cloze-blank">dispersal</span></strong> (crossing ocean barriers). <span class="zh">(物理屏障阻斷基因交流形成特有種；分板塊留存與跨海擴散兩途徑)</span></td>
+        <td>• <strong>Fig 4.8 Madagascar Plate Drift:</strong> Part of Gondwana (170 mya); <span class="red-ul">split from India around <span class="cloze-blank">90 million years ago</span> (88 mya)</span>.<br>• Over <strong><span class="cloze-blank">90%</span> of Madagascar's species are endemic</strong> (a global <strong>biodiversity hotspot</strong>).<br>• <strong>Fig 4.9 Lemurs:</strong> Split from African primates <strong>~62 mya</strong>; <span class="red-ul">dispersed from Africa to Madagascar <span class="cloze-blank">~54 mya</span></span>, evolving into <strong><span class="cloze-blank">≥50</span> endemic species</strong>.</td>
+        <td>• 🇪🇨 <strong>Galápagos Volcanic Islands</strong> (973 km off Ecuador): 0% vicariance, 100% oceanic dispersal (18 species of <strong>Darwin's finches</strong>).<br>• 🇲🇴 Macau Endemics: <strong><i>Nanhaipotamon macau</i></strong> (hill-stream crab) &amp; <strong><i>Leptanilla macauensis</i></strong> (Ilha Verde blind ant). <span class="zh">(澳門南海溪蟹與澳門細蟻)</span></td>
+      </tr>
+      <tr>
+        <td><strong>3. Age, Area &amp; Succession</strong><br><span class="zh">(年齡、面積與演替 p.57)</span></td>
+        <td>• <strong>Area Effect (S = cA<sup>z</sup>):</strong> <span class="red-ul">Larger areas support more ecosystems (wetlands, grasslands, forests) and abundant food, water, and shelter.</span><br>• <strong><span class="cloze-blank">Succession</span>:</strong> Sequential community development over time.<br>• <strong>AO3 Caveat:</strong> <span class="red-ul">Late successional stages may have reduced biodiversity due to <span class="cloze-blank">competition and dominance</span> of only a few species.</span> <span class="zh">(演替晚期常因少數優勢種競爭壟斷導致多樣性回落)</span></td>
+        <td>• <strong>Coastal Sand Dune Psammosere (p.57):</strong> Progresses from bare embryo dunes (pH 8.4) with pioneer <strong><span class="cloze-blank">marram grass</span></strong> to fixed grey dunes and dune scrub slacks (peak diversity), before closing into climax woodland (competitive shade dominance).</td>
+        <td>• 🇲🇴 Post-fire pioneer stands of exotic <strong><i>Acacia confusa</i> (台灣相思)</strong> on Macau's hills formed closed canopies that shaded out native herbs—requiring IAM native broadleaved tree enrichment. <span class="zh">(澳門台灣相思純林遮蔭壟斷與林相改造)</span></td>
+      </tr>
+      <tr>
+        <td><strong>4. Human Actions &amp; Fire Paradox</strong><br><span class="zh">(人類活動與控制火燒 p.57)</span></td>
+        <td>• Land clearing (farming, logging, urban sprawl) fragments habitats; <span class="red-ul">industrial discharges and <span class="cloze-blank">agricultural runoff</span> degrade water and soil quality</span>.<br>• <strong>Fire Paradox:</strong> <span class="red-ul">Periodic <span class="cloze-blank">controlled burning</span> removes choking dead organic litter and rapidly returns <span class="cloze-blank">nutrients</span> to the soil</span>, whereas <span class="red-ul">uncontrolled or over-frequent fire destroys healthy species</span>. <span class="zh">(控制火燒能清除枯枝並歸還養分；失控野火則摧毀健康物種)</span></td>
+        <td>• <strong>No Fire:</strong> Thick dead organic litter chokes small plants (52% richness).<br>• <strong>Controlled Burn:</strong> Clears decay layer &amp; boosts soil fertility (91% richness).<br>• <strong>Uncontrolled Wildfire:</strong> Incinerates healthy canopy flora &amp; fauna (26% richness).</td>
+        <td>• 🇦🇺 <strong>Kakadu/Darwin Indigenous Cool Patch Burning</strong> (triggers <i>Banksia</i> seed release &amp; protects canopy) vs. <strong>SE Australia 2019–20 Black Summer Megafires</strong> (18.6M ha burned; &gt;60,000 <strong>koalas</strong> killed). <span class="zh">(北領地原住民冷火 vs 東南澳洲黑色夏天超級野火)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>📘 3. Essential Key Terms Glossary (必背專有名詞定義)</h2>
+  <div class="box">
+    <div>1. <strong>Endemism (特有現象, p.56):</strong> <span class="red-ul">Where a species is <span class="cloze-blank">restricted to a specific geographic area</span> and is found nowhere else in the world</span>. <span class="zh">(物種僅自然分佈於單一特定地理區域，在世界其他地方均無發現。)</span></div>
+    <div style="margin-top:4px;">2. <strong>Biodiversity hotspot (生物多樣性熱點, p.56):</strong> <span class="red-ul">A region with exceptionally high <span class="cloze-blank">species diversity and endemism</span> that faces significant <span class="cloze-blank">threats from human activities</span></span>. <span class="zh">(擁有極高物種多樣性與特有種比例，但同時面臨人類活動嚴重威脅的地區。)</span></div>
+    <div style="margin-top:4px;">3. <strong>Succession (生態演替, p.57):</strong> <span class="red-ul">The gradual, <span class="cloze-blank">sequential process of ecological change</span> in a community over time</span>. <span class="zh">(生物群落隨時間推移而發生的漸進、順序性生態演變過程。)</span></div>
+  </div>
+
+  <h2>✍️ 4. IAL Paper 3 (10-Mark) Model Essay Blueprint (10分評估題高分英文範文與中文結構導讀)</h2>
+  <div class="box" style="font-size:8.9pt;">
+    <strong>Question: "Geographical isolation and area size are more important than climate limiting factors and human activities in explaining variations in biodiversity." Evaluate this statement. (10 marks)</strong><br>
+    • <strong>Paragraph 1 — Isolation &amp; Area:</strong> Through plate tectonics, <strong>Madagascar (Fig 4.8)</strong> <span class="red-ul">split from India around <span class="cloze-blank">90 million years ago</span></span>, generating <strong>&gt;90% endemism</strong> via both <strong>vicariance</strong> and <strong>dispersal</strong> (lemurs rafting from Africa ~<strong><span class="cloze-blank">54 mya</span></strong> into ≥50 species). Larger areas support multiple ecosystems (wetlands, grasslands, forests). <span class="zh">(先論證板塊隔離與大面積效應如何決定特有種與生境多樣性。)</span><br>
+    • <strong>Paragraph 2 — Climate Limiting Factors:</strong> However, <span class="red-ul">"Climate is perhaps the most important factor affecting biodiversity"</span> (p.55). In <strong>Fig 4.5</strong>, cold slows metabolism while heat above the <strong><span class="cloze-blank">~40°C</span> optimum causes enzymes to denature</strong>. Standard trees need <strong><span class="cloze-blank">2–3 cm</span> rain/week</strong>; baobabs (Fig 4.6) survive by storing <strong><span class="cloze-blank">120,000 litres</span></strong>. <span class="zh">(反駁指出氣候才是最關鍵的生理基礎。)</span><br>
+    • <strong>Paragraph 3 — Succession, Human/Fire Actions &amp; Verdict:</strong> <span class="red-ul">Late successional stages may lose biodiversity due to <span class="cloze-blank">competition and dominance</span></span>. Global warming forces the <strong>American pika (Fig 4.7)</strong> upslope, while <span class="red-ul">periodic <span class="cloze-blank">controlled burning</span></span> clears dead litter and returns nutrients (unlike megafires). <strong>Verdict:</strong> Climate sets primary productivity, isolation/area govern endemism over evolutionary time, and human/fire actions dictate modern survival. <span class="zh">(總結自然因素決定長期演化潛力，人類管理決定當代存續。)</span>
+  </div>
+</body>
+</html>`);
+    printWin.document.close();
+  }
+
+  // =========================================================================
+  // [V5.1 CLEAN FINALE] 6. DUAL-STAGE GAME 5, BLIND-BOXES & BOOTSTRAP
+  // =========================================================================
+  const MG5_RED_PEN_FLAWS = [
+    {
+      bad: 'Statement A: "Enzyme activity keeps accelerating up to 60°C because hot temperatures provide unlimited metabolic energy."',
+      fixed: '✅ Examiner Fix (AO1/AO2): Optimum enzyme temperature is ~40°C (Fig 4.5); above 40°C enzymes denature and energy demand exceeds supply.',
+      isFlaw: true
+    },
+    {
+      bad: 'Statement B: "Ring-tailed lemurs rode on Gondwana 170 million years ago via vicariance and stayed on Madagascar when it split from India."',
+      fixed: '✅ Examiner Fix (AO2): Lemurs split from African primates ~62 mya and arrived in Madagascar ~54 mya via oceanic DISPERSAL (after the ~90 mya split!).',
+      isFlaw: true
+    },
+    {
+      bad: 'Statement C: "In sand dune succession, the final climax woodland stage always has the highest biodiversity because tall trees share light."',
+      fixed: '✅ Examiner Fix (AO3): Late successional stages actually have REDUCED biodiversity due to competition and dominance of a few canopy species (p.57).',
+      isFlaw: true
+    },
+    {
+      bad: 'Statement D: "Every fire in an ecosystem is purely destructive and prevents nutrients from entering the soil."',
+      fixed: '✅ Examiner Fix (AO3): Periodic CONTROLLED burning removes choking dead organic litter and rapidly returns nutrients to the soil (only uncontrolled/frequent fire destroys healthy species).',
+      isFlaw: true
+    }
+  ];
+  let mg5RedPenChecked = {};
+
+  function toggleMg5RedPen(idx) {
+    mg5RedPenChecked[idx] = !mg5RedPenChecked[idx];
+    renderGame5();
+  }
+
+  const origRenderGame5 = window.renderGame5;
+  window.renderGame5 = function() {
+    origRenderGame5();
+    const box = document.getElementById('mg-box-6');
+    if (!box) return;
+    const redCount = Object.keys(mg5RedPenChecked).filter(k => mg5RedPenChecked[k]).length;
+    const redPenHtml = `
+      <div class="mt-4 pt-3.5 border-t-2 border-indigo-100 space-y-2">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs font-extrabold text-rose-900 bg-rose-100 px-2.5 py-1 rounded-full">🖍️ Part 2: Examiner's Red-Pen Error-Spotting (考官紅筆改錯挑戰 • 已批改 ${redCount} / 4)</span>
+          <span class="text-[11px] text-slate-500">Tap any flawed student sentence below to strike it out &amp; reveal the Level 3 correction!</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          ${MG5_RED_PEN_FLAWS.map((item, i) => {
+            const fixed = mg5RedPenChecked[i];
+            return `
+              <div onclick="toggleMg5RedPen(${i})" class="p-2.5 rounded-xl border-2 cursor-pointer transition ${fixed ? 'bg-emerald-50 border-emerald-500' : 'bg-rose-50/50 hover:bg-rose-50 border-rose-200'}">
+                <div class="text-xs ${fixed ? 'line-through text-rose-700 opacity-75' : 'font-bold text-slate-800'}">${item.bad}</div>
+                ${fixed ? `<div class="mt-1 text-[11px] font-extrabold text-emerald-950">${item.fixed}</div>` : `<div class="mt-1 text-[10px] font-bold text-rose-600">🖍️ Tap with Apple Pencil / Finger to strike out &amp; fix</div>`}
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+    box.insertAdjacentHTML('beforeend', redPenHtml);
+  };
+
+  function toggleCh4mBlindHint(panelId, btnId) {
+    const panel = document.getElementById(panelId), btn = document.getElementById(btnId);
+    if (!panel) return;
+    const isHidden = panel.classList.contains('hidden');
+    panel.classList.toggle('hidden', !isHidden);
+    if (btn) btn.classList.toggle('ring-2', isHidden);
+    setTimeout(syncCanvasToDocumentHeight, 60);
+  }
+
+  function updateTugOfWarVerdict(val) {
+    const v = parseInt(val);
+    const out = document.getElementById('tug-verdict-out');
+    if (!out) return;
+    if (v < 40) {
+      out.innerHTML = `<strong>⚖️ Class Verdict Stance (${100-v}% Isolation/Area vs. ${v}% Climate/Human):</strong> "In conclusion, while climate and human fires regulate short-term population numbers, <strong>geographical isolation (Madagascar’s 90 mya split &amp; 54 mya lemur dispersal) and area size</strong> are fundamentally more important because they create the irreplaceable evolutionary lineages (&gt;90% endemism) and multi-biome capacity in the first place."`;
+    } else if (v <= 60) {
+      out.innerHTML = `<strong>⚖️ Class Balanced Synoptic Verdict (50:50 Top-Band AO3 Synthesis):</strong> "In conclusion, importance depends on timescale and spatial scale: <strong>climate limiting factors (40°C enzyme optimum; 2–3 cm/wk rainfall)</strong> set the primary physiological envelope for life, <strong>geographical isolation and area</strong> govern evolutionary endemism over millions of years, and <strong>human activities and fire regimes (controlled burns vs. wildfires)</strong> are the decisive regulators of survival in the modern Anthropocene."`;
+    } else {
+      out.innerHTML = `<strong>⚖️ Class Verdict Stance (${v}% Climate/Human vs. ${100-v}% Isolation/Area):</strong> "In conclusion, although isolation and area generate endemism over geological time, <strong>climate limiting factors and human actions</strong> are far more important: without adequate warmth and rainfall (2–3 cm/wk), even vast areas like the Sahara remain barren, and anthropogenic warming (American pika upslope trap) or uncontrolled megafires can wipe out millions of years of isolated evolution in a single decade."`;
+    }
+  }
+
+  function upgradeSection6ToBlindBoxV55() {
+    document.getElementById('dr1-hints')?.classList.add('hidden');
+    document.getElementById('dr2-hints')?.classList.add('hidden');
+
+    const partBContainer = document.querySelector('#step-6 .space-y-5');
+    if (partBContainer && !document.getElementById('ch4m-dr3-10mark')) {
+      const q3Card = document.createElement('div');
+      q3Card.id = 'ch4m-dr3-10mark';
+      q3Card.className = 'bg-white rounded-2xl p-4 sm:p-6 shadow-sm border-2 border-emerald-600/30 space-y-4';
+      q3Card.innerHTML = `
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-extrabold text-emerald-900 bg-emerald-100 px-2.5 py-1 rounded border border-emerald-300">IAL Paper 3 Question 3 • [10 Marks] (AO1: 3 marks | AO2: 4 marks | AO3: 3 marks)</span>
+          <h4 class="text-sm sm:text-base font-extrabold text-slate-900 mt-2 leading-snug">
+            Study the Synthesis Matrix above and Figures 4.5–4.9.<br>
+            <span class="text-emerald-800">"<button type="button" onclick="openGeoTerm('geographical_isolation')" class="geo-term-trigger">📘 Geographical isolation <span class="zh-note">(地理隔離)</span></button> and <button type="button" onclick="openGeoTerm('species_area_relationship')" class="geo-term-trigger">📘 area size <span class="zh-note">(面積大小)</span></button> are more important than climate <button type="button" onclick="openGeoTerm('limiting_factors')" class="geo-term-trigger">📘 limiting factors <span class="zh-note">(限制因素)</span></button> and human activities in explaining variations in biodiversity." Evaluate this statement. (10 marks)</span>
+            <span class="zh-note font-normal block mt-1">(評估題：就「地理隔離與面積大小比氣候限制因素與人類活動更能解釋生物多樣性差異」之論點，正反論證並作出總結判斷。)</span>
+          </h4>
+        </div>
+
+        <div class="bg-indigo-50/90 p-3.5 rounded-xl border border-indigo-200 space-y-2">
+          <div class="flex justify-between text-xs font-extrabold text-indigo-950">
+            <span>🏝️ Physical Isolation &amp; Area More Important</span>
+            <span>⚖️ Class AO3 Verdict Tug-of-War (拉動天平生成雙語立場結論)</span>
+            <span>🌡️🔥 Climate &amp; Human Actions More Important</span>
+          </div>
+          <input type="range" min="10" max="90" step="10" value="50" oninput="updateTugOfWarVerdict(this.value)">
+          <div id="tug-verdict-out" class="p-2.5 rounded-lg bg-white border border-indigo-200 text-xs text-slate-800 leading-relaxed"></div>
+        </div>
+
+        <div class="bg-amber-50/90 p-3.5 rounded-xl border-2 border-amber-300 space-y-2.5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-extrabold text-amber-950">🎁 Blind-Box Thinking Prompts (Click ① ② ③ ④ 逐一點擊拆開蘇格拉底引導錦囊):</span>
+            <div class="flex flex-wrap gap-1.5">
+              <button onclick="toggleCh4mBlindHint('dr3m-bh-1', 'dr3m-bbtn-1')" id="dr3m-bbtn-1" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ①</button>
+              <button onclick="toggleCh4mBlindHint('dr3m-bh-2', 'dr3m-bbtn-2')" id="dr3m-bbtn-2" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ②</button>
+              <button onclick="toggleCh4mBlindHint('dr3m-bh-3', 'dr3m-bbtn-3')" id="dr3m-bbtn-3" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ③</button>
+              <button onclick="toggleCh4mBlindHint('dr3m-bh-4', 'dr3m-bbtn-4')" id="dr3m-bbtn-4" class="px-3 py-1.5 rounded-lg bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-extrabold text-xs transition">🎁 Prompt ④</button>
+              <button onclick="toggleDRAnswer('dr3m-model')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition">📝 Full 10-Mark Model Essay</button>
+            </div>
+          </div>
+          <div id="dr3m-bh-1" class="hidden p-3 rounded-lg bg-white border-l-4 border-amber-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ① (Supporting Isolation &amp; Area):</strong> How did Madagascar's tectonic split from India (~90 mya, <button type="button" onclick="openGeoTerm('vicariance')" class="geo-term-trigger">📘 vicariance <span class="zh-note">(隔離分化)</span></button>) and <button type="button" onclick="openSpeciesModal('lemur')" class="species-trigger">📸 lemur dispersal <span class="zh-note">(孤猴擴散 ~54 mya)</span></button> create &gt;90% <button type="button" onclick="openGeoTerm('endemism')" class="geo-term-trigger">📘 endemism <span class="zh-note">(特有現象)</span></button>, and how does larger geographic area support multiple ecosystems? <span class="zh-note">(正方論證：說明板塊分裂、孤猴跨海與大面積如何孕育逾九成特有種與多元生境？)</span>
+          </div>
+          <div id="dr3m-bh-2" class="hidden p-3 rounded-lg bg-white border-l-4 border-emerald-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ② (Counter-Argument 1 — Climate Limiting Factors):</strong> Why is climate critical in Fig 4.5 (40°C enzyme optimum vs <button type="button" onclick="openGeoTerm('enzyme_denaturation')" class="geo-term-trigger">📘 denaturation <span class="zh-note">(酵素變性)</span></button> &gt;40°C), Fig 4.6 (2–3 cm/wk rainfall vs <button type="button" onclick="openSpeciesModal('baobab')" class="species-trigger">📸 Baobab <span class="zh-note">(猴麵包樹 120,000 L)</span></button>), and Central Saharan Erg? <span class="zh-note">(反方一：舉溫度酵素曲線、降水門檻與撒哈拉雖廣但荒蕪為例說明氣候限制)</span>
+          </div>
+          <div id="dr3m-bh-3" class="hidden p-3 rounded-lg bg-white border-l-4 border-rose-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ③ (Counter-Argument 2 — Succession &amp; Human/Fire Actions):</strong> How do <button type="button" onclick="openGeoTerm('climax_community')" class="geo-term-trigger">📘 late climax dominance <span class="zh-note">(晚期演替競爭壟斷)</span></button>, warming (<button type="button" onclick="openSpeciesModal('pika')" class="species-trigger">📸 American pika <span class="zh-note">(美洲鼠兔上移)</span></button>), and <button type="button" onclick="openGeoTerm('controlled_burning')" class="geo-term-trigger">📘 fire regimes <span class="zh-note">(火燒制度)</span></button> alter biodiversity? <span class="zh-note">(反方二：說明晚期樹冠遮蔭降多樣性、暖化逼遷高山物種與火燒冷熱雙重作用)</span>
+          </div>
+          <div id="dr3m-bh-4" class="hidden p-3 rounded-lg bg-white border-l-4 border-indigo-500 text-xs text-slate-800">
+            <strong>🧭 Prompt ④ (10-Mark Synoptic Verdict):</strong> Conclude how climate sets total biological capacity, isolation/area govern evolutionary uniqueness, and human management dictates modern survival. <span class="zh-note">(滿分總結：氣候決定初級生產力與存活下限，隔離與面積決定特有種演化，而人類與火燒管理決定當代存續)</span>
+          </div>
+        </div>
+
+        <div id="dr3m-model" class="hidden p-4 rounded-xl bg-slate-900 text-slate-100 text-xs space-y-2 leading-relaxed">
+          <div class="font-bold text-emerald-400">✍️ Model Paper 3 Essay Response (Level 3 Full 10 Marks):</div>
+          <p>
+            Geographical isolation and area size play a decisive role in shaping the evolutionary uniqueness and habitat variety of biodiversity. Through plate tectonics, <strong>Madagascar (Figure 4.8)</strong> separated from Gondwana and <span class="exam-red-ul">split from India around 90 million years ago</span>. This oceanic isolation produced <strong>over 90% endemism</strong> via both <strong>vicariance</strong> (species that "rode there" on the drifting plate) and <strong>dispersal</strong>—such as ancestral <strong>lemurs (Figure 4.9)</strong> that diverged from African primates ~62 mya and rafted to Madagascar ~<strong>54 mya</strong>, radiating into <span class="exam-red-ul">at least 50 endemic species</span> (paralleled by 18 Darwin’s finches on the volcanic Galápagos Islands). Meanwhile, <span class="exam-red-ul">larger geographic areas support greater ecological diversity—allowing wetlands, grasslands, and forests to coexist with abundant food, water, and shelter</span> (p.57).
+          </p>
+          <p>
+            However, large area and isolation cannot generate high biodiversity if <strong>climate limiting factors</strong> are prohibitive; as textbook p.55 states, <span class="exam-red-ul">"Climate is perhaps the most important factor affecting biodiversity."</span> At the physiological scale (<strong>Figure 4.5</strong>), extreme cold slows metabolic rates and energy production, while temperatures above the <span class="exam-red-ul">~40°C optimum cause enzymes to denature</span> rapidly. Similarly, standard trees are <span class="exam-red-ul">~50% water and require 2 to 3 cm of precipitation per week</span>; vast areas like the Central Sahara have low biodiversity despite immense size, whereas arid-adapted species like Madagascar’s <strong>baobab (Figure 4.6)</strong> survive only by <span class="exam-red-ul">storing up to 120,000 litres of water</span> in their trunks.
+          </p>
+          <p>
+            Furthermore, <strong>ecological succession and human actions</strong> constantly reshape biodiversity over shorter timescales. Even in favourable climates, <span class="exam-red-ul">late successional climax stages can experience reduced biodiversity due to competitive dominance by a few species</span> (p.57). Crucially, isolated endemic hotspots are acutely vulnerable to anthropogenic pressures: global warming forces montane species like the <strong>American pika (Figure 4.7)</strong> upslope toward mountaintop extinction, while agriculture, logging, and runoff pollution fragment habitats. Conversely, <span class="exam-red-ul">periodic controlled burning</span> (such as Indigenous cool burns in Kakadu, Australia) removes choking dead organic litter and rapidly returns nutrients to soil, whereas <span class="exam-red-ul">uncontrolled megafires destroy healthy species</span> (killing &gt;60,000 koalas). In conclusion, climate sets the primary physiological envelope for life, isolation and area determine endemism and niche variety, and human management dictates contemporary survival.
+          </p>
+        </div>
+      `;
+      partBContainer.appendChild(q3Card);
+      updateTugOfWarVerdict(50);
+    }
+  }
+
+  // =========================================================================
+  // [V5.5] 6× ZERO-PAGE-NUMBER TEXTBOOK INFOGRAPHIC GALLERY + IDB MANAGER
+  // =========================================================================
+  var INFO_STORAGE_KEY = 'ial_ch4_55_57_v55_info_state';
+  var IDB_NAME = 'IAL_Geo_Ch4_55_57_ImagesDB';
+  var IDB_STORE = 'infographic_blobs';
+
+  function openInfoIDB() {
+    return new Promise((resolve, reject) => {
+      try {
+        const req = indexedDB.open(IDB_NAME, 1);
+        req.onupgradeneeded = () => {
+          const db = req.result;
+          if (!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  async function idbPutImage(key, dataUrl) {
+    const db = await openInfoIDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, 'readwrite');
+      tx.objectStore(IDB_STORE).put(dataUrl, key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+
+  async function idbGetImage(key) {
+    try {
+      const db = await openInfoIDB();
+      return await new Promise((resolve) => {
+        const tx = db.transaction(IDB_STORE, 'readonly');
+        const req = tx.objectStore(IDB_STORE).get(key);
+        req.onsuccess = () => resolve(req.result || null);
+        req.onerror = () => resolve(null);
+      });
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async function idbDelImage(key) {
+    try {
+      const db = await openInfoIDB();
+      return await new Promise((resolve) => {
+        const tx = db.transaction(IDB_STORE, 'readwrite');
+        tx.objectStore(IDB_STORE).delete(key);
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => resolve();
+      });
+    } catch (e) {
+      return null;
+    }
+  }
+
+  var DEFAULT_SIX_INFOGRAPHICS = [
+    {
+      id: 'info_ch4_55_1_climate',
+      secNum: 1,
+      anchorSelector: '#step-1 > div:nth-of-type(2)',
+      insertPosition: 'before',
+      tag: '🎨 教學示意圖 Infographic 1/6 • Unit 1 (單元一：氣候限制因素與酵素儲水機制)',
+      title: 'Climate Limiting Factors: Temperature, Water &amp; Altitudinal Shift (Fig 4.5–4.7)',
+      subtitle: '40°C 酵素反應高峰與變性崩跌、猴麵包樹 120,000 公升儲水與高山鼠兔垂直避難',
+      fileName: 'Ch4_p55_57_Info1_Climate_Enzyme_Water.png',
+      sci: 'Visual Synthesis • Enzyme Optimum Curve, Xerophytic Baobab Storage &amp; Sky-Island Shift',
+      desc: '<strong>Visual Concept Guide <span class="zh-note">(圖解核心概念)</span>:</strong> Explains how <button type="button" onclick="openGeoTerm(\'limiting_factors\')" class="geo-term-trigger">📘 climate limiting factors <span class="zh-note">(氣候限制因素)</span></button> govern survival: cold slows <button type="button" onclick="openGeoTerm(\'metabolic_rate\')" class="geo-term-trigger">📘 metabolic rate <span class="zh-note">(新陳代謝率)</span></button>, whereas heat &gt;<strong>40°C</strong> causes <button type="button" onclick="openGeoTerm(\'enzyme_denaturation\')" class="geo-term-trigger">📘 enzyme denaturation <span class="zh-note">(酵素變性)</span></button>. Standard trees (~50% water) need <strong>2–3 cm/week</strong> rainfall, while <button type="button" onclick="openGeoTerm(\'xerophyte\')" class="geo-term-trigger">📘 xerophytes <span class="zh-note">(耐旱植物)</span></button> like <button type="button" onclick="openSpeciesModal(\'baobab\')" class="species-trigger">📸 baobabs <span class="zh-note">(猴麵包樹)</span></button> store <strong>120,000 L</strong>. Warming forces <button type="button" onclick="openSpeciesModal(\'pika\')" class="species-trigger">📸 American pikas <span class="zh-note">(美洲鼠兔)</span></button> into <button type="button" onclick="openGeoTerm(\'altitudinal_migration\')" class="geo-term-trigger">📘 upslope retreat <span class="zh-note">(高海拔遷徙)</span></button> <span class="zh-note">(圖示溫度酵素曲線、猴麵包樹儲水及高山物種被迫往山頂退縮的絕境)</span>.',
+      q1: 'Q1 (AO1/AO2): Explain the physiological reason why the reaction curve peaks at ~40°C and collapses steeply between 40°C and 60°C, referencing <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'metabolic_rate\')" class="geo-term-trigger">📘 metabolic rate <span class="zh-note">(代謝率)</span></button> and <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'enzyme_denaturation\')" class="geo-term-trigger">📘 enzyme denaturation <span class="zh-note">(酵素變性)</span></button>. <span class="zh-note font-normal">(解釋為何生化反應曲線於約 40°C 達峰值，卻在 40°C 至 60°C 之間急劇跌至零？)</span>',
+      a1: '• <strong>0°C to 40°C (Warming Rise):</strong> Kinetic collisions between enzymes and substrates speed up <button type="button" onclick="openGeoTerm(\'metabolic_rate\')" class="geo-term-trigger">📘 metabolic rate <span class="zh-note">(代謝速率上升)</span></button> towards the ~40°C biological optimum.<br>• <strong>Above 40°C (Rapid Collapse):</strong> Excessive thermal agitation warps the 3D active sites (<button type="button" onclick="openGeoTerm(\'enzyme_denaturation\')" class="geo-term-trigger">📘 enzyme denaturation <span class="zh-note">(活性部位蛋白質結構變性)</span></button>) while energy demand exceeds the organism’s cellular supply—forcing the rate to zero by 60°C <span class="zh-note">(低溫限制動能產出，高於 40°C 則酵素不可逆變性且能量供不應求)</span>.',
+      q2: 'Q2 (AO2/AO3): Contrast how a <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'baobab\')" class="species-trigger">📸 baobab <span class="zh-note">(猴麵包樹)</span></button> copes with moisture limits (&lt;2–3 cm/week) versus why Macau’s <strong>Alto de Coloane (172.4m)</strong> places <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'altitudinal_migration\')" class="geo-term-trigger">📘 altitudinal migrants <span class="zh-note">(垂直避暑物種)</span></button> at greater risk than Rocky Mountain <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'pika\')" class="species-trigger">📸 pikas <span class="zh-note">(美洲鼠兔)</span></button>. <span class="zh-note font-normal">(對比猴麵包樹如何克服降水不足，以及澳門路環疊石塘山為何較洛磯山脈更缺乏高海拔避暑退路？)</span>',
+      a2: '• <strong>Precipitation Adaptation:</strong> Unlike standard trees (~50% water, needing 2–3 cm/wk rain), xerophytic <button type="button" onclick="openSpeciesModal(\'baobab\')" class="species-trigger">📸 baobabs <span class="zh-note">(猴麵包樹)</span></button> store up to <strong>120,000 L</strong> inside spongy trunk fibres.<br>• <strong>AO3 Thermal Trap Contrast:</strong> In conical 4,000m Rocky Mountain peaks, <button type="button" onclick="openSpeciesModal(\'pika\')" class="species-trigger">📸 pikas <span class="zh-note">(鼠兔)</span></button> can migrate upslope temporarily before running out of summit area; on Macau’s <strong>172.4m Alto de Coloane</strong> (~1.1°C total lapse cooling), endemic stream species have <strong>zero vertical thermal refuge</strong> <span class="zh-note">(疊石塘山高差過小，暖化時溪流生物完全無退路可遷)</span>.'
+    },
+    {
+      id: 'info_ch4_55_2_madagascar',
+      secNum: 2,
+      anchorSelector: '#step-2 > div.grid',
+      insertPosition: 'before',
+      tag: '🎨 教學示意圖 Infographic 2/6 • Unit 2 (單元二：馬達加斯加板塊漂移與狐猴擴散)',
+      title: 'Isolation, Plate Drift &amp; Endemism: Madagascar Vicariance vs. Dispersal (Fig 4.8–4.9)',
+      subtitle: '170 mya 岡瓦納古陸 → 90 mya 與印度分離（隔離分化）vs. 54 mya 狐猴植被筏跨海擴散（&gt;90% 特有種）',
+      fileName: 'Ch4_p55_57_Info2_Madagascar_Drift_Lemurs.png',
+      sci: 'Visual Synthesis • Gondwanan Plate Tectonics, Mozambique Channel Rafting &amp; &gt;90% Endemism',
+      desc: '<strong>Visual Concept Guide <span class="zh-note">(圖解核心概念)</span>:</strong> Traces how <button type="button" onclick="openGeoTerm(\'plate_tectonics\')" class="geo-term-trigger">📘 plate tectonics <span class="zh-note">(板塊構造)</span></button> isolated Madagascar after breaking from <strong>Gondwana (170 mya)</strong> and splitting from <strong>India (~90 mya)</strong>. Contrasts in-situ <button type="button" onclick="openGeoTerm(\'vicariance\')" class="geo-term-trigger">📘 vicariance <span class="zh-note">(隔離分化：「隨板塊乘船而來」)</span></button> against later oceanic <button type="button" onclick="openGeoTerm(\'dispersal\')" class="geo-term-trigger">📘 dispersal <span class="zh-note">(跨海擴散)</span></button> by ancestral <button type="button" onclick="openSpeciesModal(\'lemur\')" class="species-trigger">📸 ring-tailed lemurs <span class="zh-note">(環尾狐猴 ~54 mya 漂流登島，分化為 ≥50 特有種)</span></button>, creating a <button type="button" onclick="openGeoTerm(\'biodiversity_hotspot\')" class="geo-term-trigger">📘 biodiversity hotspot <span class="zh-note">(生物多樣性熱點 &gt;90% 特有)</span></button>.',
+      q1: 'Q1 (AO1/AO2): Distinguish between <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'vicariance\')" class="geo-term-trigger">📘 vicariance <span class="zh-note">(隔離分化)</span></button> and <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'dispersal\')" class="geo-term-trigger">📘 dispersal <span class="zh-note">(跨海擴散)</span></button> using the ~90 mya tectonic split and the ~54 mya arrival of <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'lemur\')" class="species-trigger">📸 lemurs <span class="zh-note">(狐猴)</span></button>. <span class="zh-note font-normal">(運用約 9,000 萬年前印度板塊分裂與約 5,400 萬年前狐猴登島的時間差，辨析「隔離分化」與「跨海擴散」的差異？)</span>',
+      a1: '• <strong><button type="button" onclick="openGeoTerm(\'vicariance\')" class="geo-term-trigger">📘 Vicariance <span class="zh-note">(隔離分化)</span></button> (~90 mya):</strong> Lineages (ancient baobabs, chameleons) already occupied the Gondwanan landmass and "rode there" when Madagascar split from India.<br>• <strong><button type="button" onclick="openGeoTerm(\'dispersal\')" class="geo-term-trigger">📘 Dispersal <span class="zh-note">(跨海擴散)</span></button> (~54 mya):</strong> Primates diverged in Africa <strong>~62 mya</strong> (long <em>after</em> the 90 mya tectonic separation!), so ancestral lemurs could only reach the isolated island by rafting across the 400 km Mozambique Channel on storm-uprooted vegetation mats—radiating into <strong>≥50 endemic species</strong> <span class="zh-note">(分子鐘年代早於分裂即屬留存隔離；晚於分裂則必然是跨海漂流擴散)</span>.',
+      q2: 'Q2 (AO2/AO3): Why does &gt;90% <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'endemism\')" class="geo-term-trigger">📘 endemism <span class="zh-note">(特有率)</span></button> turn Madagascar—and local endemics like Macau’s <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'macau_crab\')" class="species-trigger">📸 <i>Nanhaipotamon macau</i> <span class="zh-note">(澳門南海溪蟹)</span></button>—into fragile conservation priorities? <span class="zh-note font-normal">(為何超過 90% 的極高特有率反而令馬達加斯加與澳門南海溪蟹等特有物種在現代面臨更高的滅絕脆弱性？)</span>',
+      a2: '<button type="button" onclick="openGeoTerm(\'geographical_isolation\')" class="geo-term-trigger">📘 Geographical isolation <span class="zh-note">(地理隔離)</span></button> prevents recolonisation from nearby mainland donor populations and limits evolutionary exposure to mainland predators/competitors. When deforestation or stream channelisation destroys small endemic pockets (<button type="button" onclick="openGeoTerm(\'biodiversity_hotspot\')" class="geo-term-trigger">📘 hotspot threats <span class="zh-note">(熱點棲地威脅)</span></button>), endemic species have <strong>zero backup populations elsewhere</strong>—converting unique isolated evolution into global extinction risk <span class="zh-note">(特有種全球別無分店，無法靠大陸鄰區種群補充救火，微小棲地毀損即可造成徹底滅絕)</span>.'
+    },
+    {
+      id: 'info_ch4_55_3_succession',
+      secNum: 3,
+      anchorSelector: '#step-3 > div.grid',
+      insertPosition: 'before',
+      tag: '🎨 教學示意圖 Infographic 3/6 • Unit 3 (單元三：面積效應與沙丘演替悖論)',
+      title: 'Area Effect (S = cA<sup>z</sup>) &amp; Coastal Sand Dune Succession Paradox',
+      subtitle: '多生境面積效應、濱草固沙演替橫斷面（灌木濕窪區達峰值 → 閉合頂極林因遮蔭競爭回落）',
+      fileName: 'Ch4_p55_57_Info3_Area_SandDune_Succession.png',
+      sci: 'Visual Synthesis • Species–Area Relationship &amp; Psammosere Mid-Late Peak vs. Climax Drop',
+      desc: '<strong>Visual Concept Guide <span class="zh-note">(圖解核心概念)</span>:</strong> Top band shows the <button type="button" onclick="openGeoTerm(\'species_area_relationship\')" class="geo-term-trigger">📘 Species–Area effect <span class="zh-note">(物種–面積關係)</span></button>: broad areas support greater <button type="button" onclick="openGeoTerm(\'ecosystem_diversity\')" class="geo-term-trigger">📘 ecosystem diversity <span class="zh-note">(生態系統多樣性)</span></button> (wetlands + grasslands + forests). Bottom transect traces coastal dune <button type="button" onclick="openGeoTerm(\'succession\')" class="geo-term-trigger">📘 succession <span class="zh-note">(生態演替)</span></button> from <button type="button" onclick="openSpeciesModal(\'dune_embryo\')" class="species-trigger">📸 embryo dune <span class="zh-note">(胚胎沙丘 pH 8.4)</span></button> and <button type="button" onclick="openSpeciesModal(\'marram_grass\')" class="species-trigger">📸 marram grass <span class="zh-note">(濱草)</span></button> up to <button type="button" onclick="openSpeciesModal(\'dune_scrub\')" class="species-trigger">📸 scrub peak <span class="zh-note">(多樣性最高峰)</span></button>, then dipping in <button type="button" onclick="openGeoTerm(\'climax_community\')" class="geo-term-trigger">📘 climax woodland <span class="zh-note">(頂極林競爭下降)</span></button>.',
+      q1: 'Q1 (AO1/AO2): Explain two mechanisms by which a larger geographic area supports higher species richness (S = cA<sup>z</sup>) than a small isolated patch, citing <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'ecosystem_diversity\')" class="geo-term-trigger">📘 ecosystem diversity <span class="zh-note">(生態系統多樣性)</span></button>. <span class="zh-note font-normal">(引用生態系統多樣性與資源供給概念，解釋為何較大面積通常比小型棲地支撐更高的物種豐富度？)</span>',
+      a1: '1. <strong>Multi-Ecosystem Coexistence:</strong> Large areas encompass diverse habitats—such as marshes, wildflower meadows, and woodlands—simultaneously within one landscape, expanding available ecological niches (生態位寬度).<br>2. <strong>Greater Resource &amp; Population Buffer:</strong> Greater supplies of food, water, and shelter sustain larger population sizes, lowering random extinction risk (stochastic loss) and supporting wide-ranging apex predators <span class="zh-note">(大面積同時涵蓋多種生境，提供多元生態位與穩定食物水源緩衝)</span>.',
+      q2: 'Q2 (AO2/AO3): Why does biodiversity peak at the <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'dune_scrub\')" class="species-trigger">📸 Dune Scrub &amp; Wet Slack <span class="zh-note">(沙丘灌叢與濕窪區)</span></button> stage yet <strong>decline</strong> in the <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'climax_community\')" class="geo-term-trigger">📘 Closed Climax Woodland <span class="zh-note">(閉合頂極樹林)</span></button>, and how is Macau’s <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'acacia_confusa\')" class="species-trigger">📸 <i>Acacia confusa</i> <span class="zh-note">(台灣相思純林)</span></button> analogous? <span class="zh-note font-normal">(為何沙丘演替的生物多樣性在灌木濕窪區見頂後，於晚期閉合頂極林反而下跌？澳門路環台灣相思純林如何印證此現象？)</span>',
+      a2: '• <strong>Mid-Late Peak vs. Competitive Dominance:</strong> By Dune Scrub &amp; Wet Slack, humus buildup and shallow water tables support rich herbs, shrubs, and pollinators together. In <button type="button" onclick="openGeoTerm(\'climax_community\')" class="geo-term-trigger">📘 closed climax woodland <span class="zh-note">(閉合頂極群落)</span></button>, a few tall dominant canopy species intercept &gt;90% of sunlight and outcompete smaller ground flora.<br>• <strong>Macau Parallel:</strong> Dense single-species <button type="button" onclick="openSpeciesModal(\'acacia_confusa\')" class="species-trigger">📸 <i>Acacia confusa</i> <span class="zh-note">(台灣相思)</span></button> plantations on Coloane create heavy shade dominance and suppress understory plants until IAM introduces native broadleaved canopy enrichment <span class="zh-note">(少數高大樹種壟斷光照與土壤養分，擠壓草本與灌木生存空間)</span>.'
+    },
+    {
+      id: 'info_ch4_55_4_fire',
+      secNum: 4,
+      anchorSelector: '#step-4 > div.grid',
+      insertPosition: 'before',
+      tag: '🎨 教學示意圖 Infographic 4/6 • Unit 4 (單元四：人類毀林污染與控制火燒悖論)',
+      title: 'Human Impacts &amp; The Fire Paradox: Clearing, Runoff &amp; Fire Regimes',
+      subtitle: '土地開墾與徑流優養化衝擊，以及「完全禁火 (52%) vs. 週期性冷火 (91%) vs. 失控野火 (26%)」對比',
+      fileName: 'Ch4_p55_57_Info4_Human_Fire_Paradox.png',
+      sci: 'Visual Synthesis • Anthropogenic Pressures &amp; 3-Regime Fire Richness Thresholds (52% / 91% / 26%)',
+      desc: '<strong>Visual Concept Guide <span class="zh-note">(圖解核心概念)</span>:</strong> Top panels contrast negative pressures: forest clearing (<button type="button" onclick="openGeoTerm(\'geographical_isolation\')" class="geo-term-trigger">📘 habitat fragmentation <span class="zh-note">(棲地碎片化)</span></button>) and nutrient runoff (<button type="button" onclick="openGeoTerm(\'eutrophication\')" class="geo-term-trigger">📘 eutrophication <span class="zh-note">(水體優養化與缺氧)</span></button>). Bottom columns illustrate the fire paradox: fire suppression leaves choking dead litter (<strong>52% richness</strong>), periodic <button type="button" onclick="openGeoTerm(\'controlled_burning\')" class="geo-term-trigger">📘 controlled burning <span class="zh-note">(控制性冷火)</span></button> opens <button type="button" onclick="openSpeciesModal(\'banksia\')" class="species-trigger">📸 <i>Banksia</i> cones <span class="zh-note">(耐熱果實萌發)</span></button> and boosts richness (<strong>91%</strong>), while uncontrolled megafires collapse biodiversity (<strong>26%</strong>).',
+      q1: 'Q1 (AO1/AO2): Explain the dual mechanism linking <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'eutrophication\')" class="geo-term-trigger">📘 agricultural runoff pollution <span class="zh-note">(農業徑流污染)</span></button> and habitat clearing to biodiversity loss in freshwater and terrestrial zones. <span class="zh-note font-normal">(解釋土地開墾與農業/工業徑流污染如何透過雙重機制導致陸域與淡水生物多樣性流失？)</span>',
+      a1: '• <strong>Terrestrial Clearing:</strong> Agriculture, logging, and urbanisation shrink total habitat area and sever migration corridors, isolating small subpopulations.<br>• <strong>Aquatic <button type="button" onclick="openGeoTerm(\'eutrophication\')" class="geo-term-trigger">📘 Eutrophication <span class="zh-note">(優養化)</span></button>:</strong> Excess nitrogen/phosphorus runoff sparks surface algal blooms that block submerged light; microbial decay of dead algae strips dissolved oxygen (hypoxia 缺氧), suffocating aquatic fauna <span class="zh-note">(陸域切割棲地阻斷基因流；水域過剩養分引發藻華耗氧導致魚類窒息死亡)</span>.',
+      q2: 'Q2 (AO2/AO3): Use the <strong>52% vs. 91% vs. 26%</strong> richness data to evaluate why <em>both</em> total fire suppression and uncontrolled wildfires harm biodiversity compared to periodic <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'controlled_burning\')" class="geo-term-trigger">📘 controlled burning <span class="zh-note">(控制性火燒)</span></button>. <span class="zh-note font-normal">(引用「52% vs. 91% vs. 26%」物種豐富度數據，評估為何「完全禁火」與「失控野火」同樣不利於高多樣性維持？)</span>',
+      a2: '• <strong>No Fire Suppression (52%):</strong> Thick dead organic litter locks up nutrients and smothers small ground seedlings.<br>• <strong>Periodic Controlled Cool Burn (91% Peak):</strong> Low-intensity fire clears litter, rapidly returns mineral ash nutrients to soil, triggers serotinous <button type="button" onclick="openSpeciesModal(\'banksia\')" class="species-trigger">📸 <i>Banksia</i> <span class="zh-note">(班克木種子釋放)</span></button>, and preserves adult trees.<br>• <strong>Uncontrolled / Frequent Megafire (26% Collapse):</strong> Extreme heat consumes healthy canopies, seed banks, and soil humus, collapsing ecosystem structure <span class="zh-note">(過猶不及：完全禁火令養分鎖死且積聚燃料；失控大火直接毀林滅種；唯適度冷火兼顧更新與樹冠保護)</span>.'
+    },
+    {
+      id: 'info_ch4_55_5_galapagos',
+      secNum: 5,
+      extraClass: 'lg:col-span-12',
+      anchorSelector: '#case-card-galapagos',
+      insertPosition: 'before',
+      tag: '🎨 教學示意圖 Infographic 5/6 • Unit 5 Case A (國際案例 A：加拉帕戈斯海洋擴散與適應輻射)',
+      title: 'Case Study A: Galápagos Islands — Oceanic Dispersal, Adaptive Radiation &amp; El Niño Threat',
+      subtitle: '距離南美 973 公里火山群島（0% 隔離分化 / 100% 海洋擴散）、18 種達爾文雀鳥喙輻射與聖嬰暖水海鬣蜥危機',
+      fileName: 'Ch4_p55_57_Info5_Galapagos_Dispersal_Ig.png',
+      sci: 'Case Study Visual • Volcanic Hotspot Isolation, 18 Darwin’s Finches &amp; Marine Iguana Stress',
+      desc: '<strong>Visual Concept Guide <span class="zh-note">(圖解核心概念)</span>:</strong> Contrasts volcanic hotspot islands (<strong>973 km off Ecuador</strong>; <strong>0% vicariance / 100% <button type="button" onclick="openGeoTerm(\'dispersal\')" class="geo-term-trigger">📘 oceanic dispersal <span class="zh-note">(海洋擴散)</span></button></strong>) against continental Madagascar. Ancestral colonists underwent <button type="button" onclick="openGeoTerm(\'adaptive_radiation\')" class="geo-term-trigger">📘 adaptive radiation <span class="zh-note">(適應輻射)</span></button> into <strong>18 <button type="button" onclick="openSpeciesModal(\'darwin_finch\')" class="species-trigger">📸 Darwin’s finches <span class="zh-note">(達爾文雀鳥喙分化)</span></button></strong> feeding on <button type="button" onclick="openSpeciesModal(\'prickly_pear\')" class="species-trigger">📸 prickly pear cactus <span class="zh-note">(仙人掌)</span></button>, while El Niño ocean warming starves endemic <button type="button" onclick="openSpeciesModal(\'marine_iguana\')" class="species-trigger">📸 marine iguanas <span class="zh-note">(海鬣蜥)</span></button>.',
+      q1: 'Q1 (AO2): Why did Galápagos exhibit <strong>0% <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'vicariance\')" class="geo-term-trigger">📘 vicariance <span class="zh-note">(隔離分化)</span></button></strong> despite high endemism (97% reptiles), and how did <button type="button" onclick="event.stopPropagation(); openGeoTerm(\'adaptive_radiation\')" class="geo-term-trigger">📘 adaptive radiation <span class="zh-note">(適應輻射)</span></button> shape <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'darwin_finch\')" class="species-trigger">📸 Darwin’s finches <span class="zh-note">(達爾文雀)</span></button>? <span class="zh-note font-normal">(為何加拉帕戈斯群島擁有 97% 極高爬蟲類特有率卻屬「0% 隔離分化」？適應輻射如何演化出 18 種達爾文雀鳥喙形態？)</span>',
+      a1: '• <strong>0% Vicariance:</strong> Unlike continental Madagascar, the volcanic Galápagos rose from the Pacific ocean floor (0.7–4 mya) and were <em>never attached</em> to South America; all terrestrial founders crossed <strong>973 km of open sea</strong> via Humboldt Current rafts or storms (<button type="button" onclick="openGeoTerm(\'dispersal\')" class="geo-term-trigger">📘 100% dispersal <span class="zh-note">(完全依賴跨海擴散)</span></button>).<br>• <strong>Adaptive Radiation:</strong> Across separate micro-climatic islands, empty food niches drove divergent selection on beak shape (heavy crushing beaks for hard cactus seeds vs. slender probing beaks for insects), yielding <strong>18 endemic finch species</strong> <span class="zh-note">(孤島缺乏競爭者且各島植物異質，驅使同一祖先分化填補多樣生態位)</span>.',
+      q2: 'Q2 (AO2/AO3): Evaluate how climate warming (El Niño ocean anomalies) interacts with invasive species (goats &amp; rats) to threaten endemic <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'marine_iguana\')" class="species-trigger">📸 marine iguanas <span class="zh-note">(海鬣蜥)</span></button> and island tortoises. <span class="zh-note font-normal">(評估聖嬰現象海水暖化如何與外來入侵物種產生雙重夾擊，嚴重威脅海鬣蜥與島嶼特有生物的存活？)</span>',
+      a2: '• <strong>Climate Shock:</strong> During strong El Niño events, warm surface water blocks cold nutrient upwelling, killing intertidal red/green marine algae and causing up to <strong>50% marine iguana starvation mortality</strong>.<br>• <strong>Synergistic Invasive Stress (AO3):</strong> Because island endemics evolved without mainland mammalian predators or grazers, introduced feral goats overgraze native <button type="button" onclick="openSpeciesModal(\'prickly_pear\')" class="species-trigger">📸 <i>Opuntia</i> cactus <span class="zh-note">(大仙人掌)</span></button> while black rats prey on unguarded eggs—leaving small island populations defenseless without active biosecurity eradication <span class="zh-note">(暖海切斷海鬣蜥單一食源，加上外來山羊啃食與黑鼠吞卵雙重壓力，必須靠嚴格生物安全與外來種清除維繫)</span>.'
+    },
+    {
+      id: 'info_ch4_55_6_australia',
+      secNum: 5,
+      extraClass: 'lg:col-span-12',
+      anchorSelector: '#case-card-australia',
+      insertPosition: 'before',
+      tag: '🎨 教學示意圖 Infographic 6/6 • Unit 5 Case B (國際案例 B：澳洲隔離演化與雙極端火燒管理)',
+      title: 'Case Study B: Australia — Gondwanan Endemism &amp; Contrasting Fire Regimes',
+      subtitle: '古老陸塊有袋類與桉樹特有化、北領地卡卡杜原住民早旱季冷火 vs. 東南澳 2019–20 黑色夏天樹冠大火',
+      fileName: 'Ch4_p55_57_Info6_Australia_Fire_Vicariance.png',
+      sci: 'Case Study Visual • Kakadu Cultural Patch Burning vs. SE Australia Black Summer Megafires',
+      desc: '<strong>Visual Concept Guide <span class="zh-note">(圖解核心概念)</span>:</strong> Connects ancient <button type="button" onclick="openGeoTerm(\'plate_tectonics\')" class="geo-term-trigger">📘 Australian isolation <span class="zh-note">(澳洲古大陸隔離 ~35–40 mya)</span></button> (producing marsupials like <button type="button" onclick="openSpeciesModal(\'koala\')" class="species-trigger">📸 koalas <span class="zh-note">(樹熊)</span></button> and fire-adapted <button type="button" onclick="openSpeciesModal(\'eucalyptus\')" class="species-trigger">📸 <i>Eucalyptus</i> <span class="zh-note">(桉樹)</span></button> + <button type="button" onclick="openSpeciesModal(\'banksia\')" class="species-trigger">📸 <i>Banksia</i></button>) to contrasting human <button type="button" onclick="openGeoTerm(\'controlled_burning\')" class="geo-term-trigger">📘 fire regimes <span class="zh-note">(火燒管理模式)</span></button>: Kakadu early-dry <strong>cool mosaic burns</strong> versus catastrophic <strong>2019–20 Black Summer crown megafires (18.6M ha burned, &gt;60,000 koalas lost)</strong>.',
+      q1: 'Q1 (AO2): Contrast how Kakadu’s early-dry-season <strong>cool patch burning</strong> versus SE Australia’s decades of <strong>fire suppression</strong> shaped tree canopy survival and <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'banksia\')" class="species-trigger">📸 <i>Banksia</i> <span class="zh-note">(班克木屬)</span></button> regeneration. <span class="zh-note font-normal">(比較澳洲北領地卡卡杜「早旱季冷火」與東南澳洲長期「禁火政策」對樹冠留存與耐熱植物萌發的不同結果？)</span>',
+      a1: '• <strong>Kakadu Cultural Cool Burn:</strong> Indigenous rangers burn dry grass fuels in small cool patches early in the dry season; flame height stays low, leaving <button type="button" onclick="openSpeciesModal(\'eucalyptus\')" class="species-trigger">📸 <i>Eucalyptus</i> <span class="zh-note">(桉樹)</span></button> canopies intact as refugia while gently opening woody <button type="button" onclick="openSpeciesModal(\'banksia\')" class="species-trigger">📸 <i>Banksia</i> cones <span class="zh-note">(促進種子萌發)</span></button> and clearing litter.<br>• <strong>SE Fire Suppression Backfire:</strong> Suppressing all mild fires caused dense fuel ladders to build up for decades; under extreme heatwave and drought, fire climbed directly into the oil-rich canopies as uncontrollable megafires <span class="zh-note">(長期全面禁火反而令地面死枯燃料堆積如山，一遇熱浪乾旱即引發無法撲滅的樹冠大火)</span>.',
+      q2: 'Q2 (AO3): Evaluate whether <strong>physical climate/isolation</strong> or <strong>human fire governance</strong> played the decisive role in the 2019–2020 Black Summer collapse (&gt;60,000 <button type="button" onclick="event.stopPropagation(); openSpeciesModal(\'koala\')" class="species-trigger">📸 koalas <span class="zh-note">(樹熊)</span></button> lost). <span class="zh-note font-normal">(針對 2019–20 年澳洲逾六萬隻樹熊折損的災難，評估究竟是自然氣候／隔離因素抑或人為火燒管理缺失起了決定性作用？)</span>',
+      a2: '• <strong>Natural Risk Baseline:</strong> Plate isolation produced flight-limited/specialist arboreal marsupials (koalas dependent on specific <em>Eucalyptus</em> leaves), while climate warming intensified drought and extreme 40°C+ fire weather.<br>• <strong>AO3 Verdict:</strong> <em>However</em>, decades of underfunded hazard-reduction burning (人為低強度減災燒除不足) converted a survivable natural fire cycle into a <strong>18.6M ha crown megafire</strong>—proving human management and anthropogenic climate amplification jointly override natural resilience <span class="zh-note">(隔離造就樹熊高度特化的食性與避難難度，但長期疏於冷火減燃與人為升溫才是引爆毀滅性超級大火的決定性推手)</span>.'
+    }
+  ];
+
+  function loadInfoGalleryState() {
+    try {
+      const raw = localStorage.getItem(INFO_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return {
+          deletedIds: Array.isArray(parsed.deletedIds) ? parsed.deletedIds : [],
+          customCards: Array.isArray(parsed.customCards) ? parsed.customCards : []
+        };
+      }
+    } catch (e) {}
+    return { deletedIds: [], customCards: [] };
+  }
+
+  function saveInfoGalleryState(st) {
+    try { localStorage.setItem(INFO_STORAGE_KEY, JSON.stringify(st)); } catch (e) {}
+  }
+
+  window.replaceInfographicImage = function(cardId) {
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = 'image/*';
+    inp.onchange = (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = async (ev) => {
+        await idbPutImage(cardId, ev.target.result);
+        await injectSixInfographicGalleryV55();
+      };
+      reader.readAsDataURL(file);
+    };
+    inp.click();
+  };
+
+  window.deleteInfographicCard = async function(cardId) {
+    if (!confirm('確定要移除此張概念示意圖？（預設 6 張圖可隨時透過下方「還原預設圖解」按鈕一鍵恢復）')) return;
+    const st = loadInfoGalleryState();
+    const isDefault = DEFAULT_SIX_INFOGRAPHICS.some(c => c.id === cardId);
+    if (isDefault) {
+      if (!st.deletedIds.includes(cardId)) st.deletedIds.push(cardId);
+    } else {
+      st.customCards = st.customCards.filter(c => c.id !== cardId);
+      await idbDelImage(cardId);
+    }
+    saveInfoGalleryState(st);
+    await injectSixInfographicGalleryV55();
+  };
+
+  window.restoreDefaultInfographics = async function() {
+    const st = loadInfoGalleryState();
+    st.deletedIds = [];
+    for (const c of DEFAULT_SIX_INFOGRAPHICS) {
+      await idbDelImage(c.id);
+    }
+    saveInfoGalleryState(st);
+    await injectSixInfographicGalleryV55();
+  };
+
+  window.openAddCustomInfographicModal = function(secNum) {
+    const sel = document.getElementById('ci-sec-num');
+    if (sel) sel.value = String(secNum || 1);
+    const titleEl = document.getElementById('ci-title');
+    if (titleEl) titleEl.value = '';
+    const fileEl = document.getElementById('ci-file');
+    if (fileEl) fileEl.value = '';
+    const urlEl = document.getElementById('ci-url');
+    if (urlEl) urlEl.value = '';
+    document.getElementById('custom-info-modal')?.classList.remove('hidden');
+  };
+
+  window.saveNewCustomInfographicCard = async function() {
+    const secNum = parseInt(document.getElementById('ci-sec-num')?.value || '1', 10);
+    const tag = (document.getElementById('ci-tag')?.value || '🎨 自訂圖卡').trim();
+    const title = (document.getElementById('ci-title')?.value || '').trim();
+    const fileInput = document.getElementById('ci-file');
+    const urlInput = (document.getElementById('ci-url')?.value || '').trim();
+    const q1 = (document.getElementById('ci-q1')?.value || '').trim();
+    const a1 = (document.getElementById('ci-a1')?.value || '').trim();
+    const q2 = (document.getElementById('ci-q2')?.value || '').trim();
+    const a2 = (document.getElementById('ci-a2')?.value || '').trim();
+
+    if (!title) { alert('請填寫圖卡標題 (Title)！'); return; }
+    const file = fileInput && fileInput.files && fileInput.files[0];
+    if (!file && !urlInput) { alert('請上傳圖片檔案或輸入圖片 URL！'); return; }
+
+    const newId = 'custom_info_' + Date.now();
+    let finalSrc = urlInput;
+    if (file) {
+      finalSrc = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (ev) => resolve(ev.target.result);
+        reader.readAsDataURL(file);
+      });
+      await idbPutImage(newId, finalSrc);
+    }
+
+    const st = loadInfoGalleryState();
+    st.customCards.push({
+      id: newId,
+      secNum: secNum,
+      anchorSelector: '#step-' + secNum + ' > div.grid',
+      insertPosition: 'after',
+      tag: tag,
+      title: title,
+      subtitle: 'Teacher Custom Visual Resource (V5.5)',
+      fileName: file ? '' : finalSrc,
+      sci: 'Custom Infographic • Saved Locally',
+      desc: a1 || 'Custom visual diagram uploaded by teacher.',
+      q1: q1 || 'Q1 (AO2): Describe the main geographical pattern shown. (描述圖示展現的主要地理分佈規律。)',
+      a1: a1 || 'Refer to teacher explanation in class.',
+      q2: q2 || '',
+      a2: a2 || ''
+    });
+    saveInfoGalleryState(st);
+    document.getElementById('custom-info-modal')?.classList.add('hidden');
+    await injectSixInfographicGalleryV55();
+  };
+
+  async function buildAndInsertInfographicCard(cfg) {
+    const sec = document.getElementById('step-' + cfg.secNum);
+    if (!sec) return;
+    let anchorEl = cfg.anchorSelector ? document.querySelector(cfg.anchorSelector) : null;
+    if (!anchorEl) anchorEl = sec.firstElementChild;
+    if (!anchorEl) return;
+
+    const customBlob = await idbGetImage(cfg.id);
+    const resolvedSrc = customBlob || cfg.fileName || '';
+
+    if (typeof SPECIES_DB !== 'undefined') {
+      SPECIES_DB[cfg.id] = {
+        tag: cfg.tag,
+        name: cfg.title,
+        sci: cfg.sci || 'IAL Geography Visual Schematic',
+        directImg: resolvedSrc,
+        fallbackImg: resolvedSrc,
+        desc: cfg.desc || '',
+        exam: (cfg.q1 ? ('<strong>' + cfg.q1 + '</strong><br>' + cfg.a1) : '') +
+              (cfg.q2 ? ('<hr class="my-2 border-slate-200"><strong>' + cfg.q2 + '</strong><br>' + cfg.a2) : '')
+      };
+    }
+
+    const card = document.createElement('div');
+    card.className = 'concept-infographic-card' + (cfg.extraClass ? (' ' + cfg.extraClass) : '');
+    card.id = 'card-' + cfg.id;
+
+    const qaHtml1 = cfg.q1 ? `
+      <details class="infographic-qa-details">
+        <summary><span class="text-emerald-700 font-black shrink-0 mt-0.5">▶</span> <span class="flex-1 leading-relaxed">${cfg.q1}</span></summary>
+        <div class="infographic-qa-answer">${cfg.a1}</div>
+      </details>` : '';
+
+    const qaHtml2 = cfg.q2 ? `
+      <details class="infographic-qa-details">
+        <summary><span class="text-sky-700 font-black shrink-0 mt-0.5">▶</span> <span class="flex-1 leading-relaxed">${cfg.q2}</span></summary>
+        <div class="infographic-qa-answer">${cfg.a2}</div>
+      </details>` : '';
+
+    card.innerHTML = `
+      <div class="concept-infographic-header">
+        <div class="min-w-0 flex-1">
+          <div class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-200">${cfg.tag}</div>
+          <h3 class="text-sm sm:text-base font-extrabold text-white leading-snug">${cfg.title}</h3>
+          ${cfg.subtitle ? `<p class="text-[11px] text-emerald-100/90 mt-0.5">${cfg.subtitle}</p>` : ''}
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button type="button" onclick="openSpeciesModal('${cfg.id}')" class="px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white text-[11px] font-bold transition">🔍 全螢幕檢視</button>
+          <button type="button" onclick="replaceInfographicImage('${cfg.id}')" class="px-2.5 py-1 rounded-lg bg-amber-500/85 hover:bg-amber-500 text-slate-950 text-[11px] font-extrabold transition">🖼️ 更換圖片</button>
+          <button type="button" onclick="deleteInfographicCard('${cfg.id}')" class="px-2 py-1 rounded-lg bg-rose-500/80 hover:bg-rose-500 text-white text-[11px] font-bold transition" title="移除圖卡">🗑️</button>
+        </div>
+      </div>
+      <div class="concept-infographic-img-wrap" onclick="openSpeciesModal('${cfg.id}')" title="點擊開啟全螢幕雙指縮放與細節檢視">
+        <img src="${resolvedSrc}" alt="${cfg.title}" loading="lazy" onerror="this.alt='圖片尚未載入：請確保 ${cfg.fileName} 位於同一資料夾'; this.style.minHeight='140px';">
+        <span class="concept-infographic-zoom-hint">🔍 點擊放大雙指縮放 / Click to Zoom</span>
+      </div>
+      <div class="concept-infographic-q-box space-y-2.5">
+        <div class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-900 flex flex-wrap items-center gap-1.5">
+          <span>🎓 Guided Infographic Thinking (AO1 / AO2 / AO3 Exam Application <span class="zh-note font-semibold text-emerald-700">圖解重點名詞與雙語延伸思考題</span>)</span>
+        </div>
+        ${cfg.desc ? `<div class="concept-infographic-guide-box">${cfg.desc}</div>` : ''}
+        ${qaHtml1}
+        ${qaHtml2}
+      </div>
+    `;
+
+    if (cfg.insertPosition === 'after') {
+      anchorEl.after(card);
+    } else {
+      anchorEl.before(card);
+    }
+  }
+
+  async function injectSixInfographicGalleryV55() {
+    document.querySelectorAll('.concept-infographic-card, .infographic-manager-bar').forEach(el => el.remove());
+
+    const st = loadInfoGalleryState();
+    const cardsToRender = [
+      ...DEFAULT_SIX_INFOGRAPHICS.filter(c => !st.deletedIds.includes(c.id)),
+      ...st.customCards
+    ];
+
+    for (const cfg of cardsToRender) {
+      await buildAndInsertInfographicCard(cfg);
+    }
+
+    const mgrSections = [1, 2, 3, 4, 5];
+    mgrSections.forEach(secNum => {
+      const sec = document.getElementById('step-' + secNum);
+      if (!sec) return;
+      const bar = document.createElement('div');
+      bar.id = 'info-mgr-bar-' + secNum;
+      bar.className = 'infographic-manager-bar text-xs';
+      bar.innerHTML = `
+        <span class="font-extrabold text-emerald-900">🎨 本單元圖解畫廊工具（V5.5 Infographic Manager — Unit ${secNum}）</span>
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" onclick="openAddCustomInfographicModal(${secNum})" class="px-2.5 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold shadow-sm transition">➕ 新增自訂概念示意圖</button>
+          ${st.deletedIds.length > 0 ? '<button type="button" onclick="restoreDefaultInfographics()" class="px-2.5 py-1 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold transition">↺ 還原預設 6 張圖</button>' : ''}
+        </div>
+      `;
+      sec.appendChild(bar);
+    });
+
+    if (typeof syncCanvasToDocumentHeight === 'function') {
+      syncCanvasToDocumentHeight();
+    }
+  }
+
+  function bootPatchV55() {
+    upgradeHeaderAndLayoutV55();
+    initApplePencilProEngine();
+    setTimeout(async () => {
+      upgradeSection6ToBlindBoxV55();
+      applyRedUnderlinesAndCollapsibleNotesV50();
+      await injectSixInfographicGalleryV55();
+      injectClassroomMiniGamesV50();
+      if (typeof syncCanvasToDocumentHeight === 'function') syncCanvasToDocumentHeight();
+    }, 220);
+  }
+
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', bootPatchV55);
+  } else {
+    bootPatchV55();
+  }
+</script>
+<!-- [END OF PATCH V5.5 FOR CHAPTER 4 pp. 55–57] -->
 </body>
 </html>
