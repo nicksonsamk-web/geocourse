@@ -5465,7 +5465,141 @@
     bootPatchV55();
   }
 </script>
-<!-- [END OF PATCH V5.5 FOR CHAPTER 4 pp. 52–54] -->
+<!-- =========================================================================
+     [START OF PATCH V5.6.1 — SAFE COLLAPSIBLE TUG DRAWER + BILINGUAL GUIDE (pp. 52–54)]
+     ========================================================================= -->
+<style>
+  .tug-drawer-52-54 {
+    border: 1.5px solid #93c5fd;
+    border-radius: 14px;
+    background: #eff6ff;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .tug-drawer-52-54 > summary {
+    cursor: pointer;
+    padding: 11px 14px;
+    background: #dbeafe;
+    color: #1e3a8a;
+    font-size: 12.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    list-style: none;
+  }
+  .tug-drawer-52-54 > summary::-webkit-details-marker { display: none; }
+  .tug-extra-52-54 {
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px dashed #60a5fa;
+    font-size: 12px;
+    line-height: 1.65;
+    color: #334155;
+  }
+  body.theme-dark-pro .tug-drawer-52-54 { background: #1e293b; border-color: #334155; }
+  body.theme-dark-pro .tug-drawer-52-54 > summary { background: #0f172a; color: #93c5fd; }
+  body.theme-dark-pro .tug-extra-52-54 { background: #0f172a; border-color: #38bdf8; color: #cbd5e1; }
+  body.classroom-zoom-125 .tug-drawer-52-54 > summary,
+  body.classroom-zoom-125 .tug-extra-52-54 { font-size: 1.05rem !important; }
+  body.classroom-zoom-145 .tug-drawer-52-54 > summary,
+  body.classroom-zoom-145 .tug-extra-52-54 { font-size: 1.22rem !important; }
+</style>
+
+<script>
+  (function initSafeTugDrawer5254() {
+    function enrichVerdictBox(box) {
+      if (!box) return;
+      const out = box.querySelector('[id*="tug"]') || box.querySelector('div:last-child');
+      if (!out) return;
+
+      out.querySelectorAll('.zh-52-54-note').forEach(el => el.remove());
+      const txt = out.textContent || '';
+      let zhNote = '';
+      let extraGuide = '';
+
+      if (txt.includes('50:50') || txt.includes('scale-dependent')) {
+        zhNote = '（50:50 平衡結論：重要性取決於時空與生物尺度——宏觀氣候［日照與降水］決定了巴西六大生物群系［佔全球 15–20% 生物多樣性］與加拿大／俄羅斯／納米比亞的氣候限制框架；微地形與局部生境則創造「高多樣性口袋」［如哥斯達黎加 12 大生態生活區與澳門路氹濕地］；而演化支系年齡［1.25 億年有袋類對比 1,500–3,000 萬年袋鼠］及人類保育介入［佛羅里達美洲獅 1995 年引入 8 隻德州雌獅進行基因拯救、哥國 PES 政策］則主導基因與物種存續。）';
+        extraGuide = '<strong>📘 擴展解釋（AO3 跨尺度綜合評估）：</strong> 申論題若只單押「氣候決定一切」或「保育決定一切」容易流於片面。高分作答應先指出宏觀氣候設定群系格局，再以局部熱點、演化歷史與人類管理措施作層次補充與權衡。';
+      } else if (txt.includes('Macro-Climate') || txt.includes('Primacy')) {
+        zhNote = '（立場結論：宏觀氣候［氣溫與降水量］起基礎主導作用——缺乏適宜的熱量與水分條件，極端嚴寒［加拿大、俄羅斯］或極度乾旱［納米比亞、澳洲內陸］會形成氣候限制因子，限制複雜生態系統的發育。）';
+        extraGuide = '<strong>📘 擴展解釋（宏觀氣候立場延伸）：</strong> 氣候限制因子決定了區域初級生產力與生物群系上限，但仍須留意局部微生境與人為干預對單一物種或基因庫的直接衝擊。';
+      } else if (txt.trim().length > 15) {
+        zhNote = '（立場結論：局部微生境、演化歷史與人類保育管理更具關鍵影響——即使宏觀氣候相似或嚴苛，地形過渡帶、孤立演化與基因拯救／PES 保育策略仍會顯著改變物種與基因多樣性的存續結果。）';
+        extraGuide = '<strong>📘 擴展解釋（局部與保育立場延伸）：</strong> 結合佛羅里達美洲獅基因拯救、袋獾 DFTD 傳染病與瑪麗亞島隔離保育，或哥斯達黎加 PES 政策，可凸顯人類治理與演化背景的重要性。';
+      }
+
+      if (zhNote) {
+        const span = document.createElement('span');
+        span.className = 'zh-note zh-52-54-note block mt-1.5';
+        span.textContent = zhNote;
+        out.appendChild(span);
+      }
+
+      let extraEl = box.querySelector('.tug-extra-52-54');
+      if (!extraEl && extraGuide) {
+        extraEl = document.createElement('div');
+        extraEl.className = 'tug-extra-52-54';
+        box.appendChild(extraEl);
+      }
+      if (extraEl && extraGuide) extraEl.innerHTML = extraGuide;
+    }
+
+    function wrapOnce() {
+      document.querySelectorAll('div.rounded-xl').forEach(box => {
+        const hasTug = box.textContent.includes('Tug-of-War') || box.querySelector('[id*="tug"]');
+        if (!hasTug) return;
+        if (box.querySelector('div.rounded-xl')?.textContent.includes('Tug-of-War')) return;
+        if (box.dataset.v561Done === '1') {
+          enrichVerdictBox(box);
+          return;
+        }
+        box.dataset.v561Done = '1';
+
+        const drawer = document.createElement('details');
+        drawer.className = 'tug-drawer-52-54';
+
+        const summary = document.createElement('summary');
+        summary.innerHTML = `
+          <span>⚖️ 教師參考：AO3 立場權衡天平、擴展解釋與雙語結論（預設隱藏，點擊展開）</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-white text-blue-900 text-[11px] font-extrabold border border-blue-300 shrink-0">▼ 展開／收合</span>
+        `;
+
+        box.style.border = 'none';
+        box.style.borderRadius = '0';
+        box.style.margin = '0';
+
+        box.parentNode.insertBefore(drawer, box);
+        drawer.appendChild(summary);
+        drawer.appendChild(box);
+
+        const slider = box.querySelector('input[type="range"]');
+        if (slider) {
+          slider.addEventListener('input', () => setTimeout(() => enrichVerdictBox(box), 15));
+          slider.addEventListener('change', () => setTimeout(() => enrichVerdictBox(box), 15));
+        }
+        enrichVerdictBox(box);
+
+        drawer.addEventListener('toggle', () => {
+          setTimeout(() => {
+            if (typeof syncCanvasToDocumentHeight === 'function') syncCanvasToDocumentHeight();
+          }, 80);
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => setTimeout(wrapOnce, 250));
+    } else {
+      setTimeout(wrapOnce, 250);
+    }
+    window.addEventListener('load', () => setTimeout(wrapOnce, 600));
+  })();
+</script>
+<!-- [END OF PATCH V5.6.1] -->
 </body>
 </html>
 

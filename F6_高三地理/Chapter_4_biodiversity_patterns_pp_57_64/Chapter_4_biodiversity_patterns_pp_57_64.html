@@ -6647,6 +6647,219 @@
     bootPatchV55();
   }
 </script>
-<!-- [END OF PATCH V5.5 FOR CHAPTER 4 pp. 57–64] -->
+<!-- =========================================================================
+     [START OF PATCH V5.6.2 — COLLAPSIBLE DRAWER FOR ESSAY VERDICT TUG-OF-WAR]
+     ========================================================================= -->
+<style>
+  .ao3-tug-collapsible {
+    border: 1.5px solid #cbd5e1;
+    border-radius: 14px;
+    background: #f8fafc;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  .ao3-tug-collapsible summary {
+    cursor: pointer;
+    padding: 10px 14px;
+    background: linear-gradient(90deg, #f1f5f9 0%, #e2e8f0 100%);
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    user-select: none;
+  }
+  .ao3-tug-collapsible summary::-webkit-details-marker {
+    display: none;
+  }
+  .ao3-tug-collapsible[open] summary {
+    background: #eff6ff;
+    color: #1e40af;
+    border-bottom: 1px solid #bfdbfe;
+  }
+  body.theme-dark-pro .ao3-tug-collapsible {
+    background: #1e293b;
+    border-color: #334155;
+  }
+  body.theme-dark-pro .ao3-tug-collapsible summary {
+    background: #0f172a;
+    color: #f8fafc;
+  }
+  body.classroom-zoom-125 .ao3-tug-collapsible summary {
+    font-size: 1.05rem !important;
+  }
+  body.classroom-zoom-145 .ao3-tug-collapsible summary {
+    font-size: 1.22rem !important;
+  }
+</style>
+
+<script>
+  (function convertTugOfWarToCollapsibleDrawer() {
+    // 尋找所有申論題中直接顯示結論的 Tug-of-War 滑桿區塊
+    document.querySelectorAll('input[type="range"]').forEach((slider, idx) => {
+      const handler = slider.getAttribute('oninput') || '';
+      if (!handler.toLowerCase().includes('tug')) return;
+
+      const wrapper = slider.closest('div.rounded-xl') || slider.parentElement;
+      if (!wrapper || wrapper.dataset.convertedDrawer === '1') return;
+      wrapper.dataset.convertedDrawer = '1';
+
+      // 建立預設收合的 <details> 擴展式按鈕容器
+      const details = document.createElement('details');
+      details.className = 'ao3-tug-collapsible shadow-sm';
+
+      const summary = document.createElement('summary');
+      summary.innerHTML = `
+        <span>⚖️ 教師參考：AO3 立場權衡天平與結論示範（預設隱藏，點擊展開 / Click to Expand Class Verdict）</span>
+        <span class="px-2.5 py-0.5 rounded-full bg-white text-slate-800 text-[11px] font-extrabold border border-slate-300 shrink-0 ml-2">▼ 展開／收合</span>
+      `;
+
+      // 將原本的滑桿與結論框移入抽屜內部
+      wrapper.parentNode.insertBefore(details, wrapper);
+      wrapper.style.border = 'none';
+      wrapper.style.borderRadius = '0';
+      wrapper.style.margin = '0';
+      details.appendChild(summary);
+      details.appendChild(wrapper);
+
+      // 展開或收合時自動重新校準 Apple Pencil 畫布高度，避免底部留白或筆跡偏移
+      details.addEventListener('toggle', () => {
+        setTimeout(() => {
+          if (typeof syncCanvasToDocumentHeight === 'function') {
+            syncCanvasToDocumentHeight();
+          }
+        }, 80);
+      });
+    });
+
+    if (typeof syncCanvasToDocumentHeight === 'function') {
+      setTimeout(syncCanvasToDocumentHeight, 100);
+    }
+  })();
+</script>
+<!-- [END OF PATCH V5.6.2 — COLLAPSIBLE DRAWER FOR ESSAY VERDICT TUG-OF-WAR] -->
 </body>
+<!-- =========================================================================
+     [START OF PATCH V5.6.8 — SAFE COLLAPSIBLE TUG-OF-WAR + BILINGUAL GUIDE]
+     ========================================================================= -->
+<style>
+  .tug-safe-drawer {
+    border: 1.5px solid #93c5fd;
+    border-radius: 14px;
+    background: #eff6ff;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .tug-safe-drawer > summary {
+    cursor: pointer;
+    padding: 11px 14px;
+    background: #dbeafe;
+    color: #1e3a8a;
+    font-size: 12.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+  }
+  .tug-safe-drawer > summary::-webkit-details-marker { display: none; }
+  .tug-safe-extra {
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px dashed #60a5fa;
+    font-size: 12px;
+    line-height: 1.65;
+    color: #334155;
+  }
+  body.classroom-zoom-125 .tug-safe-drawer > summary,
+  body.classroom-zoom-125 .tug-safe-extra { font-size: 1.05rem !important; }
+  body.classroom-zoom-145 .tug-safe-drawer > summary,
+  body.classroom-zoom-145 .tug-safe-extra { font-size: 1.22rem !important; }
+</style>
+
+<script>
+  (function initSafeTugDrawerV568() {
+    function addZhAndExpanded(box) {
+      if (!box) return;
+      const out = box.querySelector('[id*="tug"]') || box.querySelector('div:last-child');
+      if (!out) return;
+
+      out.querySelectorAll('.zh-v568-note').forEach(n => n.remove());
+      const txt = out.textContent || '';
+      let zh = '';
+      let extra = '';
+
+      if (txt.includes('50:50') || txt.includes('scale-dependent')) {
+        zh = '（50:50 平衡結論：重要性取決於時空尺度——全球緯度氣候決定大陸尺度的生物群系格局，而局部海拔［圖 4.12 迎風坡地形雨與背風坡雨影區］、土壤質地及排水生態過渡帶則主導地方分佈；同時，雖然國家財富［挪威對比馬達加斯加］影響國內保育能力，但國家與地方發展目標的衝突［巴西貝羅蒙特水壩節省 11.4 億桶石油卻威脅欣古河約 600 種原生魚類含特有種］證明跨國資金［NICFI、EU/OACPS］與原住民權益同樣重要。）';
+        extra = '<strong>📘 擴展解釋（AO3 綜合評估）：</strong> 全球氣候解釋宏觀緯度分帶，局部地形、土壤過渡帶與深海隔離解釋小尺度與孤島差異；保育落差則需同時考量財富差距與國家／地方發展權衡。';
+      } else if (txt.includes('Global Climate') || txt.includes('Macro-Climate')) {
+        zh = '（立場結論：全球緯度氣候與國家經濟財富起主導作用——氣候帶決定全球生物群系分佈框架，而高收入國家如挪威［人均 GDP 逾 8.7 萬美元］具備建立 48 座國家公園與投入 28 億美元 NICFI 基金的資源。）';
+        extra = '<strong>📘 擴展解釋（正方延伸）：</strong> 宏觀氣候與經濟實力提供基礎條件，但仍需與局部因素及發展衝突作對比評估。';
+      } else if (txt.trim().length > 15) {
+        zh = '（立場結論：局部因素、地理隔離與發展權衡更具關鍵影響——海拔降溫、雨影區、濕地過渡帶與華萊士線深海隔離塑造獨特多樣性，而貧困生計［馬達加斯加 75.2% 貧困率］與大型水壩工程［貝羅蒙特水壩］則直接衝擊保育。）';
+        extra = '<strong>📘 擴展解釋（反方延伸）：</strong> 即使緯度與財富相近，局部地形、排水或水壩引流仍會造成顯著的生態與保育差異。';
+      }
+
+      if (zh) {
+        const span = document.createElement('span');
+        span.className = 'zh-note zh-v568-note block mt-1.5';
+        span.textContent = zh;
+        out.appendChild(span);
+      }
+
+      let extraBox = box.querySelector('.tug-safe-extra');
+      if (!extraBox && extra) {
+        extraBox = document.createElement('div');
+        extraBox.className = 'tug-safe-extra';
+        box.appendChild(extraBox);
+      }
+      if (extraBox && extra) extraBox.innerHTML = extra;
+    }
+
+    function runOnce() {
+      document.querySelectorAll('div.rounded-xl').forEach(box => {
+        if (!box.textContent.includes('Class AO3 Verdict Tug-of-War')) return;
+        if (box.querySelector('div.rounded-xl')?.textContent.includes('Class AO3 Verdict Tug-of-War')) return;
+        if (box.dataset.v568Done === '1') {
+          addZhAndExpanded(box);
+          return;
+        }
+        box.dataset.v568Done = '1';
+
+        const drawer = document.createElement('details');
+        drawer.className = 'tug-safe-drawer';
+
+        const summary = document.createElement('summary');
+        summary.innerHTML = `
+          <span>⚖️ 教師參考：AO3 立場權衡天平、擴展解釋與雙語結論（預設隱藏，點擊展開）</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-white text-blue-900 text-[11px] font-extrabold border border-blue-300">▼ 展開／收合</span>
+        `;
+
+        box.style.border = 'none';
+        box.style.borderRadius = '0';
+        box.style.margin = '0';
+
+        box.parentNode.insertBefore(drawer, box);
+        drawer.appendChild(summary);
+        drawer.appendChild(box);
+
+        const slider = box.querySelector('input[type="range"]');
+        if (slider) {
+          slider.addEventListener('input', () => setTimeout(() => addZhAndExpanded(box), 10));
+          slider.addEventListener('change', () => setTimeout(() => addZhAndExpanded(box), 10));
+        }
+        addZhAndExpanded(box);
+      });
+    }
+
+    runOnce();
+    setTimeout(runOnce, 400);
+    setTimeout(runOnce, 1000);
+  })();
+</script>
+<!-- [END OF PATCH V5.6.8] -->
 </html>
